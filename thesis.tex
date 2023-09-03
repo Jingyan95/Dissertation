@@ -1,0 +1,36 @@
+\documentclass{SPhdThesis}
+
+% PDF and title properties.
+\SgSetTitle{Search for charged-lepton flavor violation in the production and decay of top quarks at \\ $\sqrt{\textbf{s}}$ = 13 TeV with the CMS detector}
+\SgSetAuthor{Jingyan Li}
+\SgSetAuthorDegrees{B.S. in Physics, Lanzhou University}
+\SgSetYear{2023}
+\SgSetDegree{Doctor of Philosophy}
+\SgSetDepartment{Department of Physics}
+\SgSetUniversity{Northeastern University}
+\SgSetDeclarationDate{December 2023}
+
+% The document.
+\begin{document}
+         \sffamily\sansmath
+	\begin{frontmatter}
+		\SgAddTitle%
+		\SgAddDeclaration%
+		%\input{acknowledgments}%
+		\input{abstract}%
+		\SgAddToc%  Table of contents.
+		\SgAddLof%  List of figures.
+		\SgAddLot%  List of tables.
+		\SgAddAcr%  List of acronyms.
+	\end{frontmatter}
+	\input{chapters/Introduction}
+	\input{chapters/Part1}
+	\input{chapters/Part2}
+	\input{chapters/Part3}
+	\input{chapters/Part4}
+	\ChapterOutsidePart
+	\input{chapters/Conclusion}
+	\SgIncludeBib{biblio}
+	\appendix
+	\input{chapters/Appendix}
+\end{document}

@@ -1,0 +1,70 @@
+\chapter{Object Selection}
+\label{chap:Objects}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Leptons}
+\label{sec:Leptons}
+
+\subsubsection{Electron}
+We apply the following selections to electron objects:
+
+\begin{itemize}
+\item $p_{T}~>$ 20 GeV,
+\item $|\eta|~<$ 2.4,
+\item the gap (1.4442 $<~|\eta_{SC}|~<$1.566) is removed,
+\item $|d_{xy}|~<$ 0.05 cm, $|d_{z}|~<$ 0.1 cm,
+\item missing inner hits $<$ 2,
+\item significance of the 3D impact parameter SIP$_{3D}<$8,
+\item pass the TOP MVA ID Tight WP cite{mvaTOP} ($>$ 0.9 across all years),
+\item miniIsolation $<$ 0.12.
+\end{itemize}
+
+Electron energy scale corrections cite{EcalScale} are applied.
+
+\subsubsection{Muon}
+Similarly, we apply the following selections to muon objects:
+
+\begin{itemize}
+\item $p_{T}~>$ 20 GeV,
+\item $|\eta|~<$ 2.4,
+\item $|d_{xy}|~<$ 0.05 cm, $|d_{z}|~<$ 0.1 cm,
+\item significance of the 3D impact parameter SIP$_{3D}<$8,
+\item pass the cut-based muon ID cite{muID} (medium working point),
+\item pass the TOP MVA ID Tight WP cite{mvaTOP} ($>$ 0.9 across all years),
+\item miniIsolation $<$ 0.12.
+\end{itemize}
+
+Muon energy (Rochester) corrections are applied to low $p_T$ muons ($p_T<$200GeV). 
+
+The TOP MVA ID is used to suppress the contamination of non-prompt leptons. Both electron and muon selection in the analysis is synchronized with.
+
+The isolation variable "miniIsolation" used to select both electrons and muons is also used as input to the TOP MVA training. It is similar to a normal isolation variable but with a $pT$ dependent cone size:
+
+\begin{equation}
+R = \max (0.05, \min(0.2, \frac{10GeV}{p_T})).
+\end{equation}
+
+This analysis requires three leptons selected by the criteria above. The $p_{T}$ threshold on the leading lepton is 38 GeV.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Jets}
+\label{sec:Jets}
+
+Jets are reconstructed from particle flow, PF, candidates using the Anti-kT clustering algorithm with a cone parameter $R~=$ 0.4 (AK4). The Charged Hadron Subtraction algorithm, CHS, is applied to the jets, AK4PFCHS jets, in order to groom them, removing extra radiation from pileup. After this preliminary reconstruction the groomed jets must satisfy the below conditions:
+
+
+\begin{itemize}
+\item $p_{T}~>$ 30 GeV,
+\item $|\eta|~<$ 2.4,
+\item TightLepVeto cite{jetID},
+\item Pile up jet ID loose cite{pujetID}, if $p_{T}~<$ 50 GeV.
+\end{itemize}
+
+Jets are also required to be isolated from selected leptons. A cone of $\Delta~R~<$ 0.4 around each jet candidate is defined and jets are removed if any selected leptons are found within such a cone.  
+
+Jets from MC are corrected in order to match the data which is skewed by pileup (L1FastJet) and L2L3 MC-truth corrections. In order to correct the MC jets, we applied the recommended Jet Energy Corrections. For reference the versions of the JECs we used for
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{B-tagging}
+\label{sec:Btag}
