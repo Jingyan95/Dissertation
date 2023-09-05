@@ -2,6 +2,8 @@
 % SPhdThesis v1.0
 % By Saurabh Garg (saurabhgarg@mysoc.net)
 % Version 1.0 released 11.06.2013
+% -----------------------------------------------------------------------------
+% Modified by Jack Li, September 2023
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{SPhdThesis}[2013/06/11 v1.0 SPhdThesis class]
@@ -121,11 +123,7 @@
 
 % -----------------------------------------------------------------------
 % MACRO
-\newcommand{\bm}[1]{\boldsymbol{#1}}
-\renewcommand{\mu}{\upmu}
-\renewcommand{\tau}{\uptau}
-
-
+\input{utilities/marco}
 
 % -----------------------------------------------------------------------
 % P A G E   L A Y O U T.
@@ -236,7 +234,7 @@
 	\clearpage                                 % Fix the page number in TOC.
 	\phantomsection                            % Fix the link in PDF.
 	\addcontentsline{toc}{chapter}{References} % Add the bibliography to TOC.
-	\bibliographystyle{abbrv}                  % Set the bibliography style.
+	\bibliographystyle{unsrturl}                  % Set the bibliography style.
 	\bibliography{#1}                          % Include the bibliography file.
 }
 
@@ -360,7 +358,7 @@
 %	\sectionfont{\LARGE\bfseries\sffamily}
 	\chapter*{List of Acronyms}
 	\lhead{\sffamily\bfseries{List of Acronyms}}
-	\input{acronym}
+	\input{utilities/acronym}
 	\SgIntClearDoublePage
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 }
