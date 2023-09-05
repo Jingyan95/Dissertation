@@ -222,12 +222,13 @@ The selection criteria for $r/f$ measurement region is summarized in Table \ref{
 \centering
 \resizebox{\textwidth}{!}{ 
 \begin{tabular}{cccccccc}
-\hline 
-Observable                 &jet bin          & $\#$ of selected leptons & lepton flavor composite  & $|\Sigma_iC_i|$ & OffZ               &  njet$>=$1  &nbjet$<=$1\\ \hline \hline
+\toprule
+\multirow{2}{*}{Observable}   & \multirow{2}{*}{jet bin}          &  \multirow{2}{*}{\vtop{\hbox{\strut $\#$ of selected}\hbox{\strut~~~leptons}}} &   \multirow{2}{*}{\vtop{\hbox{\strut lepton flavor}\hbox{\strut~composite}}} & \multirow{2}{*}{$|\Sigma_iC_i|$} & \multirow{2}{*}{OffZ}               &  \multirow{2}{*}{njet$>=$1}  & \multirow{2}{*}{nbjet$<=$1}\\ 
+   &  &  &   &  &                &    & \\ \midrule
 \multirow{2}{*}{$f$}     & 0 jet                & 2                                & any                                   & 1                       & \checkmark     & -                    & -   \\  
                                    & 1 or more jet  & 2                                &  any                                  & 1                         & \checkmark     & \checkmark & \checkmark\\ \hline
-\multirow{2}{*}{$r$}    & 0 jet                & 2                                 & $e\mu$ only                     & 0                        & \checkmark     & -                      & -     \\  
-                                 & 1 or more jet  & 2                                  & $e\mu$ only                      & 0                        & \checkmark      & \checkmark & \checkmark \\ \hline   
+\multirow{2}{*}{$r$}    & 0 jet                & 2                                 & e$\upmu$ only                     & 0                        & \checkmark     & -                      & -     \\  
+                                 & 1 or more jet  & 2                                  & e$\upmu$ only                      & 0                        & \checkmark      & \checkmark & \checkmark \\ \bottomrule  
 \end{tabular}
 }
 \caption{Summary of the cuts applied to the $r$/$f$ measurement region.}

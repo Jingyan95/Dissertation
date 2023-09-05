@@ -1,7 +1,7 @@
 \chapter{Datasets, Simulated Samples and Triggers}
 \label{chap:Samples}
 
-This analysis is based on data collected by the \ac{CMS} experiment in 2016-2018 from $pp$ collisions at a center-of-mass energy of 13 TeV corresponding to an integrated luminosity of 138 fb$^{-1}$. There were approximately 30 simultaneous $pp$ collisions occurring per 25 ns. Based on online selection criteria, fully reconstructed collision data that contain high-level physics objects are divided in ``\acp{PD}'', which include ``DoubleEG'', ``DoubleMu'', ``MuonEG'', ``SingleElectron'', and ``SingleMuon'' for 2016 and 2017 data taking era. In 2018, ``SingleElectron'', ``DoubleEG'' are replaced by ``EGamma''. The names of these \acp{PD} reflect the selection criteria. The data taking conditions in 2016-2018 were difference across the years. To account for this, all \ac{MC} samples are generated separately for each year separately. 
+This analysis is based on data collected by the \ac{CMS} experiment in 2016-2018 from $pp$ collisions at a center-of-mass energy of 13 TeV corresponding to an integrated luminosity of 138 fb$^{-1}$. There were approximately 30 simultaneous $pp$ collisions occurring per 25 ns. Based on online selection criteria, fully reconstructed collision data that contain high-level physics objects are divided into ``\acp{PD}''. The \acp{PD} that make use of lepton information for selection include ``DoubleEG'', ``DoubleMu'', ``MuonEG'', ``SingleElectron'', and ``SingleMuon'' for 2016 and 2017 data taking era. In 2018, ``SingleElectron'', ``DoubleEG'' are replaced by ``EGamma''. The names of these \acp{PD} reflect the selection criteria. In addition to these \acp{PD}, \ac{MC} samples are also generated to model both signal and background processes, which are described in \autoref{sec:Signals} and \autoref{sec:Backgrounds}, respectively. To account for the different data taking conditions across the years, all \ac{MC} samples are generated separately for each year. \ac{HLT} triggers are used to select events offline, which is described in \autoref{sec:Triggers}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Signal Samples}
@@ -60,21 +60,23 @@ Among many of the Dimension-6 operators in Warsaw basis~\cite{Aguilar-Saavedra:2
  + \textsf{C}_{\textsf{lu}}^{2113}
  + \textsf{C}_{\textsf{lu}}^{1231}
  + \textsf{C}_{\textsf{lu}}^{1213}
- ,\\ 
-\label{eq:1:2}
+ ,\\
+ \label{eq:1:2}
  \textsf{C}_{\textsf{eq}}
  &=& \textsf{C}_{\textsf{eq}}^{1213}
  + \textsf{C}_{\textsf{eq}}^{2113}
  + \textsf{C}_{\textsf{eq}}^{1231}
  + \textsf{C}_{\textsf{eq}}^{1213}
  ,\\
-\label{eq:1:3}
+ \label{eq:1:3}
  \textsf{C}_{\textsf{eu}}  
  &=& \textsf{C}_{\textsf{eu}}^{1213}
  + \textsf{C}_{\textsf{eu}}^{2113}
  + \textsf{C}_{\textsf{eu}}^{1231}
- + \textsf{C}_{\textsf{eu}}^{1213}
- ,\\
+ + \textsf{C}_{\textsf{eu}}^{1213},
+\end{eqnarray}
+
+\begin{eqnarray}
 \label{eq:1:4}
  \textsf{C}_{\textsf{lequ}}^{(1)}  
  &=& \textsf{C}_{\textsf{lequ}}^{(1)1213}
@@ -103,7 +105,7 @@ Additionally, all vector-like operators are combined,
 
 which results in 6 independent \acp{WC}: $\WC{\textsf{vector}}{\emut{u}},~\WC{\textsf{scalar}}{\emut{u}},~\WC{\textsf{tensor}}{\emut{u}},~\WC{\textsf{vector}}{\emut{c}},~\WC{\textsf{scalar}}{\emut{c}},~\WC{\textsf{tensor}}{\emut{c}}.$  
 
-To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at the leading order.
+To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -125,12 +127,34 @@ R_{\textsf{reweight}}^{i}=\frac{\omega_{\textsf{SMEFTsim}}^i}{\omega_{\textsf{Sm
 
 where $\omega^{i}_{X}$ is the per-event \ac{ME} weight calculated by \MG~using model $X$. Since SMEFTsim was not used by \ac{CMS} at the time when the signal samples were generated, $R_{\textsf{reweight}}$ are used to ``reweight'' the original samples generated using SmeftFR.
 
-The cross sections for top production signals are taken directly from \MG \\with \text{SMEFTsim} UFO as input. The event generation for top decay signals at the \ac{ME}-level take two steps: (i) production of the SM $\ttbar$, and (ii) \ac{CLFV} decay of one of the top quarks. Therefore, the $\ttbar$ cross section at NNLO precision~\cite{Czakon:2011xx} is used to normalize the top decay signals. The cross sections for all signal \ac{MC} samples are summarized in Table~\ref{tab:signal}.
+The cross sections for top production signals are taken directly from \MG \\with \text{SMEFTsim} UFO as input. The event generation for top decay signals at the \ac{ME}-level take two steps: (i) production of the SM $\ttbar$, and (ii) \ac{CLFV} decay of one of the top quarks. Therefore, the $\ttbar$ cross section at \ac{NNLO} precision~\cite{Czakon:2011xx} is used to normalize the top decay signals,
+
+\begin{equation}
+\label{eq:3}
+\sigma_{\textsf{CLFV}}^{\textsf{Top Decay}}=2\times\sigma_{\ttbar}^{\textsf{NNLO}}\times\mathcal{B}(\tto{q}),
+\end{equation}
+
+where q=\{u,c\}, and $\mathcal{B}(\tto{q})$ \cite{Kile:2008rp} can be expressed as,
+
+\begin{equation}
+\label{eq:4}
+\mathcal{B}(\tto{q}) = 
+  \begin{array}{l}
+  \displaystyle
+  \frac{|\WC{\textsf{vector}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{384\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} \\
+  \displaystyle
+  \frac{|\WC{\textsf{scalar}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{3072\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} \\
+  \displaystyle
+  \frac{|\WC{\textsf{tensor}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{64\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} 
+\end{array}
+\end{equation}
+
+where $\textsf{m}_{\textsf{t}}$ and $\Gam_{\textsf{t}}^{\textsf{SM}}$ are taken to be 172.5 GeV and 1.33 GeV in this analysis, respectively. The choice of u or c quark in final states does not affect the cross sections of the top decay signals. The cross sections for all signal \ac{MC} samples are summarized in Table~\ref{tab:signal}.
 
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Theoretical cross sections for top production and decay for each \ac{CLFV} coupling. Uncertainties related to PDF and QCD scale are given ($\sigma^{+\text{scale}}_{-\text{scale}}\pm \text{PDF}$).}
+\caption{Theoretical cross sections for top production and decay for each \ac{CLFV} coupling, calculated at $\WC{}{}/\Lam^2$ = 1 TeV$^{-2}$. Uncertainties related to PDF and QCD scale in \ac{ME} calculation are given ($\sigma^{+\text{scale}}_{-\text{scale}}\pm \text{PDF}$).}
 \begin{tabular}{clll}
 \toprule 
 Lorentz Structure    & Samples              & XS (fb)   \\  \midrule
@@ -148,35 +172,39 @@ Lorentz Structure    & Samples              & XS (fb)   \\  \midrule
 \label{tab:signal}
 \end{table}
 
-Steps other than the \ac{ME} calculation concerning signal \ac{MC} generation follow the \ac{CMS} standard, which is described in the following Section.
+Steps other than the \ac{ME} calculation concerning signal \ac{MC} generation follow the \ac{CMS} standard, which is described in the following section.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background Samples}
 \label{sec:Backgrounds}
 
-Besides tZq, tHq, tHW, and tWZ process, the NLO \ac{PDF} set from NNPDF3.0~\cite{NNPDF:2014otw} is used in 2016 to generate background \ac{MC} samples. The NNLO \ac{PDF} set from NNPDF3.1~\cite{NNPDF:2017mvq} is used for tZq while the LO \ac{PDF} set from NNPDF3.0 is used for tHq, tHW, and tWZ in 2016. In 2017 and 2018, the NNLO \ac{PDF} set from NNPDF3.1 is used to generate all the samples. The default choice of \ac{ME} generator at \ac{CMS} is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} is used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} is used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The nonprompt backgrounds in this analysis will be modeled with data-driven technique. The MC samples listed in ``nonprompt" prompt category of Table \ref{tab:MCsample} are only used as reference for initial studies. 
+Besides tZq, tHq, tHW, and tWZ processes, the \ac{NLO} \ac{PDF} set from NNPDF3.0~\cite{NNPDF:2014otw} is used in 2016 to generate background \ac{MC} samples. The \ac{NNLO} \ac{PDF} set from NNPDF3.1~\cite{NNPDF:2017mvq} is used for tZq while the \ac{LO} \ac{PDF} set from NNPDF3.0 is used for tHq, tHW, and tWZ in 2016. In 2017 and 2018, the \ac{NNLO} \ac{PDF} set from NNPDF3.1 is used to generate all the samples. 
+
+The default choice of \ac{ME} event generator is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. Samples with small contributions (tHq, tWZ, tHW, and low mass DY ) are generated at \ac{LO} while other samples are generated at \ac{NLO}. Whenever possible and relevant, theoretical cross sections from high-order \ac{QCD} calculations are used. The references of these calculations are included in \ref{tab:MCsample}.
+
+The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} is used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} is used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more prompt leptons in the final states are classified as ``prompt background'', and (ii) other processes are classified as ``nonprompt background''. The nonprompt backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in ``nonprompt'' prompt category in Table \ref{tab:MCsample} are therefore only used for the purpose of validations. 
 
 \begin{table}
 \sffamily
-\caption{Summary of the configurations of the \ac{MC} samples.}
+\caption{Summary of the configurations of the \ac{MC} samples. DYM50 (DYM10to50) denote DY sample with a dilepton invariant mass greater than 50 GeV (between 10 and 50 GeV). The cross sections for samples without a citation are taken from samples themselves.}
 \centering
  \resizebox{\linewidth}{!}{%
  \begin{tabular}{cccccc}
 \toprule
 Category & Process & Event Generator & Perturbative QCD& Tune & XS precision \\ \midrule
-\multirow{7}{*}{\vtop{\hbox{\strut Prompt}\hbox{\strut backgrounds}}}  
- & WZ &Madgraph    & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\ 
- & ZZ  &Powheg   & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\
- &VVV &Madgraph & NLO & CUETP8M1(CP5) & NLO  \\ 
- & $\ttbar$W, $\ttbar$Z &Madgraph & NLO & CUETP8M1(CP5)  &  NLO~\cite{Frederix:2021agh,Kulesza:2020nfh}    \\
- & $\ttbar$H & Powheg  & NLO & CUETP8M1(CP5)  & NLO~\cite{Kulesza:2020nfh}  \\ 
- & tZq &Madgraph  & NLO & CP5 & NLO    \\
- & tHq, tHW, tWZ & Madgraph    & LO & CUETP8M1(CP5)  & LO    \\
+\multirow{7}{*}{\vtop{\hbox{\strut~~prompt}\hbox{\strut background}}}  
+ & WZ & \textsc{MadGraph}    & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\ 
+ & ZZ  & \textsc{powheg}   & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\
+ &VVV & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO  \\ 
+ & $\ttbar$W, $\ttbar$Z & \textsc{MadGraph} & NLO & CUETP8M1(CP5)  &  NLO~\cite{Frederix:2021agh,Kulesza:2020nfh}    \\
+ & $\ttbar$H & \textsc{powheg} & NLO & CUETP8M1(CP5)  & NLO~\cite{Kulesza:2020nfh}  \\ 
+ & tZq & \textsc{MadGraph}  & NLO & CP5 & NLO    \\
+ & tHq, tHW, tWZ & \textsc{MadGraph}    & LO & CUETP8M1(CP5)  & LO    \\
   \midrule
- \multirow{3}{*}{\vtop{\hbox{\strut Non-prompt}\hbox{\strut backgrounds}}}
- & $\ttbar$ & Powheg &  NLO   & CUETP8M1(CP5)    & NNLO~\cite{Czakon:2011xx}    \\ 
- & DYM50 & Madgraph   & NLO & CUETP8M1(CP5)    & NNLO~\cite{Li:2012wna}   \\
- & DYM10to50 & Madgraph   & LO  & CUETP8M1(CP5)    & NLO~\cite{Li:2012wna}    \\
+ \multirow{3}{*}{\vtop{\hbox{\strut nonprompt}\hbox{\strut background}}}
+ & $\ttbar$ & \textsc{powheg}  &  NLO   & CUETP8M1(CP5)    & NNLO~\cite{Czakon:2011xx}    \\ 
+ & DYM50 & \textsc{MadGraph}   & NLO & CUETP8M1(CP5)    & NNLO~\cite{Li:2012wna}   \\
+ & DYM10to50 & \textsc{MadGraph}   & LO  & CUETP8M1(CP5)    & NLO~\cite{Li:2012wna}    \\
   \bottomrule
   \end{tabular}}
   \label{tab:MCsample}
@@ -186,13 +214,12 @@ Category & Process & Event Generator & Perturbative QCD& Tune & XS precision \\ 
 \section{Triggers}
 \label{sec:Triggers}
 
-To achieve a trigger optimal acceptance, a combination of single-lepton, di-lepton and tri-lepton triggers are used to select events. These triggers are summarized in \autoref{chap:Triggers}. The following trigger logic was implemented to remove the overlap between different datasets:
+The target final states of this analysis contain three prompt leptons, which make lepton triggers the most optical choice to select events. To achieve the maximum acceptance, a combination of single-lepton, di-lepton and tri-lepton triggers are used. These triggers are summarized in \autoref{chap:Triggers}. Events in simulated samples are required to fire at least one of the triggers listed in Table~\ref{tab:triggers16}-\ref{tab:triggers18}. Since multple \acp{PD} are used to record data events and the orthogonality of these \acp{PD} are not guaranteed by the online selection criteria, the following trigger logic is implemented to remove the overlap between different \acp{PD}:
 
 \begin{itemize}
-\item Events in MC datasets are required to fire at least one of the triggers listed in Table~\ref{tab:triggers16}-\ref{tab:triggers18}. 
-\item Events in Single Muon datasets are required to fire at least one of the triggers listed under ``SingleMuon''. 
-\item Events in Double Muon datasets are required to fire at least one of the triggers listed under ``DoubleMu''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon''.
-\item Events in ``MuonEG'' datasets are required to fire at least one of the triggers listed under ``MuonEG''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon'' or ``DoubleMu''.
+\item Events in SingleMuon datasets are required to fire at least one of the triggers listed under ``SingleMuon''. 
+\item Events in DoubleMuon datasets are required to fire at least one of the triggers listed under ``DoubleMu''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon''.
+\item Events in MuonEG' datasets are required to fire at least one of the triggers listed under ``MuonEG''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon'' or ``DoubleMu''.
 \item Events in Single Electron datasets are required to fire at least one of the triggers listed under ``SingleElectron''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon'' or ``DoubleMu'' or ``MuonEG''.
 \item Events in DoubleEG datasets are required to fire at least one of the triggers listed under ``DoubleEG''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon'' or ``DoubleMu'' or ``MuonEG'' or ``SingleElectron''.
 \item Events in EGamma datasets are required to fire at least one of the triggers listed under ``EGamma''. Events are removed if they also fire at least one of the triggers listed under ``SingleMuon'' or ``DoubleMu'' or ``MuonEG''.

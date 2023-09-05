@@ -184,10 +184,10 @@ Uncertainties related to B-tagging scale factors are split into different source
 \caption{
 A hyphen ($-$) denotes that a source is not correlated between the different years.
 }
-\begin{tabular}{|l|c|l|}
-\hline
+\begin{tabular}{lcl}
+\toprule
 Source & Correlated & Description\\
-\hline
+\midrule
 lf			& \checkmark & udsg+c jets in heavy flavor region\\ %HF$^1$
 hf			& \checkmark & b+c jets in light flavor region \\ %LF$^2$
 hfstats1	& - 		 & Linear fluctuations of c jets\\
@@ -196,7 +196,7 @@ lfstats1	& -			 & Linear fluctuations of udsg jets \\
 lfstats2	& -			 & Quadratic fluctuations of udsg jets \\
 cferr1		& \checkmark & Linear fluctuations of c jets \\
 cferr2		& \checkmark & Quadratic fluctuations of c jets \\
-\hline
+\bottomrule
 \end{tabular}
 \end{center}
 \end{table}
@@ -213,38 +213,25 @@ Summary of the sources of uncertainty related to the JECs.
 A hyphen ($-$) denotes that a source is not correlated between the different years.
 }
 \label{tab:jec}
-\begin{tabular}{|l|c|}
-\hline
-Source & Correlated\\
-\hline
-AbsoluteStat			& -			 \\
-AbsoluteScale			& \checkmark			 \\
-AbsoluteMPFBias			& \checkmark 		 	 \\
-Fragmentation			& \checkmark			 \\
-SinglePionECAL			& \checkmark			 \\
-SinglePionHCAL			& \checkmark			 \\
-FlavorQCD				& \checkmark			 \\
-TimePtEta				& -			 \\
-RelativeJEREC1			& -			 \\
-RelativeJEREC2			& -			 \\
-RelativeJERHF			& \checkmark			 \\
-RelativePtBB			& \checkmark			 \\
-RelativePtEC1			& -			 \\
-RelativePtEC2			& -			 \\
-RelativePtHF			& \checkmark			 \\
-RelativeBal				& \checkmark			 \\
-RelativeSample			& -			 \\
-RelativeFSR				& -			 \\
-RelativeStatFSR			& \checkmark			 \\
-RelativeStatEC			& -			 \\
-RelativeStatHF			& -			 \\
-PileUpDataMC			& \checkmark			 \\
-PileUpPtRef				& \checkmark			 \\
-PileUpPtBB				& \checkmark			 \\
-PileUpPtEC1				& \checkmark			 \\
-PileUpPtEC2				& \checkmark			 \\
-PileUpPtHF				& \checkmark			 \\
-\hline
+\begin{tabular}{lc|lc}
+\toprule
+Source & Correlated & Source & Correlated \\
+\midrule
+AbsoluteStat			& -		&	 RelativePtHF			& \checkmark			 \\
+AbsoluteScale			& \checkmark		&	 RelativeBal				& \checkmark			 \\
+AbsoluteMPFBias			& \checkmark 	&	 RelativeSample			& -			 \\	 
+Fragmentation			& \checkmark		&	 RelativeFSR				& -			 \\
+SinglePionECAL			& \checkmark	&	 RelativeStatFSR			& \checkmark			 \\	 
+SinglePionHCAL			& \checkmark	&	 RelativeStatEC			& -			 \\	 
+FlavorQCD				& \checkmark	&	 RelativeStatHF			& -			 \\	 
+TimePtEta				& -			 &          PileUpDataMC			& \checkmark			 \\
+RelativeJEREC1			& -		&	    PileUpPtRef				& \checkmark			 \\
+RelativeJEREC2			& -		&	    PileUpPtBB				& \checkmark			 \\
+RelativeJERHF			& \checkmark		&	 PileUpPtEC1				& \checkmark			 \\
+RelativePtBB			& \checkmark		&	 PileUpPtEC2				& \checkmark			 \\
+RelativePtEC1			& -			&     PileUpPtHF				& \checkmark			 \\
+RelativePtEC2			& -			&     & \\
+\bottomrule
 \end{tabular}
 \end{center}
 \end{table}
