@@ -1,14 +1,20 @@
 \chapter{Object Selection}
 \label{chap:Objects}
 
+Objects described in \autoref{chap:Reco} are further selected with more stringent requirements with the goal of suppressing the contributions from background processes while maintaining a high signal acceptance. In particular, prompt electrons and muons are identified through a custom-trained \ac{BDT} classifier, which is discussed in \autoref{sec:Leptons}. Cut-based jet identifications are deployed to select jets originating from hard collisions, which is discussed in  \autoref{sec:Jets}. Furthermore, jets that originate from b quarks are identified with a \ac{NN} based algorithm, which is discussed in \autoref{sec:Btag}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Leptons}
+\section{Lepton Selection}
 \label{sec:Leptons}
 
-\subsection{Top MVA ID}
+The target final states of this analysis feature exactly three leptons that originate either from decays of electroweak bosons or from the \ac{CLFV} interaction, which in this analysis is a contact interaction that involves four fermions. These leptons, referred to as \emph{prompt} leptons, typically appear to be isolated and not far away from the \ac{PV}. In contrast, \emph{nonprompt} leptons are leptons that originate from decays of hadrons or from photon conversions. They often travel a noticeable distance away from the \ac{PV} and appear to be less isolated due to nearby activities. Due to the high multiplicity of leptons in our selection, backgrounds with at least one \emph{nonprompt} lepton outnumber any other \ac{SM} processes that produce three or more \emph{prompt} leptons. It is therefore crucial to exploit the differences between \emph{nonprompt} and \emph{prompt} leptons and bring the \emph{nonprompt} background under control. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TOP LeptonMVA}
+\label{sec:TOPMVA}
 
-\subsection{Lepton selection}
+The \TOP is an offline lepton identification algorithm that is originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Full Selection}
 We apply the following selections to electron objects:
 
 \begin{itemize}
@@ -49,7 +55,7 @@ R = \max (0.05, \min(0.2, \frac{10GeV}{p_T})).
 This analysis requires three leptons selected by the criteria above. The $p_{T}$ threshold on the leading lepton is 38 GeV.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Jets}
+\section{Jet Selection}
 \label{sec:Jets}
 
 Jets are reconstructed from particle flow, PF, candidates using the Anti-kT clustering algorithm with a cone parameter $R~=$ 0.4 (AK4). The Charged Hadron Subtraction algorithm, CHS, is applied to the jets, AK4PFCHS jets, in order to groom them, removing extra radiation from pileup. After this preliminary reconstruction the groomed jets must satisfy the below conditions:
@@ -67,5 +73,5 @@ Jets are also required to be isolated from selected leptons. A cone of $\Delta~R
 Jets from MC are corrected in order to match the data which is skewed by pileup (L1FastJet) and L2L3 MC-truth corrections. In order to correct the MC jets, we applied the recommended Jet Energy Corrections. For reference the versions of the JECs we used for
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{B-tagging}
+\section{Identification of b jets}
 \label{sec:Btag}

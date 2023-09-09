@@ -105,7 +105,7 @@ Additionally, all vector-like operators are combined,
 
 which results in 6 independent \acp{WC}: $\WC{\textsf{vector}}{\emut{u}},~\WC{\textsf{scalar}}{\emut{u}},~\WC{\textsf{tensor}}{\emut{u}},~\WC{\textsf{vector}}{\emut{c}},~\WC{\textsf{scalar}}{\emut{c}},~\WC{\textsf{tensor}}{\emut{c}}.$  
 
-To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}.
+To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} event generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -118,7 +118,7 @@ To generate signal \ac{MC} samples, the effective Lagrangian described above is 
  \end{center}
 \end{figure}
 
-In general, the calculations done by the \ac{ME} generators are model-agnostic assuming the same \ac{EFT} configurations. In other words, models like SmeftFR or SMEFTsim~\cite{Brivio:2017btx} are expected to give the same or very similar results in terms of cross sections and four-momenta of final-state particles. Nevertheless, visible differences in kinematics have been observed and shown in Figure~\ref{fig:reweight}. Furthermore, the cross sections predicted by SmeftFR v2 also yield more than 20\% difference relative to SMEFTsim due to a bug that was later fixed in SmeftFR v3. In the light of these differences, the \ac{CMS} and \ac{ATLAS} Collaborations agreed to adopt the SMEFTsim model as the common standard.  To quantify the impact of the choice of models on kinematics, the following ratio is calculated for each event $i$,
+In general, the calculations done by the \ac{ME} event generators are model-agnostic assuming the same \ac{EFT} configurations. In other words, models like SmeftFR or SMEFTsim~\cite{Brivio:2017btx} are expected to give the same or very similar results in terms of cross sections and four-momenta of final-state particles. Nevertheless, visible differences in kinematics have been observed and shown in Figure~\ref{fig:reweight}. Furthermore, the cross sections predicted by SmeftFR v2 also yield more than 20\% difference relative to SMEFTsim due to a bug that was later fixed in SmeftFR v3. In the light of these differences, the \ac{CMS} and \ac{ATLAS} Collaborations agreed to adopt the SMEFTsim model as the common standard.  To quantify the impact of the choice of models on kinematics, the following ratio is calculated for each event $i$,
 
 \begin{equation}
 \label{eq:2}
@@ -182,17 +182,17 @@ Besides tZq, tHq, tHW, and tWZ processes, the \ac{NLO} \ac{PDF} set from NNPDF3.
 
 The default choice of \ac{ME} event generator is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. Samples with small contributions (tHq, tWZ, tHW, and low mass DY ) are generated at \ac{LO} while other samples are generated at \ac{NLO}. Whenever possible and relevant, theoretical cross sections from high-order \ac{QCD} calculations are used. The references of these calculations are included in \ref{tab:MCsample}.
 
-The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} is used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} is used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more prompt leptons in the final states are classified as ``prompt background'', and (ii) other processes are classified as ``nonprompt background''. The nonprompt backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in ``nonprompt'' prompt category in Table \ref{tab:MCsample} are therefore only used for the purpose of validations. 
+The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} is used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} is used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more \emph{prompt} leptons in the final states are classified as ``\emph{prompt} background'', and (ii) other processes are classified as ``\emph{nonprompt} background''. The \emph{nonprompt} backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in ``\emph{nonprompt}'' category in Table \ref{tab:MCsample} are therefore only used for the purpose of validations. 
 
 \begin{table}
 \sffamily
-\caption{Summary of the configurations of the \ac{MC} samples. DYM50 (DYM10to50) denote DY sample with a dilepton invariant mass greater than 50 GeV (between 10 and 50 GeV). V includes W and Z bosons. The cross sections for samples without a citation are taken from samples themselves.}
+\caption{Summary of the configurations of the \ac{MC} samples. DYM50 (DYM10to50) denote DY sample with a dilepton invariant mass greater than 50 GeV (between 10 and 50 GeV). V includes W and Z bosons. The cross sections for samples without a citation are taken directly from their event generators.}
 \centering
  \resizebox{\linewidth}{!}{%
  \begin{tabular}{cccccc}
 \toprule
 Category & Process & Event Generator & Perturbative QCD& Tune & XS precision \\ \midrule
-\multirow{7}{*}{\vtop{\hbox{\strut~~prompt}\hbox{\strut background}}}  
+\multirow{7}{*}{\vtop{\hbox{\strut~~\emph{prompt}}\hbox{\strut background}}}  
  & WZ & \textsc{MadGraph}    & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\ 
  & ZZ  & \textsc{powheg}   & NLO & CUETP8M1(CP5)   & NLO~\cite{Campbell:2011bn}    \\
  &VVV & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO  \\ 
@@ -201,7 +201,7 @@ Category & Process & Event Generator & Perturbative QCD& Tune & XS precision \\ 
  & tZq & \textsc{MadGraph}  & NLO & CP5 & NLO    \\
  & tHq, tHW, tWZ & \textsc{MadGraph}    & LO & CUETP8M1(CP5)  & LO    \\
   \midrule
- \multirow{3}{*}{\vtop{\hbox{\strut nonprompt}\hbox{\strut background}}}
+ \multirow{3}{*}{\vtop{\hbox{\strut \emph{nonprompt}}\hbox{\strut background}}}
  & $\ttbar$ & \textsc{powheg}  &  NLO   & CUETP8M1(CP5)    & NNLO~\cite{Czakon:2011xx}    \\ 
  & DYM50 & \textsc{MadGraph}   & NLO & CUETP8M1(CP5)    & NNLO~\cite{Li:2012wna}   \\
  & DYM10to50 & \textsc{MadGraph}   & LO  & CUETP8M1(CP5)    & NLO~\cite{Li:2012wna}    \\
