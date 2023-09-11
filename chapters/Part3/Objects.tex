@@ -1,77 +1,59 @@
 \chapter{Object Selection}
 \label{chap:Objects}
 
-Objects described in \autoref{chap:Reco} are further selected with more stringent requirements with the goal of suppressing the contributions from background processes while maintaining a high signal acceptance. In particular, prompt electrons and muons are identified through a custom-trained \ac{BDT} classifier, which is discussed in \autoref{sec:Leptons}. Cut-based jet identifications are deployed to select jets originating from hard collisions, which is discussed in  \autoref{sec:Jets}. Furthermore, jets that originate from b quarks are identified with a \ac{NN} based algorithm, which is discussed in \autoref{sec:Btag}. 
+Objects described in \autoref{chap:Reco}, referred to as ``candidates'', are further selected with more stringent requirements with the goal of suppressing the contributions from background processes while maintaining a high signal acceptance. In particular, prompt electron and muon candidates are identified through a custom-trained \ac{BDT} classifier, which is discussed in \autoref{sec:Leptons}. Two jet identification algorithms are deployed to select jet candidates originating from hard collisions, which is discussed in  \autoref{sec:Jets}. Furthermore, jet candidates that originate from b quarks are identified with a \ac{NN} based algorithm, which is discussed in \autoref{sec:Btag}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lepton Selection}
 \label{sec:Leptons}
 
-The target final states of this analysis feature exactly three leptons that originate either from decays of electroweak bosons or from the \ac{CLFV} interaction, which in this analysis is a contact interaction that involves four fermions. These leptons, referred to as \emph{prompt} leptons, typically appear to be isolated and not far away from the \ac{PV}. In contrast, \emph{nonprompt} leptons are leptons that originate from decays of hadrons or from photon conversions. They often travel a noticeable distance away from the \ac{PV} and appear to be less isolated due to nearby activities. Due to the high multiplicity of leptons in our selection, backgrounds with at least one \emph{nonprompt} lepton outnumber any other \ac{SM} processes that produce three or more \emph{prompt} leptons. It is therefore crucial to exploit the differences between \emph{nonprompt} and \emph{prompt} leptons and bring the \emph{nonprompt} background under control. 
+The target final states of this analysis feature exactly three leptons that originate either from decays of electroweak bosons or from the \ac{CLFV} interaction, which in this analysis is a contact interaction that involves four fermions. These leptons, referred to as \emph{prompt} leptons, typically appear to be isolated and not far away from the \ac{PV}. In contrast, \emph{nonprompt} leptons are leptons that originate from decays of hadrons, or from photon conversions, or misidentified leptons. They often travel a noticeable distance away from the \ac{PV} and appear to be less isolated due to nearby activities. Due to the high multiplicity of leptons in our selection, backgrounds with at least one \emph{nonprompt} lepton outnumber any other \ac{SM} processes that produce three or more \emph{prompt} leptons. It is therefore crucial to exploit the differences between \emph{nonprompt} and \emph{prompt} leptons and bring the \emph{nonprompt} background under control. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TOP LeptonMVA}
 \label{sec:TOPMVA}
 
-The \TOP is an offline lepton identification algorithm that is originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. 
+The \TOP is an offline lepton identification algorithm that is originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on Gradient \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. A total of 13 discriminating variables are used as input to the \ac{BDT}. They can be categorised into four groups: (i) positions and momenta of the lepton candidates, (ii) isolation variables, (iii) variables associated to the closest jet, and (iv) a quality variable that is specific to electron or muon candidate. The version of \TOP used by this analysis is the same as \cite{CMS:2021ugv}, where a detailed description of input variables can be found.
+
+\emph{Prompt} leptons from $\ttbar$W, $\ttbar$Z, and tZq samples are used as signals in the \ac{BDT} training while \emph{nonprompt} leptons from $\ttbar$ samples are used as backgrounds. The trained \ac{BDT} outputs a single score for each lepton candidate ranging from -1 to 1 with -1 (1) being the most background- (signal-) like. the tight working point with a threshold of ($>$) 0.9 is chosen as the selection criteria for both electron candidates and muon candidates, which corresponds to a signal(background) efficiency of 90\%(1\%). The strategy is to trade a small percentage (<10\%) of signal efficiency for several factors of background rejection. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Full Selection}
-We apply the following selections to electron objects:
+In addition to the \TOP requirement, a set of common selection criteria are applied to both electron and muon candidates. The minimum $\pt$ requirement is 38GeV, 20 GeV, and 20 GeV for the leading, sub-leading, and trailing lepton in $\pt$, respectively. This requirement is driven by the $\pt$ thresholds of the \ac{HLT} triggers to avoid inefficiency at turn-on. Electron and muon candidates are required to be in the pseudorapidity range $|\eta|<$2.4, which corresponds to the acceptance of \ac{CMS} tracker and muon system  in 2016-2018. The transverse (longitudinal) impact parameters with respect to the \ac{PV}, denoted as $d_{\textsf{xy}}$ ($d_{\textsf{z}}$), is required to be in the range $|d_{\textsf{xy}}|~<$ 0.05 cm ($|d_{\textsf{z}}|~<$ 0.05 cm). The significance of the 3-dimensional impact parameter, denoted as SIP$_3$, is defined as the 3-dimensional impact parameter divided by its uncertainty. It is required that SIP$_3$ $<$ 8. The three cuts on impact parameters are added due to the difference in distributions of these parameters between \emph{prompt} and \emph{nonprompt} leptons. Also, they are part of the pre-selection requirement in the \ac{BDT} training.
 
-\begin{itemize}
-\item $p_{T}~>$ 20 GeV,
-\item $|\eta|~<$ 2.4,
-\item the gap (1.4442 $<~|\eta_{SC}|~<$1.566) is removed,
-\item $|d_{xy}|~<$ 0.05 cm, $|d_{z}|~<$ 0.1 cm,
-\item missing inner hits $<$ 2,
-\item significance of the 3D impact parameter SIP$_{3D}<$8,
-\item pass the TOP MVA ID Tight WP cite{mvaTOP} ($>$ 0.9 across all years),
-\item miniIsolation $<$ 0.12.
-\end{itemize}
-
-Electron energy scale corrections cite{EcalScale} are applied.
-
-Similarly, we apply the following selections to muon objects:
-
-\begin{itemize}
-\item $p_{T}~>$ 20 GeV,
-\item $|\eta|~<$ 2.4,
-\item $|d_{xy}|~<$ 0.05 cm, $|d_{z}|~<$ 0.1 cm,
-\item significance of the 3D impact parameter SIP$_{3D}<$8,
-\item pass the cut-based muon ID cite{muID} (medium working point),
-\item pass the TOP MVA ID Tight WP cite{mvaTOP} ($>$ 0.9 across all years),
-\item miniIsolation $<$ 0.12.
-\end{itemize}
-
-Muon energy (Rochester) corrections are applied to low $p_T$ muons ($p_T<$200GeV). 
-
-The TOP MVA ID is used to suppress the contamination of non-prompt leptons. Both electron and muon selection in the analysis is synchronized with.
-
-The isolation variable "miniIsolation" used to select both electrons and muons is also used as input to the TOP MVA training. It is similar to a normal isolation variable but with a $pT$ dependent cone size:
+Furthermore, all lepton candidates are required to be isolated. This is achieved by first defining a cone with a distance parameter of $\mathrm{\Delta}R$ around each lepton candidate, where $\mathrm{\Delta}R=\sqrt{\mathrm{\Delta}\eta^2+\mathrm{\Delta}\phi^2}$. Only particles within $\mathrm{\Delta}R<R_{\textsf{max}}$ can contribute to the isolation variable, where $R_{\textsf{max}}$ is referred to as the size of the cone. Secondly, a \ac{PF} based isolation variable is defined as,
 
 \begin{equation}
-R = \max (0.05, \min(0.2, \frac{10GeV}{p_T})).
+I^{\textsf{rel}}_{\textsf{mini}} = \frac{1}{p_{\textsf{T}}^{\ell}} \{\sum_{\textsf{charged}}\pt+\max(0,\sum_{\textsf{neutral}}\pt-\rho \mathcal{A}[\frac{\mathrm{\Delta}R}{0.3}]^2)\},
 \end{equation}
 
-This analysis requires three leptons selected by the criteria above. The $p_{T}$ threshold on the leading lepton is 38 GeV.
+where $p_{\textsf{T}}^{\ell}$ is the $\pt$ of the lepton candidate, the first term inside the curly braces is the scalar sum of all charged particles associated with the \ac{PV} while the second term evaluates the contribution from neutral particles. This is done by first scalar-summing over $\pt$ of all neutral particles associated to the \ac{PV}. A correction term, known as effective area correction~\cite{Cacciari:2007fd}, is then subtracted. This term is used to mitigate the impact of \ac{PU} interactions. The size of the cone scales with $p_{\textsf{T}}^{\ell}$ as,  
+
+\begin{equation}
+R_{\textsf{max}} = \max (0.05, \min(0.2, \frac{10\GeV}{p_{\textsf{T}}^{\ell}})).
+\end{equation}.
+
+This type of isolation variable is known as ``mini'' isolation, which maximises the signal efficiency at $p_{\textsf{T}}^{\ell}$ by reducing the cone size. It is required that lepton candidates to have $I^{\textsf{rel}}_{\textsf{mini}}<$ 0.12.
+
+For electron specifically, candidates are required to have a GSF track with one of less missing inner hit. Electron candidates reconstructed in the transition region between ECAL barrel and endcap (i.e. 1.44 $<~|\eta_{\textsf{SC}}|~<$ 1.57) are removed from consideration. For muon specifically, candidates are required to be \ac{PF} muons and pass the medium working point discussed in \autoref{sec:Muon}.
+
+Lepton candidates that pass all requirements stated above are referred to as ``\emph{tight}'' leptons. Leptons selected with a separate set of criteria, known as ``\emph{loose}'', is used in estimating the \emph{nonprompt} background, which is discussed in \autoref{chap:Nonprompt}. Unless explicitly stated, all lepton objects presented in this search are \emph{tight} leptons.
+
+The energy of electron candidates are calibrated through. The eneryg of muon candidates. Scale factors are applied to both electron and muon candidates to correct for in difference in reconstruction, isolation, and identification between data and \ac{MC}. These scale factors are obtained .
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Jet Selection}
 \label{sec:Jets}
 
-Jets are reconstructed from particle flow, PF, candidates using the Anti-kT clustering algorithm with a cone parameter $R~=$ 0.4 (AK4). The Charged Hadron Subtraction algorithm, CHS, is applied to the jets, AK4PFCHS jets, in order to groom them, removing extra radiation from pileup. After this preliminary reconstruction the groomed jets must satisfy the below conditions:
+Jet candidates are reconstructed from \ac{PF} candidates using the anti-$k_{\textsf{T}}$ algorithm described in \autoref{sec:Jets} with a cone size of 0.4. Charged hadrons that are not associated to the \ac{PV} are removed. Jet candidates are required to have a minimum $\pt$ of 30 GeV and in in the pseudorapidity range $|\eta|<$2.4, where b-tagging are still effective. It is further required that all jet candidates to be isolated from \emph{tight} leptons. A cone of the size 0.4 around each jet candidate is defined and candidates will be removed if any \emph{tight} leptons are found within such a cone. This procedure is implemented to remove the overlap between leptons and jets. 
+
+The two primary sources of background are (i) detector noise, and (ii) jets from \ac{PU} interactions. To suppress detector noise, a set of cut-based selections are applied to jet candidates. The requirements include: 
 
 
-\begin{itemize}
-\item $p_{T}~>$ 30 GeV,
-\item $|\eta|~<$ 2.4,
-\item TightLepVeto cite{jetID},
-\item Pile up jet ID loose cite{pujetID}, if $p_{T}~<$ 50 GeV.
-\end{itemize}
+The second algorithm is designed to reject jet candidates that originate from \ac{PU} interactions. This algorithm is based on a \ac{BDT} that utiltizes the following information
 
-Jets are also required to be isolated from selected leptons. A cone of $\Delta~R~<$ 0.4 around each jet candidate is defined and jets are removed if any selected leptons are found within such a cone.  
-
-Jets from MC are corrected in order to match the data which is skewed by pileup (L1FastJet) and L2L3 MC-truth corrections. In order to correct the MC jets, we applied the recommended Jet Energy Corrections. For reference the versions of the JECs we used for
+The energy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Identification of b jets}
 \label{sec:Btag}
+
+The identification of 
