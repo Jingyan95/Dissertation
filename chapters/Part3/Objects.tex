@@ -12,7 +12,7 @@ The target final states of this analysis feature exactly three leptons that orig
 \subsection{TOP LeptonMVA}
 \label{sec:TOPMVA}
 
-The \TOP is an offline lepton identification algorithm that is originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on Gradient \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. A total of 13 discriminating variables are used as input to the \ac{BDT}. They can be categorised into four groups: (i) positions and momenta of the lepton candidates, (ii) isolation variables, (iii) variables associated to the closest jet, and (iv) a quality variable that is specific to electron or muon candidate. The version of \TOP used by this analysis is the same as \cite{CMS:2021ugv}, where a detailed description of input variables can be found.
+The \TOP is an offline lepton identification algorithm that is originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on Gradient \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. A total of 13 features are used as input to the \ac{BDT}. They can be categorised into four groups: (i) positions and momenta of the lepton candidates, (ii) isolation variables, (iii) variables associated to the closest jet, and (iv) a quality variable that is specific to electron or muon candidate. The version of \TOP used by this analysis is the same as \cite{CMS:2021ugv}, where a detailed description of all input features can be found.
 
 \emph{Prompt} leptons from $\ttbar$W, $\ttbar$Z, and tZq samples are used as signals in the \ac{BDT} training while \emph{nonprompt} leptons from $\ttbar$ samples are used as backgrounds. The trained \ac{BDT} outputs a single score for each lepton candidate ranging from -1 to 1 with -1 (1) being the most background- (signal-) like. the tight working point with a threshold of ($>$) 0.9 is chosen as the selection criteria for both electron candidates and muon candidates, which corresponds to a signal(background) efficiency of 90\%(1\%). The strategy is to trade a small percentage (<10\%) of signal efficiency for several factors of background rejection. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +37,7 @@ For electron specifically, candidates are required to have a GSF track with one 
 
 Lepton candidates that pass all requirements stated above are referred to as ``\emph{tight}'' leptons. Leptons selected with a separate set of criteria, known as ``\emph{loose}'', is used in estimating the \emph{nonprompt} background, which is discussed in \autoref{chap:Nonprompt}. Unless explicitly stated, all lepton objects presented in this search are \emph{tight} leptons.
 
-The energy of electron candidates are calibrated through. The eneryg of muon candidates. Scale factors are applied to both electron and muon candidates to correct for in difference in reconstruction, isolation, and identification between data and \ac{MC}. These scale factors are obtained .
+The energy of electron candidates are calibrated through. The moment scale of muon candidates are calibrated for muon candidates with $\pt~<$ 200 GeV. Scale factors are applied to \emph{tight} leptons to correct for the differences in reconstruction, isolation, and identification between data and \ac{MC}. These scale factors are obtained using dilepton events in Z resonance window.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Jet Selection}
@@ -45,15 +45,33 @@ The energy of electron candidates are calibrated through. The eneryg of muon can
 
 Jet candidates are reconstructed from \ac{PF} candidates using the anti-$k_{\textsf{T}}$ algorithm described in \autoref{sec:Jets} with a cone size of 0.4. Charged hadrons that are not associated to the \ac{PV} are removed. Jet candidates are required to have a minimum $\pt$ of 30 GeV and in in the pseudorapidity range $|\eta|<$2.4, where b-tagging are still effective. It is further required that all jet candidates to be isolated from \emph{tight} leptons. A cone of the size 0.4 around each jet candidate is defined and candidates will be removed if any \emph{tight} leptons are found within such a cone. This procedure is implemented to remove the overlap between leptons and jets. 
 
-The two primary sources of background are (i) detector noise, and (ii) jets from \ac{PU} interactions. To suppress detector noise, a set of cut-based selections are applied to jet candidates. The requirements include: 
+The two primary sources of background are (i) detector noise, and (ii) jets from \ac{PU} interactions. To suppress detector noise, a set of cut-based selections are applied to jet candidates. This algorithm utilizes information from \ac{PF} candidates, including: (i) fraction of charged (neutral) hadrons energy, (ii) fraction of charged (neutral) EM energy, (iii) fraction of muon energy, and (iv) object multiplicity. The ``tightLepVeto'' working point is chosen to select jet candidates, which corresponds to 98-99\% signal efficiency.
 
+The second algorithm is designed to reject jet candidates that originate from \ac{PU} interactions. This algorithm is based on a \ac{BDT} that utilizes: (i) the trajectories of tracks associated to the jets, (ii) the topology of the jet shape, and (iii) object multiplicity. The \emph{loose} working point is chosen to select jet candidates with $\pt~<$ 50 GeV, which corresponds to 99\% signal efficiency. Applying this algorithm to jet candidates with $\pt~>$ 50 GeV is both ineffective and unnecessary as \ac{PU} jets mostly reside in low $\pt$ spectrum. The overall effect of this algorithm on this analysis is small as \ac{PU} jets constitute only a small fraction of all jet candidates in the phase space of this analysis. 
 
-The second algorithm is designed to reject jet candidates that originate from \ac{PU} interactions. This algorithm is based on a \ac{BDT} that utiltizes the following information
-
-The energy
+As discussed in \autoref{sec:Jet}, the energy scale for all jet candidates (data and \ac{MC}) are calibrated. One extra correction is applied to simulated jets to recreate the jet energy resolution as measured in data. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Identification of b jets}
 \label{sec:Btag}
 
-The identification of 
+The \DeepJ algorithm~\cite{Bols:2020bkb} is used to identify jets that originate from b quark. The core strategy of this algorithm is to minimise information. This is achieved by removing entirely the selection of jet constituents, which limits the number of jet constituents considered.  Additionally, an effort is made to use as many low-level features as possible, which further further deepens the feature space. Approximately a total of 650 input features are used,  which can be categorized into four groups: (i) global variables, (ii) charged PF candidate features, (iii) neutral PF candidate features, (iv) and \ac{SV} features associated with the jet. 
+
+The \DeepJ algorithm outputs a score ranging between 0 and 1, with 0 (1) being the most background- (signal-) like. The medium working point is chosen to tag b jet candidate, which corresponds to 90\% signal efficiency. The shape of the \DeepJ output distribution is corrected for the differences between data and \ac{MC} in signal and background efficiencies. The per-event correction weight $ \omega$ is defined as,
+ 
+ \begin{equation}
+ \omega = \prod_{i}^{N_{\textsf{jets}}} \textsf{SF}(p_{T_{i}},\eta_i, F_i, D_i),
+ \end{equation}
+ 
+where \textsf{SF} is the ratio of efficiency in data to efficiency to \ac{MC} parameterized as a function of $\pt$, $\eta$, (MC truth) flavor F, as well as \DeepJ output $D$ of each jet in the event. $\omega$ is applied to all \ac{MC} samples, and additional scale factors are also applied to remove the normlization effect of $\omega$. These scale factors are measured using \ac{MC} in e$\upmu\ell$ channel described in \autoref{chap:Selection}. The effect of these scale factors are shown in Figure~\ref{fig:BtagSF}.
+ 
+ \begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{c}
+ \includegraphics[width=0.75\textwidth]{figures/Part3/Objects/njet_Btag}\\
+ \includegraphics[width=0.75\textwidth]{figures/Part3/Objects/Ht_Btag} \\
+ \end{tabular}
+ \caption{Simulated events in $e\mu l$ channel (run-II). Top: jet multiplicity. Bottom: $H_T$ of jets.}
+ \label{fig:BtagSF}
+ \end{center}
+\end{figure}

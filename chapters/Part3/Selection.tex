@@ -1,16 +1,9 @@
 \chapter{Event Selection}
 \label{chap:Selection}
 
-We require events to contain exactly three selected leptons. Events with different lepton compositions are further categorized into different channels: $eee$, $\mu\mu\mu$, $e\mu l$. In all three channels, the sum of the charges of three leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects via $\Delta R<$0.2. Within each channel, different regions are defined to further understand signal and background.
+Events to contain exactly three \emph{tight} leptons. Events with different lepton compositions are further categorized into different channels: eee, $\mmm$, $\emul$. In all three channels, the sum of the charges of three leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects via $\mathrm{\Delta} R~<$ 0.2. Within each channel, different regions are defined to further understand signal and background.
 
-e$\mu\ell$ is the channel where the presence of the signal is expected. We require at least one pair of leptons of Opposite-Sign-Opposite-Flavor (OSOF). Such a requirement is achieved if:
-
-\begin{itemize}
-\item Both positively charged and negatively charged leptons are present.
-\item Both electrons and muons are present.
-\end{itemize}
-
-Events with the presence of the same flavor leptons are categorized into $eee$ or $\mu\mu\mu$ channels to study the background composition. 
+e$\mu\ell$ is the channel where the presence of the signal is expected. This channel is split up to signal-enriched signal regions and signal-depleted validation regions, which are discussed in \autoref{sec:SR} and \autoref{sec:VR}, respectively. Events with the presence of the same flavor leptons are categorized into eee or $\mmm$ are signal-depleted by definition. Regions in these two channels are used to study background processes, which is discussed in \autoref{sec:VR}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Signal Region}
@@ -19,6 +12,7 @@ Events with the presence of the same flavor leptons are categorized into $eee$ o
 In $e\mu l$ channel, we set up our signal region (SR) targeting LFV signal processes. Apart from the OSOF pair, we require the events to have big MET (MET $>$ 20 GeV). Events with an Opposite-Sign-Same-Flavor (OSSF) lepton pair, the invariant mass of which is between 50 GeV and 106 GeV, are removed to suppress contribution from Z production. To further suppress background contribution, we require at least one jet and at most one b-tag jet.
 
 Distributions of leading lepton $p_{T}$ and invariant mass of Opposite-Sign $e\mu$ pair are shown in Figure \ref{fig:SR}. Please note: Although we intend to deploy a data-driven technique to estimate non-prompt background in the actual analysis, all backgrounds in Figure \ref{fig:SR} are estimated using MC simulation only. This serves as a preliminary check to understand the components of different backgrounds in SR. 
+
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
