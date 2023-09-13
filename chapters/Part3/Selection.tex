@@ -1,17 +1,19 @@
 \chapter{Event Selection}
 \label{chap:Selection}
 
-Events to contain exactly three \emph{tight} leptons. Events with different lepton compositions are further categorized into different channels: eee, $\mmm$, $\emul$. In all three channels, the sum of the charges of three leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects via $\mathrm{\Delta} R~<$ 0.2. Within each channel, different regions are defined to further understand signal and background.
+Events are required to contain exactly three \emph{tight} leptons described in \autoref{sec:Leptons}. Furthermore, events are selected with HLT triggers discussed in \autoref{sec:Triggers}. Events with different lepton flavor composites are further categorized into three exclusive channels: eee, $\mmm$, $\emul$. In all three channels, the sum of the electric charges of three selected leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects via $\mathrm{\Delta} R~<$ 0.2. Within each channel, different regions are defined to further understand signal and background.
 
-e$\mu\ell$ is the channel where the presence of the signal is expected. This channel is split up to signal-enriched signal regions and signal-depleted validation regions, which are discussed in \autoref{sec:SR} and \autoref{sec:VR}, respectively. Events with the presence of the same flavor leptons are categorized into eee or $\mmm$ are signal-depleted by definition. Regions in these two channels are used to study background processes, which is discussed in \autoref{sec:VR}.
+$\emul$ is the channel where close to 100\% of the simuated signal events reside. This channel is divided into signal-enriched \acp{SR} and signal-depleted \acp{VR}, which are discussed in \autoref{sec:SR} and \autoref{sec:VR}, respectively. Due to the lack of different flavors, the eee and $\mmm$ channels are signal-depleted by definition. Therefore, events found in these two channels are only used to study background processes, which is discussed in \autoref{sec:VR}. The kinematic reconstruction of heavy particles, such as the top quark, is described in \autoref{sec:Kin}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Signal Region}
 \label{sec:SR}
 
-In $e\mu l$ channel, we set up our signal region (SR) targeting LFV signal processes. Apart from the OSOF pair, we require the events to have big MET (MET $>$ 20 GeV). Events with an Opposite-Sign-Same-Flavor (OSSF) lepton pair, the invariant mass of which is between 50 GeV and 106 GeV, are removed to suppress contribution from Z production. To further suppress background contribution, we require at least one jet and at most one b-tag jet.
+The core feature of the signal events is the presence of the \ac{OSDF} lepton pair. It is guaranteed that there is at least one \ac{OSDF} pair in all events residing in $\emul$ channel due to the requirement on electric charges. Leptons that form the \ac{OSDF} pair are referred to as the LFV electron or muon as it is assumed that they originate from the \ac{CLFV} interaction. Based on the event topology of the signal process, further selection criteria are applied to define the \ac{SR}. These selection criteria help achieve an optimal signal to background ratio by removing majority of the background events present in $\emul$ channel. 
 
-Distributions of leading lepton $p_{T}$ and invariant mass of Opposite-Sign $e\mu$ pair are shown in Figure \ref{fig:SR}. Please note: Although we intend to deploy a data-driven technique to estimate non-prompt background in the actual analysis, all backgrounds in Figure \ref{fig:SR} are estimated using MC simulation only. This serves as a preliminary check to understand the components of different backgrounds in SR. 
+At tree-level, signal events are expected to contain one or two jets, which motivates a requirement of at least one jet in \ac{SR}. Furthermore, it is required that there is no more than one b-tagged jet to suppress the contribution from $\ttbar$ events. Another prominent background is Drell-Yan production that features a \ac{OSSF} pair. To suppress Drell-Yan processes in \ac{SR}, events that contain an \ac{OSSF} lepton pair with an invariant mass between 50 GeV and 106 GeV are removed. The lower bound of the this veto is lower than the typical value (e.g. 75 GeV) because the mass range between 50 GeV and 106 GeV has very few signal events and is dominated by \emph{nonprompt} background from photon conversion. Additionally, a modest threshold of 20 GeV is applied to \ac{MET} due to the presence of neutrinos in the signal events.
+
+Distributions of the invariant mass of the \ac{OSDF} pair and the invariant mass of the \ac{OSSF} pair are shown in Figure~\ref{fig:SR}. All backgrounds in Figure~\ref{fig:SR} are estimated using MC simulation even though strategy is to use a data-driven method to estimate the \emph{nonprompt} background. This serves as a preliminary check to understand the components of different backgrounds in \ac{SR}. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -19,66 +21,35 @@ Distributions of leading lepton $p_{T}$ and invariant mass of Opposite-Sign $e\m
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/Memu}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/Zmass} \\
  \end{tabular}
- \caption{Distributions of different kinematic variables estimated in SR (full run II). Backgrounds are estimated using MC only. From left to right: invariant mass of the $e\mu$ pair, leading lepton $p_{T}$.}
+ \caption{Distributions of the invariant mass of the \ac{OSDF} pair (left) and the invariant mass of the \ac{OSSF} pair (right) in \ac{SR}. The data are shown as filled points and the \ac{SM} background predictions as histograms. The VV(V) background includes ZZ and triboson production, while the $\ttbar$ + X(X) component includes $\ttbar$W, $\ttbar$Z, $\ttbar$H, tZq, and smaller backgrounds containing one or two top quarks plus a boson or quark. All backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The last bin of both histograms includes the overflow events.}
  \label{fig:SR}
  \end{center}
 \end{figure}
 
-Using the invariant mass of the Opposite-Sign $e\mu$ pair, SR is further divided into two subsets to create ST and TT enriched regions:
+Using the invariant mass of the \ac{OSDF} pair, \ac{SR} is further divided into two subsets to create top production and decay enriched regions:
+
 \begin{itemize}
-\item SR1, $M_{e\mu}<$150GeV: TT enriched.
-\item SR2, $M_{e\mu}>$150GeV: ST enriched.
+\item SR1, $\textsf{m}_{\textsf{e}\upmu}~<$ 150 GeV: top decay enriched.
+\item SR2, $\textsf{m}_{\textsf{e}\upmu}~>$ 150 GeV: top production enriched.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Validation Region}
 \label{sec:VR}
 
-Events are required to pass trigger requirements listed in Table \ref{tab:triggers16}-\ref{tab:triggers18}. The leading lepton is required to have a $p_{T}>$38 GeV. The sum of the charges of the three selected leptons is required to be either 1 or -1. Selections applied to different regions are summarized in Table \ref{tab:region} and are illustrated in Figure \ref{fig:Event}. 
-\begin{itemize}
-\item Acronyms
-\begin{itemize}
-\item $C_i$: electric charge of the i-th lepton
-\item OnZ: requiring the presence of at least one Opposite-Sign-Same-Flavor lepton pair with an invariant mass between 50 GeV and 106 GeV.
-\item OffZ: veto events that pass OnZ
-\item MET: missing transverse energy 
-\item njet: number of jets that pass jet selection
-\item nbjet: number of b-tag jets that pass jet selection 
-\item SR: signal region
-\item VR: validation region for data-driven method
-\item WZ CR: WZ control region
-\end{itemize}
-\end{itemize}
-
-\begin{table}[th]
-\sffamily
-\centering
-\begin{tabular}{cccccccc}
-\toprule
-Channel         &Region & $|\Sigma_iC_i|$=1 & OnZ & OffZ & MET $>$ 20 GeV &njet$>=$1 &nbjet$<=$1\\ \midrule
-\multirow{2}{*}{eee}     & VR & \checkmark & -       & -       & -       & -     & -   \\  
-            & WZ VR &\checkmark & \checkmark   & -       & \checkmark   & \checkmark & \checkmark\\ \midrule
-\multirow{3}{*}{e$\upmu\ell$}   & SR & \checkmark  & -       & \checkmark   & \checkmark   & \checkmark & \checkmark \\
-            & Nonprompt VR & \checkmark  & \checkmark   & -       & -       & -     & -     \\
-            & WZ VR & \checkmark & \checkmark   & -       & \checkmark   & \checkmark & \checkmark \\ \midrule
-\multirow{2}{*}{$\upmu\upmu\upmu$} & Nonprompt VR & \checkmark   & -       & -       & -       & -     & -     \\  
-            & WZ VR & \checkmark & -       & \checkmark   & \checkmark & \checkmark & \checkmark  \\ \bottomrule  
-\end{tabular}
-\caption{Summary of the cuts applied to different regions}
-\label{tab:region}
-\end{table}
-
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.8\textwidth]{figures/Part3/Selection/Event}
  \end{tabular}
- \caption{Illustration of event selections applied to different regions}
+ \caption{Illustration of selection criteria used to define different regions. ``OnZ'' means the presence of at least one \ac{OSDF} pair with an invariant mass between 50 GeV and 106 GeV. Events are labelled as ``OffZ'' when they fail ``OnZ'' criteria.}
  \label{fig:Event}
  \end{center}
 \end{figure}
 
-There are two types of signal-depleted regions defined within eee/$\mu\mu\mu$ channel: validation region (VR) and WZ control region. The distinction between these two regions comes down to background compositions. It is expected that the VR has a significant fraction of non-prompt backgrounds while WZ production is responsible for most of the backgrounds in the WZ control region. Distributions of leading lepton $p_{T}$ and leading lepton $\eta$ in WZ control region can be found in Figure~\ref{fig:WZ_eee}-\ref{fig:WZ_mumumu}. Discussion about validation region can be found in \autoref{chap:Nonprompt}.
+There are two types of signal-depleted \ac{VR} defined across three channels: \emph{nonprompt} \ac{VR} and WZ \ac{VR}. The purpose of these two types of \ac{VR} is only limited to the validation of the background modelling as neither of them enter the final fit. It is expected that the \emph{nonprompt} \ac{VR} has a significant fraction of \emph{nonprompt} background while WZ production is responsible for most of the backgrounds in the WZ \ac{VR}. Distributions of leading lepton $\pt$ and leading lepton $\eta$ in WZ control region can be found in Figure~\ref{fig:WZ_eee}-\ref{fig:WZ_mumumu}. The \emph{nonprompt} \ac{VR} are further discussed in \autoref{chap:Nonprompt}.
+
+Selection criteria used to define different regions are illustrated in Figure~\ref{fig:Event} and is summarized in Table~\ref{tab:region}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -112,11 +83,30 @@ There are two types of signal-depleted regions defined within eee/$\mu\mu\mu$ ch
  \label{fig:WZ_mumumu}
  \end{center}
 \end{figure}
+
+\begin{table}[th]
+\sffamily
+\centering
+\begin{tabular}{cccccccc}
+\toprule
+Channel         &Region & OnZ & OffZ & MET $>$ 20 GeV &njet$>=$1 &nbjet$<=$1\\ \midrule
+\multirow{2}{*}{eee}     & VR  & -       & -       & -       & -     & -   \\  
+            & WZ VR & \checkmark   & -       & \checkmark   & \checkmark & \checkmark\\ \midrule
+\multirow{3}{*}{e$\upmu\ell$}   & SR   & -       & \checkmark   & \checkmark   & \checkmark & \checkmark \\
+            & Nonprompt VR   & \checkmark   & -       & -       & -     & -     \\
+            & WZ VR  & \checkmark   & -       & \checkmark   & \checkmark & \checkmark \\ \midrule
+\multirow{2}{*}{$\upmu\upmu\upmu$} & Nonprompt VR    & -       & -       & -       & -     & -     \\  
+            & WZ VR  & -       & \checkmark   & \checkmark & \checkmark & \checkmark  \\ \bottomrule  
+\end{tabular}
+\caption{Summary of the selection criteria used to define different event regions. ``OnZ'' means the presence of at least one \ac{OSDF} pair with an invariant mass between 50 GeV and 106 GeV. Events are labelled as ``OffZ'' when they fail ``OnZ'' criteria.}
+\label{tab:region}
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kinematic Reconstruction}
 \label{sec:Kin}
-A kinematic reconstruction is performed in this channel. The OSOF lepton pair is assumed to be the product of cLFV interaction, while the third lepton (bachelor lepton) is assumed to be the product of the SM top-quark decay. Jet with the highest b-tagging score is assumed to originate from bottom-quark decay, therefore, it is combined with MET and the bachelor lepton to build the SM top-quark. 
+
+As mentioned, the \ac{OSDF} lepton pair in the $\emul$ channel is assumed to be the product of the \ac{CLFV} interaction, while the third lepton, referred to as the standalone lepton, is assumed to originate from the leptonically decaying top quark. To distinguish this top quark (t$\rightarrow\ell\nu$b) with the top quark that decays via the \ac{CLFV} interaction. The former is referred to as the \ac{SM} top quark while the latter is referred to as the LFV top quark. Jet with the highest b-tagging score, regardless of whether or not it crosses the medium working point threshold, is assumed to originate from bottom quark decay. Therefore, it is combined with \ac{MET} and the standalone lepton to build the \ac{SM} top quark. 
 
 \begin{itemize}
 \item We take the x and y component of MET as measurements of neutrino $p_x$ and $p_y$. 
