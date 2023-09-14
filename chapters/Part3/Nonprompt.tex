@@ -1,59 +1,61 @@
-\chapter{Nonprompt Background Estimate}
+\chapter{Nonprompt Background Estimation}
 \label{chap:Nonprompt}
 
-In this analysis, the term \emph{real} leptons refers to prompt leptons that originate from the primary interaction, like the decays of vector bosons that are produced via hard collisions. \emph{Fake} leptons refer to non-prompt leptons that are mostly produced in the decays of b-quarks, c-quarks, pions, or from photon conversion. A relatively low ratio of \emph{fake} leptons in a lepton selection is desired and can be achieved by applying stringent isolation requirements and/or an MVA-based lepton identification specifically trained against \emph{fake} leptons. 
+In this analysis, the term \emph{prompt} leptons refers to leptons that originate from the \ac{CLFV} vertex, the Drell-Yan process, or an electroweak boson decay, including leptons from $\uptau$ decays if the $\uptau$ lepton originates from the latter two processes. \emph{Nonprompt} leptons refer to leptons that originate from hadron decays and photon conversions, as well as particles misidentified as leptons. Nonprompt leptons are suppressed through isolation requirements and an MVA-based identification specifically trained to reject them.
 
-Non-prompt backgrounds are defined to be backgrounds with at least one \emph{fake} lepton passing the analysis selection, in this case generally dominated by Drell-Yan and $t\bar{t}$ production. An accurate estimation of non-prompt backgrounds is difficult to achieve through MC modeling. Therefore, a data-driven technique called the $3$D matrix method is used to estimate the non-prompt backgrounds. 
+\emph{Nonprompt} backgrounds are defined to be backgrounds with at least one \emph{nonprompt} lepton passing the \emph{tight} selection criteria, in this case generally dominated by Drell-Yan and $\ttbar$ production. An accurate estimation of \emph{nonprompt} backgrounds is difficult to achieve through MC modelling. Therefore, a data-driven technique called the matrix method is used to estimate the \emph{nonprompt} backgrounds. 
 
-A brief description of the matrix method is given in this section followed by details on it's implementation. In autorefyou can find more information on the generalization of the matrix method to $2$D and $3$D. The appendices also contain a validation of the method and its performance is compared to the results of the fake factor method, another commonly used data-driven technique.
+A brief description of the matrix method is given in \autoref{sec:MM} followed by details on its implementation in \autoref{sec:MR}. This method is validated using three \ac{VR} and is described in \autoref{sec:VR}. Lastly, the nonprompt estimation in the \ac{SR} is presented in \autoref{sec:MMSR}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Matrix Method}
 \label{sec:MM}
 
-The matrix method cite{matrix2012} is a data driven technique used to estimate the fraction of \emph{fake} leptons that pass a given lepton selection, referred to as "\emph{tight}". The \emph{tight} selection usually incorporates tight lepton identification and isolation requirements and should be similar if not exactly the same as lepton selection in the actual analysis. The \emph{loose} selection is obtained by loosening the \emph{tight} selection. The \emph{loose} selection is used as a baseline such that any leptons that pass it will fall into one of the two exclusive categories: \emph{tight} or \emph{not tight}. The matrix method treats \emph{real} and \emph{fake} leptons separately. As a result, \emph{real} and \emph{fake} efficiencies are introduced (see Figure \ref{fig:Matrix_Method}).
+The matrix method \cite{Gillam:2014xua} is a data driven technique used to estimate the fraction of \emph{nonprompt} leptons that pass a given lepton selection, referred to as ``\emph{tight}''. The \emph{tight} selection usually incorporates tight lepton identification and isolation requirements and should be similar if not exactly the same as lepton selection in the actual analysis. The \emph{loose} selection is obtained by loosening the \emph{tight} selection. The \emph{loose} selection is used as a baseline such that any leptons that pass it will fall into one of the two exclusive categories: \emph{tight} or \emph{not tight}. The matrix method treats \emph{prompt} and \emph{nonprompt} leptons separately. As a result, \emph{prompt} and \emph{nonprompt} efficiencies are introduced, as is illustrated in Figure~\ref{fig:Matrix_Method}.
 
  \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.7\textwidth]{figures/Part3/Nonprompt/matrix}
  \end{tabular}
- \caption{Illustration of the \emph{real} efficiency $r$ and the \emph{fake} efficiency $f$.}
+ \caption{Illustration of the \emph{prompt} efficiency $r$ and the \emph{nonprompt} efficiency $f$.}
  \label{fig:Matrix_Method}
  \end{center}
 \end{figure}
 
-In a simplified scenario with only one lepton in the final state, the \emph{real} efficiency $r$ measures the likelihood of \emph{real} leptons pass \emph{tight} selection. It is treated as an observable that can be obtained through measurement:
+In a simplified scenario with only one lepton in the final state, the \emph{prompt} efficiency $r$ measures the likelihood of \emph{prompt} leptons pass \emph{tight} selection. It is treated as an observable that can be obtained through measurement:
+
 \begin{equation}
-r=\frac{n_R^{T}}{n_R^{T}+n_R^{\overline{T}}},
+r=\frac{n_P^{T}}{n_P^{T}+n_P^{\overline{T}}},
  \label{eq:real_rate}
 \end{equation}
-in which $n_R^{T}$/$n_R^{\overline{T}}$ denotes the number of events with a \emph{real} lepton that is \emph{tight}/\emph{not tight}.
+in which $n_P^{T}$/$n_P^{\overline{T}}$ denotes the number of events with a \emph{prompt} lepton that is \emph{tight}/\emph{not tight}.
 
-Similarly, \emph{fake} efficiency $f$ can be expressed as
+Similarly, \emph{nonprompt} efficiency $f$ can be expressed as
+
 \begin{equation}
-f=\frac{n_F^{T}}{n_F^{T}+n_F^{\overline{T}}},
+f=\frac{n_{NP}^{T}}{n_{np}^{T}+n_{NP}^{\overline{T}}},
  \label{eq:fake_rate}
 \end{equation}
-in which $n_F^{T}$/$n_F^{\overline{T}}$ denotes the number of events with a \emph{fake} lepton that is \emph{tight}/\emph{not tight}.
+in which $n_{NP}^{T}$/$n_{NP}^{\overline{T}}$ denotes the number of events with a \emph{nonprompt} lepton that is \emph{tight}/\emph{not tight}.
 
-The measurement of $r/f$ is often performed in dedicated control regions, where high purity of \emph{real}/\emph{fake} leptons is expected. These regions are referred to as the measurement regions (MR). It is assumed that $r/f$ is a universal property of \emph{real}/\emph{fake} leptons that is independent of physics processes. Therefore, $r/f$ extracted from MR can be used to estimate the contamination of \emph{fake} leptons in a different region (e.g. SR) even though these two regions are orthogonal to each other.
+The measurement of $r/f$ is often performed in dedicated control regions, where high purity of \emph{prompt}/\emph{nonprompt} leptons is expected. These regions are referred to as the \ac{MR}. It is assumed that $r/f$ is a universal property of \emph{prompt}/\emph{nonprompt} leptons that is independent of physics processes. Therefore, $r/f$ extracted from \ac{MR} can be used to estimate the contamination of \emph{nonprompt} leptons in a different region (e.g. \ac{SR}) even though these two regions are orthogonal to each other.
 
-In our simplified scenario, the total number of events in the region of interest (e.g. SR/VR) with a \emph{tight}/\emph{not tight} lepton can be expressed in a system of equations:
+In our simplified scenario, the total number of events in the region of interest (e.g. \ac{SR}/\ac{VR}) with a \emph{tight}/\emph{not tight} lepton can be expressed in a system of equations:
 
 \begin{equation}
 \begin{split}
-N^{T}&=N_{R}^{T}+N_{F}^{T}\\
-N^{\overline{T}}&=N_{R}^{\overline{T}}+N_{F}^{\overline{T}},
+N^{T}&=N_{P}^{T}+N_{NP}^{T}\\
+N^{\overline{T}}&=N_{P}^{\overline{T}}+N_{NP}^{\overline{T}},
 \end{split}
 \end{equation}
 
-in which capital letter "N" is used to indicate that these numbers are referring to events in a region that is different from MR. $N_{R}^{\overline{T}}$/$N_{F}^{\overline{T}}$ can be expressed in terms of $r/f$ and $N_{R}^{T}$/$N_{F}^{T}$ according to Equation \ref{eq:real_rate}/\ref{eq:fake_rate} and the assumption that r/f is transferable to other regions:
+in which capital letter ``N'' is used to indicate that these numbers are referring to events in a region that is different from \ac{MR}. $N_{P}^{\overline{T}}$/$N_{NP}^{\overline{T}}$ can be expressed in terms of $r/f$ and $N_{P}^{T}$/$N_{NP}^{T}$ according to Equation \ref{eq:real_rate}/\ref{eq:fake_rate} and the assumption that r/f is transferable to other regions:
 
 \begin{equation}
 \begin{split}
-N^{T}&=r\frac{N_{R}^{T}}{r}+f\frac{N_{F}^{T}}{f}\\
-N^{\overline{T}}&=(1-r)\frac{N_{R}^{T}}{r}+(1-f)\frac{N_{F}^{T}}{f}.
+N^{T}&=r\frac{N_{P}^{T}}{r}+f\frac{N_{NP}^{T}}{f}\\
+N^{\overline{T}}&=(1-r)\frac{N_{P}^{T}}{r}+(1-f)\frac{N_{NP}^{T}}{f}.
 \end{split}
 \label{eq:sys_eq}
 \end{equation}
@@ -68,13 +70,13 @@ Equation \ref{eq:sys_eq} can also be expressed in the form of matrix:
 r&f\\
 1-r&1-f
  \end{pmatrix}\begin{pmatrix}
- N_{R}^{T}/r\\
- N_{F}^{T}/f
+ N_{P}^{T}/r\\
+ N_{NP}^{T}/f
  \end{pmatrix}.
  \label{eq:matrix}
  \end{equation}
  
-Since those two numbers that appear on the lefthand side of the equation can be obtained through measurement, a matrix inversion can give us an estimation of \emph{fake} leptons that pass \emph{tight} selection, denoted by $N_{F}^T$.
+Since those two numbers that appear on the lefthand side of the equation can be obtained through measurement, a matrix inversion can give us an estimation of \emph{nonprompt} leptons that pass \emph{tight} selection, denoted by $N_{NP}^T$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extraction of Prompt and Nonprompt Efficiencies}

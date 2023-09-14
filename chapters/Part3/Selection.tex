@@ -1,7 +1,7 @@
 \chapter{Event Selection}
 \label{chap:Selection}
 
-Events are required to contain exactly three \emph{tight} leptons described in \autoref{sec:Leptons}. Furthermore, events are selected with HLT triggers discussed in \autoref{sec:Triggers}. Events with different lepton flavor composites are further categorized into three exclusive channels: eee, $\mmm$, $\emul$. In all three channels, the sum of the electric charges of three selected leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects via $\mathrm{\Delta} R~<$ 0.2. Within each channel, different regions are defined to further understand signal and background.
+Events are required to contain exactly three \emph{tight} leptons described in \autoref{sec:Leptons}. Furthermore, events are selected with HLT triggers discussed in \autoref{sec:Triggers}. Events with different lepton flavor composites are further categorized into three exclusive channels: eee, $\mmm$, $\emul$. In all three channels, the sum of the electric charges of three selected leptons are required to be 1 or -1. The leading leptons in all selected events are required to be matched with trigger objects within $\mathrm{\Delta} R~<$ 0.2. Within each channel, different regions are defined to further understand signal and background.
 
 $\emul$ is the channel where close to 100\% of the simuated signal events reside. This channel is divided into signal-enriched \acp{SR} and signal-depleted \acp{VR}, which are discussed in \autoref{sec:SR} and \autoref{sec:VR}, respectively. Due to the lack of different flavors, the eee and $\mmm$ channels are signal-depleted by definition. Therefore, events found in these two channels are only used to study background processes, which is discussed in \autoref{sec:VR}. The kinematic reconstruction of heavy particles, such as the top quark, is described in \autoref{sec:Kin}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +57,7 @@ Selection criteria used to define different regions are illustrated in Figure~\r
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/eee/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/eee/njet} \\
  \end{tabular}
- \caption{Distributions of different kinematic variables estimated in WZ control region (full run II). Backgrounds are estimated using MC only. From left to right: leading lepton $\eta$, jet multiplicity.}
+ \caption{Distributions of the leading lepton $\eta$ (left) and jet multiplicity (right) in the eee WZ VR. The data are shown as filled points and the background predictions as histograms. All backgrounds are estimated with \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the background predictions. The last bin of the right column histograms includes the overflow events.}
  \label{fig:WZ_eee}
  \end{center}
 \end{figure}
@@ -68,7 +68,7 @@ Selection criteria used to define different regions are illustrated in Figure~\r
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/emul/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/emul/njet} \\
  \end{tabular}
- \caption{Distributions of different kinematic variables estimated in WZ control region (full run II). Backgrounds are estimated using MC only. From left to right: leading lepton $\eta$, jet multiplicity.}
+ \caption{Distributions of the leading lepton $\eta$ (left) and jet multiplicity (right) in the $\emul$ WZ VR. The data are shown as filled points and the background predictions as histograms. All backgrounds are estimated with \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the background predictions. The last bin of the right column histograms includes the overflow events.}
  \label{fig:WZ_emul}
  \end{center}
 \end{figure}
@@ -79,7 +79,7 @@ Selection criteria used to define different regions are illustrated in Figure~\r
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/mumumu/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Selection/WZ/mumumu/njet} \\
  \end{tabular}
- \caption{Distributions of different kinematic variables estimated in WZ control region (full run II). Backgrounds are estimated using MC only. From left to right: leading lepton $\eta$, jet multiplicity.}
+ \caption{Distributions of the leading lepton $\eta$ (left) and jet multiplicity (right) in the $\mmm$ WZ VR. The data are shown as filled points and the background predictions as histograms. All backgrounds are estimated with \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the background predictions. The last bin of the right column histograms includes the overflow events.}
  \label{fig:WZ_mumumu}
  \end{center}
 \end{figure}
@@ -106,62 +106,12 @@ Channel         &Region & OnZ & OffZ & MET $>$ 20 GeV &njet$>=$1 &nbjet$<=$1\\ \
 \section{Kinematic Reconstruction}
 \label{sec:Kin}
 
-As mentioned, the \ac{OSDF} lepton pair in the $\emul$ channel is assumed to be the product of the \ac{CLFV} interaction, while the third lepton, referred to as the standalone lepton, is assumed to originate from the leptonically decaying top quark. To distinguish this top quark (t$\rightarrow\ell\nu$b) with the top quark that decays via the \ac{CLFV} interaction. The former is referred to as the \ac{SM} top quark while the latter is referred to as the LFV top quark. Jet with the highest b-tagging score, regardless of whether or not it crosses the medium working point threshold, is assumed to originate from bottom quark decay. Therefore, it is combined with \ac{MET} and the standalone lepton to build the \ac{SM} top quark. 
+As mentioned, the \ac{OSDF} lepton pair in the $\emul$ channel is assumed to be the product of the \ac{CLFV} interaction, while the third lepton, referred to as the standalone lepton, is assumed to originate from the leptonically decaying top quark. To distinguish this top quark (t$\rightarrow\ell\nu$b) with the top quark that decays via the \ac{CLFV} interaction. The former is referred to as the \ac{SM} top quark while the latter is referred to as the LFV top quark. 
 
-\begin{itemize}
-\item We take the x and y component of MET as measurements of neutrino $p_x$ and $p_y$. 
-\item The z component of neutrino momentum is calculated by imposing the constraint that the invariant mass of the combined object (bachelor lepton+neutrino) must be equal to W boson mass.
-\item If there is no real solution, we take the real part of the complex solution.
-\item If there is more than one real solution, we chose the solution that is the closest to the $p_z$ of the bachelor lepton.
-\end{itemize}
+Jet with the highest b-tagging score, regardless of whether or not it crosses the medium working point threshold, is assumed to originate from bottom quark decay. Therefore, it is combined with \ac{MET} and  to build the \ac{SM} top quark. The x and y component of \ac{MET} are taken as measurements of neutrino $p_{\textsf{x}}$ and $p_{\textsf{y}}$. The z component of neutrino momentum is calculated by imposing the constraint that the invariant mass of the combined object (standalone lepton + neutrino) must be equal to W boson mass. If there is no real solution, the real part of the complex solution is taken. If there is more than one real solution, the solution that is the closest to the $p_{\textsf{z}}$ of the standalone lepton is taken. In events where there is more than one candidate of standalone lepton (i.e. the presence of the same-sign and same-flavor pair), the lepton that gives a top mass that is the closest to the the \ac{SM} top quark mass ($\mt$ = 172.5 GeV) is taken as the standalone lepton.
 
-In events where there is more than one candidate of bachelor lepton, the lepton that gives a top mass that is the closest to the the SM top-quark mass is chosen as the bachelor lepton.
+Once the standalone lepton has been determined, the \ac{OSDF} pair is combined with each selected jet to reconstruct the LFV top candidates. Jet with the highest b-tagging score is excluded from this reconstruction since it is assumed to be from the decay of the \ac{SM} top quark. Out of all the LFV top candidates, the candidate that gives a top mass that is the closest to the the \ac{SM} top quark mass is taken. The LFV top quark mass is set to 0 in events where there are less than two jets.
 
-Once the bachelor lepton has been determined, the OSOF pair is combined with jets One-By-One to reconstruct LFV top candidates. Jet with the highest b-tagging score is excluded from this reconstruction since it is assumed to be from the decay of the SM top-quark. Out of all the LFV top candidates, the candidate that gives a top mass that is the closest to the the SM top-quark mass is chosen.
+Z boson candidate is reconstructed using the \ac{OSSF} pair, which is not guaranteed to be present in the $\emul$ channel. The Z boson mass ($\mz$) is set to 0 in events where the \ac{OSSF} is absent. Z boson candidate is the only heavy particle reconstructed in the eee and $\mmm$ channels. Since there are always two ways to form the \ac{OSSF} pair, the \ac{OSSF} pair with an invariant mass that is closer to the Z boson mass ($\mz$ = 91.2 GeV) is taken. 
 
-Kinematic reconstruction of heavy objects like top-quark is carried out using selected leptons, jets, and MET.
-\begin{itemize}
-\item \textbf{Z boson candidate}
-\begin{itemize}
-\item Z boson candidate is reconstructed by combining two Opposite-Sign-Same-Flavor leptons 
-\item Whenever possible, Z candidate with an invariant mass that is closest to Z boson mass is chosen
-\end{itemize}
-\item \textbf{Standard model top-quark candidate }
-\begin{itemize}
-\item Standard model top-quark candidate is reconstructed by combining a jet, a lepton, and MET
-\item Jet with the highest b-tagging score is always chosen
-\item In $e\mu l$ channel, flavor-violating leptons are excluded from reconstruction 
-\begin{itemize}
-\item Whenever more than one lepton is available due to possible combinatorics of flavor-violating $e\mu$ pair, lepton that forms a top-quark candidate with an invariant mass that is closest to the top-quark mass is chosen 
-\end{itemize}
-\item In $eee$/$\mu\mu\mu$ channel, leptons that form Z candidate are excluded 
-\item Lepton is combined with MET to reconstruct W candidate 
-\begin{itemize}
-\item Transverse component of the neutrino momentum is taken from MET
-\item Neutrino $p_z$ is obtained by W mass constrain set on the lepton-neutrino system 
-\end{itemize}
-\end{itemize}
-\item \textbf{Flavor-violating top-quark candidate }
-\begin{itemize}
-\item Flavor-violating top-quark candidate is reconstructed by combining a jet and an Opposite-Sign $e\mu$ lepton pair
-\item Jet with the highest b-tagging score is excluded from reconstruction unless it fails b-tagging 
-\item Whenever possible, the jet that forms a flavor-violating top-quark candidate with an invariant mass that is the closest to the top-quark mass is chosen
-\item Lepton that forms the standard model top-quark candidate is excluded 
-\end{itemize}
-\item \textbf{The first b-jet+lepton system }
-\begin{itemize}
-\item Jet with the highest b-tagging score is always chosen 
-\item All three leptons can form this system with the chosen jet 
-\begin{itemize}
-\item Lepton that forms a jet-lepton system with the lowest invariant mass is chosen 
-\end{itemize}
-\end{itemize}
-\item \textbf{The second b-jet+lepton system}
-\begin{itemize}
-\item Jet with the highest b-tagging score is excluded unless it passes b-tagging 
-\item Whenever possible (after the previous step), jet with the highest b-tagging score is chosen 
-\item Lepton that forms the first jet-lepton system is excluded 
-\item Leptons that have the same sign as the lepton that forms the first jet-lepton system is excluded 
-\item Whenever possible, lepton that forms a jet-lepton system with the lowest invariant mass is chosen 
-\end{itemize}
-\end{itemize}
+Jets with high b-tagging scores are combined with leptons to form so called ``$\mbl$'' systems. The first $\mbl$ system takes the jet with the highest b-tagging score and combine it with each \emph{tight} lepton in events. Out of the three $\mbl$ system candidates, the one with the lowest $\mbl$ is taken, the two constitutes are excluded from the consideration of the second $\mbl$ system. If additional jets exist, the second $\mbl$ system takes jet with the highest b-tagging score and combine it with two of the remaining leptons separately. Out of the two candidates, the one with lowest $\mbl$ is taken. $\mbl$ is set to 0 if no additional jet exists after the formation of the first $\mbl$ system.
