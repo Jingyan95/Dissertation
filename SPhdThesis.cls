@@ -324,7 +324,7 @@
 
 \setcounter{tocdepth}{1}%Only show parts, chapters, and sections in TOC
 \renewcommand{\cftpartfont}{\color{red}\sffamily\bfseries}%chapter font in TOC
-\setlength{\cftbeforepartskip}{6pt}%part spacing
+\setlength{\cftbeforepartskip}{9pt}%part spacing
 \renewcommand{\cftchapfont}{\sffamily\bfseries}%chapter font in TOC
 \renewcommand{\cftchappagefont}{\sffamily\bfseries}%chapter page font in TOC
 \setlength{\cftbeforechapskip}{3pt}%chap spacing

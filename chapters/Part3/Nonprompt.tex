@@ -1,9 +1,9 @@
 \chapter{Nonprompt Background Estimation}
 \label{chap:Nonprompt}
 
-In this analysis, the term \emph{prompt} leptons refers to leptons that originate from the \ac{CLFV} vertex, the Drell-Yan process, or an electroweak boson decay, including leptons from $\uptau$ decays if the $\uptau$ lepton originates from the latter two processes. \emph{Nonprompt} leptons refer to leptons that originate from hadron decays and photon conversions, as well as particles misidentified as leptons. Nonprompt leptons are suppressed through isolation requirements and an MVA-based identification specifically trained to reject them.
+In this analysis, the term \emph{prompt} leptons refers to leptons that originate from the \ac{CLFV} vertex, the Drell-Yan process, or an electroweak boson decay, including leptons from $\uptau$ decays if the $\uptau$ lepton originates from the latter two processes. \emph{Nonprompt} leptons refer to leptons that originate from hadron decays and photon conversions, as well as particles misidentified as leptons. \emph{Nonprompt} leptons are suppressed through isolation requirements and a \ac{MVA}-based identification specifically trained to reject them.
 
-\emph{Nonprompt} backgrounds are defined to be backgrounds with at least one \emph{nonprompt} lepton passing the \emph{tight} selection criteria, in this case generally dominated by Drell-Yan and $\ttbar$ production. An accurate estimation of \emph{nonprompt} backgrounds is difficult to achieve through MC modelling. Therefore, a data-driven technique called the ``\mm'' \cite{Gillam:2014xua} is used to estimate the \emph{nonprompt} backgrounds. 
+\emph{Nonprompt} backgrounds are defined to be backgrounds with at least one \emph{nonprompt} lepton passing the \emph{tight} selection criteria, in this case generally dominated by Drell-Yan and $\ttbar$ production. An accurate estimation of \emph{nonprompt} backgrounds is difficult to achieve through \ac{MC} modelling. Therefore, a data-driven technique called the ``\mm'' \cite{Gillam:2014xua} is used to estimate the \emph{nonprompt} backgrounds. 
 
 A brief description of the \mm~in its simplist form is given in \autoref{sec:MM} followed by its generalization and implementation in \autoref{sec:MR}. This method is validated using three \acp{VR} and is described in \autoref{sec:VR}. Lastly, the \emph{nonprompt} estimation in the \ac{SR} is presented in \autoref{sec:MMSR}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +12,7 @@ A brief description of the \mm~in its simplist form is given in \autoref{sec:MM}
 \section{The Matrix Method}
 \label{sec:MM}
 
-The \mm~is a data driven technique used to estimate the fraction of \emph{nonprompt} leptons that pass a given lepton selection, referred to as ``\emph{tight}''. The \emph{tight} selection usually incorporates tight lepton identification and isolation requirements and corresponds to full lepton selection used in an analysis. The \emph{loose} selection is obtained by loosening the \emph{tight} selection. The \emph{loose} selection is used as a baseline such that any \emph{loose} leptons fall into one of the two exclusive categories: \emph{tight} or \emph{not tight}. The \mm~deals with  \emph{prompt} and \emph{nonprompt} leptons separately. As a result, \emph{prompt} and \emph{nonprompt} efficiencies are introduced, as is illustrated in Figure~\ref{fig:Matrix_Method}.
+The \mm~is a data driven technique used to estimate the fraction of \emph{nonprompt} leptons that pass a given lepton selection, referred to as ``\emph{tight}''. The \emph{tight} selection usually incorporates tight lepton identification and isolation requirements and corresponds to the full lepton selection used in an analysis. The \emph{loose} selection is obtained by loosening the \emph{tight} selection. The \emph{loose} selection is used as a baseline such that any \emph{loose} leptons fall into one of the two exclusive categories: \emph{tight} or \emph{not tight}. The \mm~deals with  \emph{prompt} and \emph{nonprompt} leptons separately. As a result, \emph{prompt} and \emph{nonprompt} efficiencies are introduced, as is illustrated in Figure~\ref{fig:Matrix_Method}.
 
  \begin{figure}[tbh!]
  \begin{center}
@@ -128,7 +128,7 @@ All but the first number that appear in the righthand side vector correspond to 
 N_{Nonprompt}^{TTT} = N_{PPN}^{TTT} + N_{PNP}^{TTT} + N_{PNN}^{TTT} + N_{NPP}^{TTT} + N_{NPN}^{TTT} + N_{NNP}^{TTT} + N_{NNN}^{TTT},
 \end{equation}
  
-which can be obtained by constructing 8 \acp{AR} to form that lefthand side vector. Secondly, the 8 $\times$ 8 matrix is constructed and inverted. Lastly, the righthand side vector can be obtained by multiplying the lefthand side vector to the inverted matrix.
+which can be obtained by first constructing 8 \acp{AR} to form the lefthand side vector. Secondly, the 8 $\times$ 8 matrix is constructed and inverted. Lastly, the righthand side vector can be obtained by multiplying the lefthand side vector to the inverted matrix.
 
 Only two \acp{PD} ``SingleElectron'' and ``SingleMuon'' are used in the construction of \ac{MR} in 2016 and 2017 while ``SingleElectron'' is replaced with ``EGamma'' in 2018. In addition to \acp{PD}, the measurements of $r$/$f$ also utilize the $\ttbar$ sample and all \ac{MC} samples listed under the ``\emph{prompt} background'' category in Table~\ref{tab:MCsample}. Depending on the flavor of the leading lepton in \ac{MC}, events are selected with either a single-electron or a single-muon trigger, which is summarized in Table~\ref{tab:RandF_trigger}. Data events are selected with the same \ac{HLT} triggers as well but events in ``SingleMuon'' (``SingleElectron'' or ``EGamma'') \ac{PD} are only accepted if the leading lepton is a muon (electron).
 
@@ -155,11 +155,11 @@ Both $r$ and $f$ are parameterized in bins of lepton $\pt$, $|\eta|$, and jet mu
 \item Jet multiplicity: \{0 jet, $\geq$ 1 jet\}.
 \end{itemize}
 
-The jet multiplicity bin is a proxy for variation of the composition of physics processes. In addition to requiring at least one jet, the actual \ac{MR} corresponds to the second jet multiplicity bin requires no more than one b-tagged jet as this is also required in the \ac{SR}.
+The jet multiplicity bin is a proxy for variation of the composition of physics processes. In addition to requiring at least one jet, the \ac{MR} corresponds to the second jet multiplicity bin requires no more than one b-tagged jet as this is also required in the \ac{SR}.
 
 The \emph{nonprompt} efficiency is measured in same-sign dilepton regions, in which the leading lepton in $\pt$, used as a \emph{tag}, is required to be matched with trigger objects within $\mathrm{\Delta}R~<$ 0.2. The sub-leading lepton is required to pass the \emph{loose} selection and is taken as the \emph{probe}. Events that have two same-sign electrons with an invariant mass between 76 GeV and 106 GeV are removed from \ac{MR} to suppress the backgrounds that originate from charge misidentification. No such requirement has been introduced to the muon \ac{MR} due to its negligible rate of  charge misidentification.
 
-The contribution from prompt backgrounds, estimated from \ac{MC} simulation, are subtracted from data. A representative composition of backgrounds in \ac{MR} is shown in Figure~\ref{fig:MRexample}. 
+The contribution from \emph{prompt} backgrounds, estimated from \ac{MC} simulation, are subtracted from data. A representative composition of backgrounds in \ac{MR} is shown in Figure~\ref{fig:MRexample}. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -187,17 +187,17 @@ where the numerator is selected with one \emph{tag} and one \emph{tight} lepton 
 \begin{tabular}{ccccc}
 \toprule
 Lepton   &Selection   & \emph{loose} & \emph{tag} & \emph{tight}$^{\textsf{ii}}$\\ \midrule
-\multirow{4}{*}{Electron} & $p_{T}$  & $>$ 20 GeV & $>$ 38 GeV$^{\textsf{i}}$ & $>$ 20 GeV \\  
+\multirow{4}{*}{Electron} & $\pt$  & $>$ 20 GeV & $>$ 38 GeV$^{\textsf{i}}$ & $>$ 20 GeV \\  
      & $I_{\textsf{mini}}^{\textsf{rel}}$  & $<$0.4 & $<$0.1 & $<$0.12 \\
      & \TOP   & $>$-0.9   & $>$0.95 & $>$0.9 \\ 
      & Match with trigger objects   & - & \checkmark & -  \\ \midrule
-\multirow{5}{*}{Muon} & $p_{T}$ & $>$ 20 GeV & $>$ 30 GeV & $>$ 20 GeV \\
+\multirow{5}{*}{Muon} & $\pt$ & $>$ 20 GeV & $>$ 30 GeV & $>$ 20 GeV \\
      & $I_{\textsf{mini}}^{\textsf{rel}}$  & $<$0.4 & $<$0.1 & $<$0.12 \\
      & Cut-based ID  & - & Medium WP & Medium WP \\
      & \TOP   & $>$0.5 & $>$0.9 & $>$0.9 \\ 
      & Match with trigger objects   & - & \checkmark & -  \\ \bottomrule
 \end{tabular}
-\caption{Summary of the lepton selections needed for the measurement of $r$ and $f$. Please note: (i) the minimum $p_{T}$ cut for \emph{tag} electron in 2016 dataset is reduced to 30 GeV to adjust for the trigger threshold, and (ii) the \emph{tight} selection here is the same as the \emph{tight} lepton selection described in \autoref{sec:Leptons}.}
+\caption{Summary of the lepton selections needed for the measurement of $r$ and $f$. Please note: (i) the minimum $\pt$ cut for \emph{tag} electron in 2016 dataset is reduced to 30 GeV to adjust for the trigger threshold, and (ii) the \emph{tight} selection here is the same as the \emph{tight} lepton selection described in \autoref{sec:Leptons}.}
 \label{tab:looseandtight}
 \end{table}
 
@@ -206,21 +206,21 @@ Lepton   &Selection   & \emph{loose} & \emph{tag} & \emph{tight}$^{\textsf{ii}}$
  \begin{tabular}{c}
  \includegraphics[width=0.85\textwidth]{figures/Part3/Nonprompt/MR/fake_eff}
  \end{tabular}
- \caption{Representative \emph{nonprompt} electron efficiency measured in data events. These plots correspond to the first $|\eta|$ bin ($|\eta|<$0.8) and the second jet multiplicity bin. Events selected Error bars displayed in these plots include statistical uncertainty only. From left to right: electron $f$, muon $f$.}
+ \caption{Representative \emph{nonprompt} electron efficiency measured in data events. From left to right: electron $f$, muon $f$. Events with a same-flavor lepton pair are shown in red points while events selected with a different-flavor lepton pair are shown in green points. Events with a same-flavor or different-flavor lepton pair is shown in black points. These plots correspond to the first $|\eta|$ bin ($|\eta|<$0.8) and the second jet multiplicity bin. Events selected Error bars displayed in these plots include statistical uncertainty only. }
  \label{fig:fake_eff}
  \end{center}
 \end{figure}
 
-The measured \emph{nonprompt} efficiency $f$ exhibits a dependency on flavor composition, as is shown in Figure~\ref{fig:fake_eff}. This dependency is treated as a source of the systematic uncertainties of the nonprompt estimation and is further discussed in \autoref{sec:NonUnc}.
+The measured \emph{nonprompt} efficiency $f$ exhibits a dependency on flavor composition, as is shown in Figure~\ref{fig:fake_eff}. This dependency is treated as a source of the systematic uncertainties of the \emph{nonprompt} estimation and is further discussed in \autoref{sec:NonUnc}.
 
-The \emph{prompt} efficiency $r$ is estimated in simulated $\ttbar$ events in opposite-sign dilepton regions. The same lepton selection listed in Table~\ref{tab:looseandtight} is used to perform the \emph{Tag-and-Probe}. The leading lepton in $p_{T}$ is used as a \emph{tag} while the oppositely charged sub-leading lepton is taken as a \emph{probe}. The variation of $r$ between different flavor composition is negligible, as is shown in Figure~\ref{fig:real_eff}. Therefore, only e$\upmu$ events are used to measure \emph{prompt} efficiency in order to minimise the contamination of \emph{nonprompt} leptons.
+The \emph{prompt} efficiency $r$ is measured in simulated $\ttbar$ events in opposite-sign dilepton regions. The same lepton selection listed in Table~\ref{tab:looseandtight} is used to perform the \emph{Tag-and-Probe}. The leading lepton in $\pt$ is used as a \emph{tag} while the oppositely charged sub-leading lepton is taken as a \emph{probe}. The variation of $r$ between different flavor composition is negligible, as is shown in Figure~\ref{fig:real_eff}. Therefore, only e$\upmu$ events are used to measure \emph{prompt} efficiency in order to minimise the contamination of \emph{nonprompt} leptons.
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.85\textwidth]{figures/Part3/Nonprompt/MR/real_eff}
  \end{tabular}
- \caption{Representative \emph{prompt} efficiency measured in simulated $t\bar{t}$ events. These plots correspond to the first $|\eta|$ bin ($|\eta|<$0.8) and the second jet multiplicity bin. Error bars displayed in these plots include statistical uncertainty only. From left to right: electron $r$, muon $r$.}
+ \caption{Representative \emph{prompt} efficiency measured in simulated $\ttbar$ events. From left to right: electron $r$, muon $r$. Events with a same-flavor lepton pair are shown in red points while events selected with a different-flavor lepton pair are shown in green points. Events with a same-flavor or different-flavor lepton pair is shown in black points. These plots correspond to the first $|\eta|$ bin ($|\eta|<$0.8) and the second jet multiplicity bin. Error bars displayed in these plots include statistical uncertainty only. }
  \label{fig:real_eff}
  \end{center}
 \end{figure}
@@ -250,49 +250,31 @@ The selection criteria for various \acp{MR} is summarised in Table~\ref{tab:MR}.
 \section{Validation of the Matrix Method}
 \label{sec:MMVR}
 
-The performance of the \mm~is validated using three regions that are tangential to the \ac{SR}, referred to as \acp{VR}. In these \acp{VR}, \emph{prompt} backgrounds are estimated using MC simulation while \emph{nonprompt} background is estimated with the \mm. A summary of the selections applied to these VRs is given in \autoref{chap:Selection}. 
+The performance of the \mm~is validated using three regions that are tangential to the \ac{SR}, referred to as \acp{VR}. In these \acp{VR}, \emph{prompt} backgrounds are estimated using \ac{MC} simulation while \emph{nonprompt} background is estimated with the \mm. A summary of the selections applied to these VRs is given in \autoref{chap:Selection}. 
 
-Distribution of the leading lepton $\eta$ and jet multiplicity are shown in Figure~\ref{fig:VR_matrix_eee}-\ref{fig:VR_matrix_mumumu}. Good agreement between data and background estimate has been observed in all three \acp{VR}.
+Distribution of the leading lepton $\eta$ and jet multiplicity are shown in Figure~\ref{fig:VR_matrix}. Good agreement between data and background estimate has been observed in all three \acp{VR}.
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/eee/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/eee/njet} \\
- \end{tabular}
- \caption{Distributions of the leading lepton $\eta$ (left) and the jet multiplicity (right) in the eee \emph{nonprompt} VR. The data are shown as filled points and the SM background predictions as histograms. The nonprompt background is estimated using control samples in data, while other backgrounds are estimated using MC simulation. The hatched bands indicate statistical and systematic uncertainties for the SM background predictions. The last bin of the right histogram includes the overflow events.}
- \label{fig:VR_matrix_eee}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{cc}
-  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/lep1Eta}&
+   \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/njet} \\
- \end{tabular}
- \caption{Distributions of the leading lepton $\eta$ (left) and the jet multiplicity (right) in the $\emul$ \emph{nonprompt} VR. The data are shown as filled points and the SM background predictions as histograms. The nonprompt background is estimated using control samples in data, while other backgrounds are estimated using MC simulation. The hatched bands indicate statistical and systematic uncertainties for the SM background predictions. The last bin of the right histogram includes the overflow events.}
- \label{fig:VR_matrix_emul}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{cc}
-   \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/lep1Eta}&
+    \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/njet} \\
  \end{tabular}
- \caption{Distributions of the leading lepton $\eta$ (left) and the jet multiplicity (right) in the $\mmm$ \emph{nonprompt} VR. The data are shown as filled points and the SM background predictions as histograms. The nonprompt background is estimated using control samples in data, while other backgrounds are estimated using MC simulation. The hatched bands indicate statistical and systematic uncertainties for the SM background predictions. The last bin of the right histogram includes the overflow events.}
- \label{fig:VR_matrix_mumumu}
+ \caption{Distributions of the leading lepton $\eta$ (left column) and the jet multiplicity (right column) in the \emph{nonprompt} \acp{VR}. Events in the eee, $\emul$, and $\mmm$ \emph{nonprompt} \acp{VR} are shown in the upper, middle, and lower row, respectively. The data are shown as filled points and the \ac{SM} background predictions as histograms. The \emph{nonprompt} background is estimated using control samples in data, while other backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The last bin of the right histogram includes the overflow events.}
+ \label{fig:VR_matrix}
  \end{center}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Nonprompt estimate in SR}
+\section{Nonprompt Estimate in SR}
 \label{sec:MMSR}
 
-The \mm~is used to estimate \emph{nonprompt} background in the \ac{SR}. Distributions of the LFV-e$\upmu$ mass and the Z boson mass are shown in Figure~\ref{fig:SR_DataDriven_1}. When compared to background estimate from pure MC simulation (Figure~\ref{fig:SR}), the updated background template is smoother with lower statistical uncertainties. 
+The \mm~is used to estimate \emph{nonprompt} background in the \ac{SR}. Distributions of the LFV e$\upmu$ mass and the Z boson mass are shown in Figure~\ref{fig:SR_DataDriven_1}. When compared to background estimate from pure \ac{MC} simulation (Figure~\ref{fig:SR}), the updated background template is smoother with lower statistical uncertainties. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -300,7 +282,7 @@ The \mm~is used to estimate \emph{nonprompt} background in the \ac{SR}. Distribu
   \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/SR/Memu}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/SR/Zmass} \\
  \end{tabular}
- \caption{Distributions of the LFV-e$\upmu$ mass (left) and the Z boson mass (right) in \ac{SR}. The data are shown as filled points and the \ac{SM} background predictions as histograms. The \emph{nonprompt} background is estimated using control samples in data, while other backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The normalisation of the signal processes is chosen arbitrarily for improved visualisation. The last bin of both histograms includes the overflow events.}
+ \caption{Distributions of the LFV e$\upmu$ mass (left) and the Z boson mass (right) in \ac{SR}. The data are shown as filled points and the \ac{SM} background predictions as histograms. The \emph{nonprompt} background is estimated using control samples in data, while other backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The normalisation of the signal processes is chosen arbitrarily for improved visualisation. The last bin of both histograms includes the overflow events.}
  \label{fig:SR_DataDriven_1}
  \end{center}
 \end{figure}
@@ -338,4 +320,3 @@ CLFV & $207\pm15$ & $4440\pm215$\\
 \end{tabular}
 \label{tab:eventcount}
 \end{table}
-

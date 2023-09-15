@@ -1,15 +1,18 @@
 \chapter{Signal Extraction with Boosted Decision Trees}
 \label{chap:BDT}
 
-To further separate the LFV signal from the standard model backgrounds in our signal region, a Boosted Decision Tree (BDT) was employed using the xgBoost package cite{Chen:2016:XST:2939672.2939785}. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{BDT Setup}
-\label{sec:Setup}
+A \ac{MVA} is performed in \ac{SR} to further separate the LFV signals from the backgrounds, and enhance the sensitivity of this analysis. More specifically, a dozen of discriminating variables, referred to as ``features'', are selected and combined by a gradient-\ac{BDT}, which is implemented using the \textsc{XGBoost} package \cite{Chen:2016:XST:2939672.2939785}. There are several reasons why \ac{BDT} is chosen: (i) the goal of the \ac{MVA} is to achieve maximum separation between signals and backgrounds using a small number of already well-separated kinematic variables, instead of exploring some complicated structures hidden in event topology, (ii) under such a goal, the potential performance gain from a more sophisticated algorithm like a \ac{NN} is limited, (iii) a \ac{BDT}-based algorithm is straightforward to implement and consumes only a moderate amount of computational resources, and (iv) the interpretability of a \ac{BDT}-based algorithm is excellent. 
+
+The top production and decay signals are longer distinguished by the \ac{BDT}. They are combined into a single signal class, just like all backgrounds are combined into a single background class. The training of the \ac{BDT} depends entirely on \ac{MC} samples that are statistically orthogonal to the samples used in the actual background estimation. More details on the configurations of the \ac{BDT} are described in \autoref{sec:Config}. The input features are described in \autoref{sec:Input}. The output of the \ac{BDT} is presented in \autoref{sec:Output}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{BDT Configuration}
+\label{sec:Config}
 
 Since the kinematic distributions of final state particles in our two signal channels (single top production and top decay) differ significantly (see Figure \ref{fig:Features1}-\ref{fig:Features5}), the SR is divided into two parts (SR1: $M_{e\mu}\leq$150GeV; SR2: $M_{e\mu}>$150GeV) in order to achieve the optimal sensitivity. Within each sub-region of the SR, a binary BDT is trained.
    
-The signal datasets used for BDT training are MC samples that correspond to single top LFV production (ST) and top LFV decay (TT). The Lorentz structure and the flavor of the up-type quark involved in LFV interaction were shown to have a minor impact on the kinematics of final state particles (See Figure \ref{fig:Lorentz}). Therefore, they were not further distinguished.  
+The signal datasets used for BDT training are MC samples that correspond to single top LFV production (ST) and top LFV decay (TT). The Lorentz structure and the flavor of the up-type quark involved in LFV interaction were shown to have a minor impact on the kinematics of final state particles (See Figure~\ref{fig:Lorentz}). Therefore, they were not further distinguished.  
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -36,19 +39,10 @@ The background MC samples include all the samples listed in Table \ref{tab:2016M
 \end{figure}
 
 The MC dataset is divided into 5 subsets evenly. A 5-fold cross-validation scheme is deployed: the training set consists of 3 out of the 5 subsets, while validation/testing set each consists of 1 subset. The number of estimators is set to 1000, max depth 5, and sub-sample 0.8 with the evaluation metric set to "mlogloss".  The results of the cross-validation study are shown in Figure \ref{fig:5fold}. The trained BDT model targeting TT(ST) signal is used to evaluate each event in SR1(SR2): a BDT weight is assigned to each event, giving the likelihood that it originated from TT(ST) signal. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{c}
-  \includegraphics[width=0.99\textwidth]{figures/Part3/BDT/Features1}\\
- \end{tabular}
- \caption{Normalized distribution of various features in SR. From to left to right: MVA\_M$_{e\mu}$, MVA\_JeDr, MVA\_JeDr.}
- \label{fig:Features1}
- \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Input Variables}
+\section{BDT Features}
 \label{sec:Input}
 
 The observables used in training are referred to as "features" in this analysis. The following features are used for both ST and TT classifier:
@@ -91,6 +85,16 @@ Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
+  \includegraphics[width=0.99\textwidth]{figures/Part3/BDT/Features1}\\
+ \end{tabular}
+ \caption{Normalized distribution of various features in SR. From to left to right: MVA\_M$_{e\mu}$, MVA\_JeDr, MVA\_JeDr.}
+ \label{fig:Features1}
+ \end{center}
+\end{figure}
+
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{c}
   \includegraphics[width=0.99\textwidth]{figures/Part3/BDT/Features2}\\
  \end{tabular}
  \caption{Normalized distribution of additional features in SR. From to left to right: MVA\_LFVePt, MVA\_LFVmuPt, MVA\_LFVTopmass.}
@@ -128,7 +132,6 @@ Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{
  \end{center}
 \end{figure}
 
-\subsection{Input ranking and correlation}
 To determine the relative importance of these features, feature importance is extracted using the "gain" method and is shown in Figure \ref{fig:Ranking}.
 
 \begin{figure}[tbh!]
@@ -163,95 +166,9 @@ To determine the relative importance of these features, feature importance is ex
  \label{fig:Ranking}
  \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
-\subsection{Input validation}
-The background modeling of the input features are checked in SR. The input features are shown in Figure \ref{fig:input_vali_1}-\ref{fig:input_vali_7}. Note: all input samples come from MC simulation.
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Memu}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/LFVePt}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/LFVmuPt}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_M$_{e\mu}$, MVA\_LFVePt, MVA\_LFVmuPt}
- \label{fig:input_vali_1}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Zmass}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/LFVTopmass}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/nbjet}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_Zmass, MVA\_LFVTopmass, MVA\_nbjet}
- \label{fig:input_vali_2}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Topmass}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/JetHt}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/tM}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_Topmass, MVA\_JetHt, MVA\_tM}
- \label{fig:input_vali_3}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/njet}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Ht}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Met}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_njet, MVA\_Ht, MVA\_Met}
- \label{fig:input_vali_4}
- \end{center}
-\end{figure}
-
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/SSZmass}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/JeDr}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/JmuDr}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_SSZmass, MVA\_JeDr, MVA\_JmuDr}
- \label{fig:input_vali_5}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Mbl1}&
-    \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Mbl2}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/BaPt}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_Mbl1, MVA\_Mbl2, MVA\_BaPt}
- \label{fig:input_vali_6}
- \end{center}
-\end{figure}
-
-\begin{figure}[tbh!]
- \begin{center}
- \begin{tabular}{cc}
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/Jet2Btag}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/BDT/llDr}\\
- \end{tabular}
- \caption{BDT input validation, from left to right: MVA\_Jet2Btag, MVA\_llDr}
- \label{fig:input_vali_7}
- \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{BDT Output}
 \label{sec:Output}
 
