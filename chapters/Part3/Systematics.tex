@@ -26,7 +26,7 @@ We consider the following sources of systematic uncertainties (shape) associated
 \item Statistical uncertainty 
 \end{itemize}
 
-An important systematic uncertainty comes from the estimate of prompt contamination in MR. As is discussed in \autoref{sec:Nonprompt}, prompt backgrounds (estimated with MC) are subtracted from total event yields measured in MR (data). A flat 20 $\%$ uncertainty ($\alpha$ in Equation \ref{eq:f_eq}) is assigned to the event yields of the prompt background and the resulting variation of \emph{f} is taken as the uncertainty, which is estimated to be between 5 $\%$ and 15 $\%$.
+An important systematic uncertainty comes from the estimate of prompt contamination in MR. As is discussed in \autoref{chap:Nonprompt}, prompt backgrounds (estimated with MC) are subtracted from total event yields measured in MR (data). A flat 20 $\%$ uncertainty ($\alpha$ in Equation \ref{eq:f_eq}) is assigned to the event yields of the prompt background and the resulting variation of \emph{f} is taken as the uncertainty, which is estimated to be between 5 $\%$ and 15 $\%$.
 
 \begin{equation}
 f=\frac{n_{data}^{T}-(1+\alpha)n_{Prompt~MC}^{T}}{n_{data}^{T+\overline{T}}-(1+\alpha)n_{Prompt~MC}^{T+\overline{T}}}.
@@ -175,12 +175,11 @@ the middle of the data taking (runs$>=$319077, i.e. last certified run of
 2018B, and all of 2018C+D). The HEM issue is likely a very small effect but we still have to check it following the procedure in cite{HEM}
 \end{itemize}
 
-Uncertainties related to B-tagging scale factors are split into different sources. For b and udsg jets, we applied lf, hf, hfstats1/2, and lfstats1/2 uncertainties. For c jets, we applied cferr1/2 uncertainties. Correlations between different sources are specified in the Table~\ref{tab:btag}.
+Uncertainties related to B-tagging scale factors are split into different sources. For b and udsg jets, we applied lf, hf, hfstats1/2, and lfstats1/2 uncertainties. For c jets, we applied cferr1/2 uncertainties. Correlations between different sources are specified in the Table~\ref{tab:btagsys}.
 
 \begin{table}[!hbtp]
-\label{tab:btag}
 \sffamily
-\begin{center}
+\centering
 \caption{
 A hyphen ($-$) denotes that a source is not correlated between the different years.
 }
@@ -198,7 +197,7 @@ cferr1		& \checkmark & Linear fluctuations of c jets \\
 cferr2		& \checkmark & Quadratic fluctuations of c jets \\
 \bottomrule
 \end{tabular}
-\end{center}
+\label{tab:btagsys}
 \end{table}
 
 \subsection{Jet energy scale uncertainties}
@@ -207,7 +206,7 @@ Uncertainties associated with JES are split into their 27 components and properl
 
 \begin{table}[!hbtp]
 \sffamily
-\begin{center}
+\centering
 \caption{
 Summary of the sources of uncertainty related to the JECs.
 A hyphen ($-$) denotes that a source is not correlated between the different years.
@@ -233,7 +232,6 @@ RelativePtEC1			& -			&     PileUpPtHF				& \checkmark			 \\
 RelativePtEC2			& -			&     & \\
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 B-tagging scale factors and MET vector are computed for each of the JES templates and treated as uncertainties that are fully correlated to the respective JES sources. 
@@ -252,7 +250,7 @@ The overall systematic uncertainty on background is estimated to be about 15 $\%
     \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_bkg_2018}&
   \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_TT_bkg_2018} \\
  \end{tabular}
- \caption{Distributions of relative uncertainties on total expected backgrounds as a function of BDT output in ST enriched SR (left), TT enriched SR (right). Luminosity and normalization uncertainties are not included in these plots. JES, JER and HEM are combined into "JEC". Sources of b-tagging uncertainties listed in Table~\ref{tab:btag} are combined into "BtagSF". From top to bottom: 2016, 2017 and 2018 datasets.}
+ \caption{Distributions of relative uncertainties on total expected backgrounds as a function of BDT output in ST enriched SR (left), TT enriched SR (right). Luminosity and normalization uncertainties are not included in these plots. JES, JER and HEM are combined into "JEC". Sources of b-tagging uncertainties listed in Table~\ref{tab:btagsys} are combined into "BtagSF". From top to bottom: 2016, 2017 and 2018 datasets.}
  \label{fig:Comp_sys_background}
  \end{center}
 \end{figure}
@@ -269,7 +267,7 @@ The overall systematic uncertainty on background is estimated to be about 15 $\%
     \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_sig_2018}&
   \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_TT_sig_2018} \\
  \end{tabular}
- \caption{Distributions of relative uncertainties on signal ($C_{e\mu tu}^{vector}$ is used as an example) as a function of BDT output in ST enriched SR (left), TT enriched SR (right). Luminosity and normalization uncertainties are not included in these plots. JES, JER and HEM are combined into "JEC". Sources of b-tagging uncertainties listed in Table~\ref{tab:btag} are combined into "BtagSF". From top to bottom: 2016, 2017 and 2018 datasets.}
+ \caption{Distributions of relative uncertainties on signal ($C_{e\mu tu}^{vector}$ is used as an example) as a function of BDT output in ST enriched SR (left), TT enriched SR (right). Luminosity and normalization uncertainties are not included in these plots. JES, JER and HEM are combined into "JEC". Sources of b-tagging uncertainties listed in Table~\ref{tab:btagsys} are combined into "BtagSF". From top to bottom: 2016, 2017 and 2018 datasets.}
  \label{fig:Comp_sys_signal}
  \end{center}
 \end{figure}
