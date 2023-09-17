@@ -105,7 +105,7 @@ Additionally, all vector-like operators are combined,
 
 which results in 6 independent \acp{WC}: $\WC{\textsf{vector}}{\emut{u}},~\WC{\textsf{scalar}}{\emut{u}},~\WC{\textsf{tensor}}{\emut{u}},~\WC{\textsf{vector}}{\emut{c}},~\WC{\textsf{scalar}}{\emut{c}},~\WC{\textsf{tensor}}{\emut{c}}.$  
 
-To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} event generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}.
+To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} event generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -127,7 +127,7 @@ R_{\textsf{reweight}}^{i}=\frac{\omega_{\textsf{SMEFTsim}}^i}{\omega_{\textsf{Sm
 
 where $\omega^{i}_{X}$ is the per-event \ac{ME} weight calculated by \MG~using model $X$. Since SMEFTsim was not used by \ac{CMS} at the time when the signal samples were generated, $R_{\textsf{reweight}}$ are used to ``reweight'' the original samples generated using SmeftFR.
 
-The cross sections for top production signals are taken directly from \MG \\with \text{SMEFTsim} UFO as input. The event generation for top decay signals at the \ac{ME}-level take two steps: (i) production of the SM $\ttbar$, and (ii) \ac{CLFV} decay of one of the top quarks. Therefore, the $\ttbar$ cross section at \ac{NNLO} precision~\cite{Czakon:2011xx} is used to normalize the top decay signals,
+Due to the significant differences in kinematic distributions between top decay and production signals, \ac{MC} samples are generated separately for these processes. The cross sections for top production signals are taken directly from \MG \\with \text{SMEFTsim} UFO as input. The event generation for top decay signals at the \ac{ME}-level take two steps: (i) production of the SM $\ttbar$, and (ii) \ac{CLFV} decay of one of the top quarks. Therefore, the $\ttbar$ cross section at \ac{NNLO} precision~\cite{Czakon:2011xx} is used to normalize the top decay signals,
 
 \begin{equation}
 \label{eq:3}

@@ -10,9 +10,9 @@ The top production and decay signals are longer distinguished by the \ac{BDT}. T
 \section{BDT Configuration}
 \label{sec:Config}
 
-Since the kinematic distributions of final state particles in our two signal channels (single top production and top decay) differ significantly (see Figure \ref{fig:Features1}-\ref{fig:Features5}), the SR is divided into two parts (SR1: $M_{e\mu}\leq$150GeV; SR2: $M_{e\mu}>$150GeV) in order to achieve the optimal sensitivity. Within each sub-region of the SR, a binary BDT is trained.
+The LFV e$\upmu$ mass of the top decay signal is bounded by the \ac{SM} top quark mass, as is shown in Figure~\ref{sec:SR}. On the contrary, the LFV e$\upmu$ mass of the top production signal has no such restriction and often reaches TeV level. Therefore, a 150 GeV threshold is used to divide the \ac{SR} into two \acp{SR} enriched in different signal modes. The \ac{MVA} strategy is to combine two signal modes within each \ac{SR} and train binary \acp{BDT} separately for each \ac{SR}. In other words, only two signal datasets and two background datasets are needed.
    
-The signal datasets used for BDT training are MC samples that correspond to single top LFV production (ST) and top LFV decay (TT). The Lorentz structure and the flavor of the up-type quark involved in LFV interaction were shown to have a minor impact on the kinematics of final state particles (See Figure~\ref{fig:Lorentz}). Therefore, they were not further distinguished.  
+Other aspects of the signal \ac{MC} samples, such as the Lorentz structure and the flavor of the up-type quark involved in LFV interaction, are shown to have a relatively small impact on the kinematics of final state particles, as is shown in Figure~\ref{fig:Lorentz}. Therefore, they are not distinguished by the \ac{BDT}. The construction of the signal datasets take a few steps. Firstly, all top production signal samples, regardless of the Lorentz structure or the quark flavor, are normalised to the cross section of the vector-like top production signal with an $\emut{u}$ vertex, which is shown in Table~\ref{tab:signal}. Similarly, all top decay signal samples are normalised to the cross section of the vector-like top decay signal. For each sample, a normalisation weight is calculated and is used to replace the original normalisation component of the \ac{MC} weights. These updated \ac{MC} weights are eventually passed on to the \ac{BDT} to weight each signal event.  Secondly, all top production and decay signal samples are combined into a single dataset, which is then divided into two subsets using a 150 GeV threshold on LFV e$\upmu$. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -25,7 +25,7 @@ The signal datasets used for BDT training are MC samples that correspond to sing
  \end{center}
 \end{figure}
 
-The background MC samples include all the samples listed in Table \ref{tab:2016MCsample}-\ref{tab:20172018MCsample}. It was determined that splitting the background into separate classes (prompt vs non-prompt backgrounds) did not increase the signal discrimination power and caused overtraining which is why in the backgrounds are combined. 
+All background \ac{MC} samples listed in Table~\ref{tab:MCsample} are used in the \ac{BDT} training. The 
 
 \begin{figure}[tbh!]
  \begin{center}
