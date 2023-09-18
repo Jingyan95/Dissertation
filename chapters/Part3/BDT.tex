@@ -12,7 +12,9 @@ The top production and decay signals are longer distinguished by the \ac{BDT}. T
 
 The LFV e$\upmu$ mass of the top decay signal is bounded by the \ac{SM} top quark mass, as is shown in Figure~\ref{sec:SR}. On the contrary, the LFV e$\upmu$ mass of the top production signal has no such restriction and often reaches TeV level. Therefore, a 150 GeV threshold is used to divide the \ac{SR} into two \acp{SR} enriched in different signal modes. The \ac{MVA} strategy is to combine two signal modes within each \ac{SR} and train binary \acp{BDT} separately for each \ac{SR}. In other words, only two signal datasets and two background datasets are needed.
    
-Other aspects of the signal \ac{MC} samples, such as the Lorentz structure and the flavor of the up-type quark involved in LFV interaction, are shown to have a relatively small impact on the kinematics of final state particles, as is shown in Figure~\ref{fig:Lorentz}. Therefore, they are not distinguished by the \ac{BDT}. The construction of the signal datasets take a few steps. Firstly, all top production signal samples, regardless of the Lorentz structure or the quark flavor, are normalised to the cross section of the vector-like top production signal with an $\emut{u}$ vertex, which is shown in Table~\ref{tab:signal}. Similarly, all top decay signal samples are normalised to the cross section of the vector-like top decay signal. For each sample, a normalisation weight is calculated and is used to replace the original normalisation component of the \ac{MC} weights. These updated \ac{MC} weights are eventually passed on to the \ac{BDT} to weight each signal event.  Secondly, all top production and decay signal samples are combined into a single dataset, which is then divided into two subsets using a 150 GeV threshold on LFV e$\upmu$. 
+Other aspects of the signal \ac{MC} samples, such as the Lorentz structure and the flavor of the up-type quark involved in LFV interaction, are shown to have a relatively small impact on the kinematics of final state particles, as is shown in Figure~\ref{fig:Lorentz}. Therefore, they are not distinguished by the \ac{BDT}. The selection criteria used to define \ac{SR}, described in \autoref{sec:SR}, are used to preselect events before the construction of both signal and background datasets. 
+
+The construction of the signal datasets take a few steps. Firstly, the cross sections of all top production signal samples, regardless of the Lorentz structure or the quark flavor, are set to the cross section of the vector-like top production signal with an $\emut{u}$ vertex, which is shown in Table~\ref{tab:signal}. This is done to remove poential bias towards the signals with higher cross sections. Similarly, the cross sections of all top decay signal samples are set to the cross section of the vector-like top decay signal. For each sample, a normalisation weight is calculated and is used to replace the original normalisation component of the \ac{MC} weights. These updated \ac{MC} weights are eventually passed on to the \ac{BDT} to weight each signal event.  Secondly, all top production and decay signal samples are combined into a single dataset, which is then sub-divided into two datasets using a 150 GeV threshold on LFV e$\upmu$. The last step is to adjust the overall normalisation (i.e. sum of the \ac{MC} weights) of each of the two signal datasets to match the overall normalisation of the corresponding background dataset. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -25,7 +27,21 @@ Other aspects of the signal \ac{MC} samples, such as the Lorentz structure and t
  \end{center}
 \end{figure}
 
-All background \ac{MC} samples listed in Table~\ref{tab:MCsample} are used in the \ac{BDT} training. The 
+The \emph{prompt} background dataset is constructed by combining all \ac{MC} samples listed under the ``prompt'' category listed in Table~\ref{tab:MCsample}. Cross sections referenced Table~\ref{tab:MCsample} are directly used to normalise the \emph{prompt} backgrounds. The construction of the \emph{nonpeompt} background dataset is different since the \emph{nonprompt} backgrounds are modelled with the \mm, which is itself constructed from 8 \acp{AR}. Therefore, 8 \acp{AR} are constructed to collect simulated $\ttbar$ and Drell-Yan events. These events used to form the \emph{nonprompt} dataset. Each event in the \emph{nonprompt} dataset is then ``weighted'' using the output of the \mm. Finally, the \emph{nonprompt} dataset is combined with the \emph{prompt} dataset and then divided into to datasets using a 150 GeV threshold on LFV e$\upmu$ mass. 
+
+A technique know as the ``$k$-fold cross validation'' is used to minimise the loss of statistics when partitioning datasets into training, validation, and test sets. For each targeted \ac{SR}, the corresponding signal/background set is divided evenly into five subsets. Three out of the five subsets are used in the training while a fourth subset is used as a validation set. The fifth set is used to test the performance of the trained \ac{BDT}. A second \ac{BDT} is trained using a different combination of subsets to form training, validation, and test sets. This process is repeated five times until a unique test set no longer exists, which is illustrated in Figure~\ref{fig:5fold}. This technique ensures that the test set is always statistically independent of the process of parameters tuning, which serves as the basis for the bias-free evaluation after training: when evaluating each event using the trained model, it is always possible to pick one of the five \acp{BDT} where this particular event was not included in the training or validation.
+
+\begin{figure}[tbh!]
+ \begin{center}
+   \caption{Illustration of a 5-fold cross validation.}
+ \begin{tabular}{c}
+  \includegraphics[width=0.8\textwidth]{figures/Part3/BDT/kfold}
+ \end{tabular}
+ \label{fig:5fold}
+ \end{center}
+\end{figure}
+
+The same set of hyper parameters are used for all \acp{BDT}, which are optimised using a randomised grid search algorithm. The number of estimators is set to 1000 with a max depth of 5. Standard loss function implemented in \cite{Chen:2016:XST:2939672.2939785} is uses as the evaluation metric. The performance of the \ac{BDT} is visualised using a metric known as ``\ac{ROC}'', which is shown in Figure \ref{fig:5fold}. In general, the \acp{BDT} trained in  \ac{SR}2 (i.e. $\textsf{m}_{\textsf{e}\upmu}~>$ 150 GeV) are much more performant due to the high $\pt$ objects in the final states.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -34,11 +50,9 @@ All background \ac{MC} samples listed in Table~\ref{tab:MCsample} are used in th
     \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/5foldST}\\
  \end{tabular}
  \caption{ROC curve with 5-fold cross validation. From left to right: BDT targeting TT (SR1), BDT targeting ST (SR2).}
- \label{fig:5fold}
+ \label{fig:ROC}
  \end{center}
 \end{figure}
-
-The MC dataset is divided into 5 subsets evenly. A 5-fold cross-validation scheme is deployed: the training set consists of 3 out of the 5 subsets, while validation/testing set each consists of 1 subset. The number of estimators is set to 1000, max depth 5, and sub-sample 0.8 with the evaluation metric set to "mlogloss".  The results of the cross-validation study are shown in Figure \ref{fig:5fold}. The trained BDT model targeting TT(ST) signal is used to evaluate each event in SR1(SR2): a BDT weight is assigned to each event, giving the likelihood that it originated from TT(ST) signal. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
