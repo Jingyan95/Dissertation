@@ -41,7 +41,7 @@ A technique know as the ``$k$-fold cross validation'' is used to minimise the lo
  \end{center}
 \end{figure}
 
-The same set of hyper parameters are used for all \acp{BDT}, which are optimised using a randomised grid search algorithm. The number of estimators is set to 1000 with a max depth of 5. Standard loss function implemented in \cite{Chen:2016:XST:2939672.2939785} is uses as the evaluation metric. The performance of the \ac{BDT} is visualised using a metric known as ``\ac{ROC}'', which is shown in Figure \ref{fig:5fold}. In general, the \acp{BDT} trained in  \ac{SR}2 (i.e. $\textsf{m}_{\textsf{e}\upmu}~>$ 150 GeV) are much more performant due to the high $\pt$ objects in the final states.
+The same set of hyper parameters are used for all \acp{BDT}, which are optimised using a randomised grid search algorithm. The number of estimators is set to 1000 with a max depth of 5. Standard loss function implemented in \cite{Chen:2016:XST:2939672.2939785} is uses as the evaluation metric. The performance of the \ac{BDT} is visualised using a metric known as ``\ac{ROC}'', which is shown in Figure \ref{fig:ROC}. In general, the \acp{BDT} trained in  \ac{SR}2 (i.e. $\textsf{m}_{\textsf{e}\upmu}~>$ 150 GeV) are much more performant due to the high $\pt$ objects in the final states.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -59,42 +59,77 @@ The same set of hyper parameters are used for all \acp{BDT}, which are optimised
 \section{BDT Features}
 \label{sec:Input}
 
-The observables used in training are referred to as "features" in this analysis. The following features are used for both ST and TT classifier:
+The discriminating variables used as input in training are referred to as "features" in this analysis. A total of 14 features are used for \ac{BDT} trained in \ac{SR}1 and \ac{SR}2. The names and descriptions of these 14 features are summarized in Table~\ref{tab:CommonFeatures}. Many of these features are derived from reconstructed heavy objects which are described in \autoref{sec:Kin}.
 
-\begin{itemize}
-\item \textbf{MVA\_M$_{e\mu}$: invariant mass of the Opposite-Sign $e\mu$ pair}
-\item \textbf{MVA\_LFVePt: $p_T$ of the flavor-violating electron}
-\item \textbf{MVA\_LFVmuPt: $p_T$ of the flavor-violating muon}
-\item \textbf{MVA\_LFVTopmass: invariant mass of the flavor-violating top-quark candidate}
-\item \textbf{MVA\_Zmass: invariant mass of Z boson candidate}
-\item \textbf{MVA\_Jet2Btag: b-tagging score of the jet with the second highest b-tagging score}
-\item \textbf{MVA\_Mbl2: invariant mass of the second b-jet+lepton system}
-\item \textbf{MVA\_njet: number of jets}
-\item \textbf{MVA\_nbjet: number of b-jets}
-\item \textbf{MVA\_tM: transverse mass of the W boson candidate (from standard model top-quark)}
-\item \textbf{MVA\_llDr: $\Delta R$ between flavor-violating electron and muon}
-\item \textbf{MVA\_SSee\_Zmass: invariant mass of a Same-Sign di-electron pair}
-\item \textbf{MVA\_Topmass: invariant mass of the standard model top-quark candidate}
-\item \textbf{MVA\_Met: missing transverse energy}
-\end{itemize}
 
-The following features are only used for TT classifier:
+\begin{table}[th]
+\sffamily
+\centering
+\caption{Features shared by \ac{BDT}s trained in both \ac{SR}1 and \ac{SR}2.}
+ \resizebox{\linewidth}{!}{%
+\begin{tabular}{lc}
+\toprule
+Name & Description \\
+\midrule
+MVA\_Memu &  invariant mass of the LFV-e$\upmu$ pair\\
+MVA\_LFVePt & $\pt$ of the LFV electron \\
+MVA\_LFVmuPt & $\pt$ of the LFV muon \\
+MVA\_LFVTopmass & invariant mass of the LFV top quark candidate \\
+MVA\_Zmass & invariant mass of Z boson candidate \\
+MVA\_Jet2Btag & b-tagging score of the jet with the second highest b-tagging score \\
+MVA\_Mbl2 & invariant mass of the second $\mbl$ system \\
+MVA\_njet & number of jets \\
+MVA\_nbjet & number of b-tagged jets \\
+MVA\_tM & transverse mass of the W boson candidate (from the \ac{SM} top quark) \\
+MVA\_llDr & $\mathrm{\Delta}R$ between LFV electron and LFV muon \\
+MVA\_SSee\_Zmass & invariant mass of a Same-Sign di-electron pair \\
+MVA\_Topmass & invariant mass of the \ac{SM} top quark candidate \\
+MVA\_Met & missing transverse momentum (\ac{MET}) \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:CommonFeatures}
+\end{table}
 
-\begin{itemize}
-\item \textbf{MVA\_Ht: scalar sum of the $p_T$ of all objects}
-\item \textbf{MVA\_Mbl1: invariant mass of the second bjet+lepton system}
-\item \textbf{MVA\_JeDr: $\Delta R$ between flavor-violating electron and a light jet (non-b-jet)}
-\item \textbf{MVA\_JmuDr: $\Delta R$ between flavor-violating muon and a light jet (non-b-jet)}
-\end{itemize}
+Four additional features are added to the \ac{BDT} trained in \ac{SR}1. The ``MVA\_JeDr'' and ``MVA\_JeDr'' variables are defined by using the jet that forms the LFV top quark candidate and calculate the opening angle between this jet and the LFV leptons. It is expected that this angle is smaller in the LFV decay mode than LFV production mode. Two additional features are added to the \ac{BDT} trained in SR2. Description on how the standalone lepton is determined can be found in \autoref{sec:Kin}. 
 
-The following features are used for ST classifier:
+\begin{table}[th]
+\sffamily
+\centering
+\caption{Features only used by \ac{BDT} trained in \ac{SR}1}
+ \resizebox{0.8\linewidth}{!}{%
+\begin{tabular}{lc}
+\toprule
+Name & Description \\
+\midrule
+MVA\_Ht & scalar sum of the $\pt$ of all jets and leptons \\
+MVA\_Mbl1 & invariant mass of the second $\mbl$ system \\
+MVA\_JeDr & $\mathrm{\Delta}R$ between LFV electron and a light jet (non b jet) \\
+MVA\_JmuDr & $\mathrm{\Delta}R$ between LFV muon and a light jet (non b jet) \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:SR1Features}
+\end{table}
 
-\begin{itemize}
-\item \textbf{MVA\_BaPt: $p_T$ of the standard model lepton}
-\item \textbf{MVA\_JetHt: scalar sum of the $p_T$ of jets}
-\end{itemize}
+\begin{table}[th]
+\sffamily
+\centering
+\caption{Features only used by \ac{BDT} trained in \ac{SR}2}
+ \resizebox{0.52\linewidth}{!}{%
+\begin{tabular}{lc}
+\toprule
+Name & Description \\
+\midrule
+MVA\_BaPt & $\pt$ of the standalone lepton \\
+MVA\_JetHt & scalar sum of the $\pt$ of all jets \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:SR2Features}
+\end{table}
 
-Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{fig:Features5}.
+Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{fig:Features5}. Distributions of the full list of features can be found in \autoref{chap:SRMC}. The elative importance of these feature is extracted using the "gain" method and is shown in Figure \ref{fig:Ranking}. The correlation between different features are shown in Figure~\ref{fig:Corr1}-\ref{fig:Corr2}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -146,8 +181,6 @@ Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{
  \end{center}
 \end{figure}
 
-To determine the relative importance of these features, feature importance is extracted using the "gain" method and is shown in Figure \ref{fig:Ranking}.
-
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
@@ -166,7 +199,7 @@ To determine the relative importance of these features, feature importance is ex
   \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/corr_signal_SR1}\\
  \end{tabular}
  \caption{Correlation matrices (SR1), from left to right: background correlation, signal correlation.}
- \label{fig:Ranking}
+ \label{fig:Corr1}
  \end{center}
 \end{figure}
 
@@ -177,7 +210,7 @@ To determine the relative importance of these features, feature importance is ex
   \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/corr_signal_SR2}\\
  \end{tabular}
  \caption{Correlation matrices (SR2), from left to right: background correlation, signal correlation.}
- \label{fig:Ranking}
+ \label{fig:Corr2}
  \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,7 +219,7 @@ To determine the relative importance of these features, feature importance is ex
 \section{BDT Output}
 \label{sec:Output}
 
-The output of the BDTs are shown in Figure \ref{fig:bdt_output}. Note: all but the nonprompt backgrounds are estimated with MC simulation. The nonprompt background backgrounds are estimated with the matrix method.
+The output of the \acp{BDT} are shown in Figure \ref{fig:bdt_output}. All but the nonprompt backgrounds are estimated with MC simulation. The nonprompt background backgrounds are estimated with the matrix method.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -194,7 +227,7 @@ The output of the BDTs are shown in Figure \ref{fig:bdt_output}. Note: all but t
   \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/BDT_TT}&
   \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/BDT_ST}\\
  \end{tabular}
- \caption{Distribution of BDT output, from left to right TT enriched SR (SR1), ST enriched SR (SR2)}
+ \caption{Distributions of the \ac{BDT} discriminator targeting the \ac{CLFV} top quark decay (left) and production (right) signal. Contributions from the two signal modes (production and decay) are combined within each \ac{SR} and are shown as the solid red line. The pre-fit signal strength ($\mu_{\emut{u}}^{\textsf{vector}}$ = 1), corresponding to $\textsf{C}_{\emut{u}}^{\textsf{vector}}/\Lam^2~=~1~\TeV^{\textsf{-2}}$, is used to normalise the signal cross sections. The hatched bands indicate statistical and systematic uncertainties for the background predictions.}
  \label{fig:bdt_output}
  \end{center}
 \end{figure}

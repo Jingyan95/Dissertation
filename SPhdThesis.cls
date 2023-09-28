@@ -9,6 +9,7 @@
 \ProvidesClass{SPhdThesis}[2013/06/11 v1.0 SPhdThesis class]
 
 \RequirePackage{xkeyval}
+\RequirePackage{fontawesome}%Icon for copy right
 
 % -----------------------------------------------------------------------------
 % Define option for formatting for [screen] and print.
@@ -586,7 +587,7 @@
 	\begin{center}
 	\vspace*{7.7cm}
 	\large\bfseries
-\copyright~2023 Jingyan Li\\
+\faCopyright~2023 Jingyan Li\\
 ALL RIGHTS RESERVED
 	\end{center}
 %	\vspace*{1.5cm}
