@@ -4,8 +4,8 @@
 A \ac{MVA} is performed in \ac{SR} to further separate the LFV signals from the backgrounds, and enhance the sensitivity of this analysis. More specifically, a dozen of discriminating variables, referred to as ``features'', are selected and combined by a gradient-\ac{BDT}, which is implemented using the \textsc{XGBoost} package \cite{Chen:2016:XST:2939672.2939785}. There are several reasons why \ac{BDT} is chosen: (i) the goal of the \ac{MVA} is to achieve maximum separation between signals and backgrounds using a small number of already well-separated kinematic variables, instead of exploring some complicated structures hidden in event topology, (ii) under such a goal, the potential performance gain from a more sophisticated algorithm like a \ac{NN} is limited, (iii) a \ac{BDT}-based algorithm is straightforward to implement and consumes only a moderate amount of computational resources, and (iv) the interpretability of a \ac{BDT}-based algorithm is excellent. 
 
 The top production and decay signals are longer distinguished by the \ac{BDT}. They are combined into a single signal class, just like all backgrounds are combined into a single background class. The training of the \ac{BDT} depends entirely on \ac{MC} samples that are statistically orthogonal to the samples used in the actual background estimation. More details on the configurations of the \ac{BDT} are described in \autoref{sec:Config}. The input features are described in \autoref{sec:Input}. The output of the \ac{BDT} is presented in \autoref{sec:Output}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{BDT Configuration}
 \label{sec:Config}
@@ -53,8 +53,8 @@ The same set of hyper parameters are used for all \acp{BDT}, which are optimised
  \label{fig:ROC}
  \end{center}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{BDT Features}
 \label{sec:Input}
@@ -213,13 +213,13 @@ Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{
  \label{fig:Corr2}
  \end{center}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{BDT Output}
 \label{sec:Output}
 
-The output of the \acp{BDT} are shown in Figure \ref{fig:bdt_output}. All but the nonprompt backgrounds are estimated with MC simulation. The nonprompt background backgrounds are estimated with the matrix method.
+The output of the \acp{BDT} in \acp{SR} are shown in Figure \ref{fig:bdt_output}. The \emph{nonprompt} background is estimated with the matrix method. Other backgrounds are estimated with \ac{MC} simulation.
 
 \begin{figure}[tbh!]
  \begin{center}
