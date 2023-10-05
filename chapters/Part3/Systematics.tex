@@ -8,31 +8,23 @@ Different sources of systematic uncertainty contribute to the estimation of back
 \section{Theoretical Uncertainties}
 \label{sec:ThUnc}
 
-Variations on theoretical cross sections for \emph{prompt backgrounds} are introduced to cover the uncertainties in perturbative \ac{QCD} calculations.  A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to tZq process, which is a conservative estimate taken from the MC generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated between the years. 
+Variations on theoretical cross sections for \emph{prompt} backgrounds are introduced to cover the uncertainties in perturbative \ac{QCD} calculations.  A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to tZq process, which is a conservative estimate taken from the MC generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated between the years. 
 
-Uncertainties associated to the \ac{PDF} is evaluated by using 100 replicas of the NNPDF sets~\cite{NNPDF:2014otw,NNPDF:2017mvq}. The procedure described in~\cite{CMS:2012nsv} is followed. Firstly, the sum of the generator weights of each replica is normalized to the nominal sum of the generator weights. This is done before any event selection to ensure no addtional normalization effect is introduced. After previous step, the bin-by-bin variations of the BDT templates are obtained by calculating the bin-by-bin difference of the BDT templates when switching from nominal PDF to each PDF replica. Finally, PDF uncertainty for each bin is assigned by taking the root mean square value of the 100 variations of the corresponding bin. This uncertainty is treated as uncorrelated between different processes but correlated between the years.  We consider this uncertainty for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
+Uncertainties associated to the \ac{PDF} are evaluated by using 100 replicas of the NNPDF sets~\cite{NNPDF:2014otw,NNPDF:2017mvq}. The procedure described in~\cite{CMS:2012nsv} is followed. Firstly, the sum of the generator weights of each replica is normalized to the nominal sum of the generator weights. This is done before any event selection to ensure no addtional normalization effect is introduced. After previous step, the bin-by-bin variations of the \ac{BDT} templates are obtained by calculating the bin-by-bin difference of the \ac{BDT} templates when switching from nominal \ac{PDF} to each \ac{PDF} replica. Finally, \ac{PDF} uncertainty for each bin is assigned by taking the root mean square value of the 100 variations of the corresponding bin. This uncertainty is treated as uncorrelated between different processes but correlated between the years.  We consider this uncertainty for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 
-Uncertainties associated to the renormalization and factorization scales in the \ac{ME}: this uncertainty is evaluated by considering an envelope of 6 variation ($\mu_R$ 2, $\mu_R$ 0.5, $\mu_F$ 2, $\mu_F$ 0.5, $\mu_R$ and $\mu_F$ 2, $\mu_R$ and $\mu_F$ 0.5). Similar to PDF uncertainty, normalization effects of each variation is removed. We consider this uncertainty for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
+\ac{QCD} scale uncertainties are evaluated by varying the renormalization scale $\mu_\textsf{R}$ and factorization scales $\mu_\textsf{F}$ in \ac{ME}.  A total of six variations are considered: varying $\mu_\textsf{R}$ by a factor of 2 and 0.5, varying $\mu_\textsf{F}$ by a factor of 2 and 0.5, and varying $\mu_\textsf{R}$ and $\mu_\textsf{F}$ simultaneously by a factor of 2 and 0.5. Similar to PDF uncertainty, normalization effects of each variation is removed. An envelope that covers all six variations is used to represent the scale uncertainty. This uncertainty is treated as uncorrelated between different processes but correlated between the years. We consider this uncertainty for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 
-ISR and FSR: initial state radiation and final state radiation uncertainty is evaluated by using the default set of variation (2 and 0.5). This uncertainty is treated as correlated and only shape component is considered. We consider this uncertainty for all the signals.
+Uncertainties associated to the \ac{PS} are evaluated by varying the renormalization scale $\mu_\textsf{R}$ in the initial and final state radiations, which effectively changes the strong coupling constant in the \ac{PS}. Similarly, $\mu_\textsf{R}$ is varied by a factor of 2 and 0.5, and normalization effects of each variation is removed. This uncertainty is treated as uncorrelated between different processes but correlated between the years.  We consider this uncertainty for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Nonprompt Uncertainties}
 \label{sec:NonUnc}
 
-We consider the following sources of systematic uncertainties (shape) associated with the \emph{fake} efficiency.
-
-\begin{itemize}
-\item Prompt background correction
-\item Sample dependence 
-\item Statistical uncertainty 
-\end{itemize}
-
-An important systematic uncertainty comes from the estimate of prompt contamination in MR. As is discussed in \autoref{chap:Nonprompt}, prompt backgrounds (estimated with MC) are subtracted from total event yields measured in MR (data). A flat 20 $\%$ uncertainty ($\alpha$ in Equation \ref{eq:f_eq}) is assigned to the event yields of the prompt background and the resulting variation of \emph{f} is taken as the uncertainty, which is estimated to be between 5 $\%$ and 15 $\%$.
+There are several sources of uncertainties associated to the determination of the \emph{nonprompt} efficiency $f$. One of these uncertainties comes from the estimate of \emph{prompt} contamination in \ac{MR}. As is discussed in \autoref{chap:Nonprompt}, \emph{prompt} backgrounds (estimated with \ac{MC}) are subtracted from total event yields measured in data. A flat 20 $\%$ uncertainty ($\alpha$ in Equation \ref{eq:f_eq}) is assigned to the event yields of the \emph{prompt} background and the resulting variation of $f$ is taken as the uncertainty.
 
 \begin{equation}
-f=\frac{n_{data}^{T}-(1+\alpha)n_{Prompt~MC}^{T}}{n_{data}^{T+\overline{T}}-(1+\alpha)n_{Prompt~MC}^{T+\overline{T}}}.
+f=\frac{n_{data}^{tag+tight}-(1+\alpha)n_{MC(prompt)}^{tag+tight}}{n_{data}^{tag+loose}-(1+\alpha)n_{MC(prompt)}^{tag+loose}}.
 \label{eq:f_eq}
 \end{equation}  
 
@@ -41,59 +33,49 @@ f=\frac{n_{data}^{T}-(1+\alpha)n_{Prompt~MC}^{T}}{n_{data}^{T+\overline{T}}-(1+\
  \begin{tabular}{c}
  \includegraphics[width=0.99\textwidth]{figures/Part3/Systematics/MR1}
  \end{tabular}
- \caption{Comparison of different components of the uncertainties associated to the \emph{fake} efficiency measured in 2017 dataset (njet=0 bin, $|\eta|<$0.8 bin). From left to right: electron \emph{f} uncertainty, muon \emph{f} uncertainty. Note: black uncertainty bars represent statistical uncertainties.}
+ \caption{Comparison of different components of the uncertainties associated to the \emph{nonprompt} efficiency measured in 2017 dataset (njet=0 bin, $|\eta|<$0.8 bin). From left to right: electron $f$ uncertainty, muon $f$ uncertainty.}
  \label{fig:f_comp1}
  \end{center}
 \end{figure}
 
-Sample dependence is one of the primary sources of systematic uncertainty and it is concerned with the possibility that the \emph{fake} efficiency \emph{f} measured in MR may not reflect characteristics of the non-prompt leptons in SR due to different compositions of backgrounds. This type of uncertainty is estimated by introducing a variation factor $\beta$ between the proportions of Same-Flavor and Opposite-Flavor pairs in MR. For example, electron \emph{f} can be calculated as (prompt background correction is ignored from the equation): 
+Another source of uncertainty associated to the determination of \emph{nonprompt} efficiency \emph{f} is concerned with the observation that f exhibits a flavor-dependency, as is shown in Figure~\ref{fig:fake_eff}. This can happen when different physics processes enter \acp{MR} with different lepton flavor composites, which lead to differences in \emph{nonprompt} lepton behaviors. This type of uncertainty, referred to as ``sample dependence'', is estimated by introducing a variation factor $\beta$ between the proportions of same-flavor and different-flavor pairs in \ac{MR}. For example, electron \emph{f} can be calculated as (prompt background correction is ignored from the equation),
 
 \begin{equation}
-f_{e}=\frac{(1+\beta)n_{F,e+e}^{T}+(1-\beta)n_{F,e+\mu}^{T}}{(1+\beta)n_{F,e+e}^{T+\overline{T}}+(1-\beta)n_{F,e+\mu}^{T+\overline{T}}}.
+f_{\textsf{e}}=\frac{(1+\beta)n_{\textsf{e+e}}^{tag+tight}+(1-\beta)n_{\textsf{e+}\upmu}^{tag+tight}}{(1+\beta)n_{\textsf{e+e}}^{tag+loose}+(1-\beta)n_{\textsf{e+}\upmu}^{tag+loose}}.
  \label{eq:samp_dep}
 \end{equation}
 
-A 20$\%$ variation ($\beta$) is assigned the resulting variation of \emph{f} is taken as the uncertainty, which is estimated to be between 3 $\%$ and 15 $\%$. 
+A 20$\%$ variation ($\beta$) is assigned the resulting variation of $f$ is taken as the uncertainty.
  
-A comparison of different sources of systematic uncertainties (using 2017 datasets) are shown in Figure \ref{fig:f_comp1} and Figure \ref{fig:f_comp2}. A complete summary of uncertainties associated to \emph{real} and \emph{fake} efficiency can be found in.
+Statistical uncertainty is also considered when determining $f$. A comparison of different sources of uncertainties are shown in Figure \ref{fig:f_comp1} and Figure \ref{fig:f_comp2}. All sources of uncertainties are added in quadrature to form the final uncertainty on $f$. 
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.99\textwidth]{figures/Part3/Systematics/MR2}
  \end{tabular}
- \caption{Comparison of different components of the uncertainties associated to the \emph{fake} efficiency measured in 2017 dataset (njet$>$0 bin, $|\eta|<$0.8 bin). From left to right: electron \emph{f} uncertainty, muon \emph{f} uncertainty. Note: black uncertainty bars represent statistical uncertainties.}
+ \caption{Comparison of different components of the uncertainties associated to the \emph{nonprompt} efficiency measured in 2017 dataset (njet$>$0 bin, $|\eta|<$0.8 bin). From left to right: electron $f$ uncertainty, muon $f$ uncertainty.}
  \label{fig:f_comp2}
  \end{center}
 \end{figure}
 
-In addition to statistical uncertainties, MC uncertainties are propagated to the \emph{real} efficiency as sources of systematic uncertainties:
+Since the \emph{prompt} efficiency $r$ is measured in simulated $\ttbar$ events, \ac{MC} uncertainties described in \autoref{sec:OthUnc} are propagated to $r$ as the uncertainties. Additionally, statistical uncertainty is added in quadrature to the MC uncertainties to form the final uncertainty on $r$.
 
-\begin{itemize}
-\item Statistical uncertainty 
-\item MC uncertainty 
-\begin{itemize}
-\item Electron reconstruction 
-\item b-tagging 
-\item JES/JER
-\item Pile-up rewighting 
-\item ECAL prefiring 
-\end{itemize}
-\end{itemize}
-
-The uncertainties associated to the \emph{real} efficiency are relatively small when compared to the \emph{fake} efficiency uncertainties. A comparison of different sources of \emph{real} efficiency uncertainties are shown in Figure \ref{fig:r_comp}.
+The uncertainties associated to the \emph{prompt} efficiency are relatively small when compared to the \emph{nonprompt} efficiency uncertainties. A comparison of different sources of \emph{prompt} efficiency uncertainties are shown in Figure \ref{fig:r_comp}.
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.99\textwidth]{figures/Part3/Systematics/MR}
  \end{tabular}
- \caption{Comparison of different components of the uncertainties associated to the \emph{real} efficiency measured in 2017 dataset (njet$=$0 bin, $|\eta|<$0.8 bin). From left to right: electron \emph{r} uncertainty, muon \emph{r} uncertainty. Note: black uncertainty bars represent statistical uncertainties.}
+ \caption{Comparison of different components of the uncertainties associated to the \emph{prompt} efficiency measured in 2017 dataset (njet$=$0 bin, $|\eta|<$0.8 bin). From left to right: electron $r$ uncertainty, muon $r$ uncertainty.}
  \label{fig:r_comp}
  \end{center}
 \end{figure}
 
-In addition to the four components (i.e. $r_e$, $r_{\mu}$, $f_e$, $f_{\mu}$) of the shape uncertainties associated to the measurement of $r$ and $f$, a fifth component is considered that accounts for the potential bias introduced when implementing 3D matrix method: Four out of the eight regions that appear on the lefthand side of the Equation \ref{eq:matrix_method3} (i.e. $N^{\overline{T}TT}$, $N^{\overline{T}T\overline{T}}$, $N^{\overline{T}\overline{T}T}$, $N^{\overline{T}\overline{T}\overline{T}}$) are selected by requiring the leading lepton to fail the \emph{tight} criteria (See Table \ref{tab:looseandtight}). Effectively this means that the isolation requirement is reversed for leading lepton that enter these four regions. Selecting the leading lepton by a loose/reversed isolation requirement is not ideal since the leading lepton is required to match with iso-trigger. To account for this bias, a 50 $\%$ uncertainty is assigned to the $f_1$ (\emph{fake} efficiency of the leading lepton) for events that enter these four regions. The variation of the non-prompt estimate due to trigger matching is largely covered by this uncertainty (See Figure \ref{fig:MM_trigger}).
+Uncertainties associated to $r$ and $f$ are determined separately for electron and muon. Therefore, there are four independent uncertainties: $r_{\textsf{e}}$, $r_{\upmu}$, $f_{\textsf{e}}$ and $f_{\upmu}$. 
+
+A fifth uncertainty is considered that accounts for the potential bias caused by the way the generalized matrix method is implemented. Four out of the eight \acp{AR} that appear on the lefthand side of the Equation \ref{eq:matrix_method3} (i.e. $N^{\overline{T}TT}$, $N^{\overline{T}T\overline{T}}$, $N^{\overline{T}\overline{T}T}$, $N^{\overline{T}\overline{T}\overline{T}}$) are selected by requiring the leading lepton in $\pt$ to fail the \emph{tight} criteria described in Table~\ref{tab:looseandtight}. Effectively this means that the isolation requirement is reversed for leading lepton that enter these four \acp{AR}. Selecting the leading lepton by a loose requirement is not ideal since the leading lepton is required to match with iso-triggers. To account for this bias, a 50 $\%$ uncertainty is assigned to the $f_1$ (\emph{nonprompt} efficiency associated to the leading lepton) for events that enter these four \acp{AR}. The variation of the \emph{nonprompt} estimate due to trigger matching is largely covered by this uncertainty, as is shown in Figure~\ref{fig:MM_trigger}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -101,31 +83,24 @@ In addition to the four components (i.e. $r_e$, $r_{\mu}$, $f_e$, $f_{\mu}$) of 
  \includegraphics[width=0.47\textwidth]{figures/Part3/Systematics/BDT_ST_MM}&
  \includegraphics[width=0.47\textwidth]{figures/Part3/Systematics/BDT_TT_MM} \\
  \end{tabular}
- \caption{The impact of matching leptons to trigger objects on non-prompt estimate. From left to right: non-prompt estimate in ST enriched SR, non-prompt estimate in TT enriched SR. The nominal configuration of the matrix method is to match the leading lepton with trigger objects. Matching the 2nd-leading with the trigger objects is taken as an alternative to evaluate the robustness of the non-prompt estimate. The uncertainty band only covers the variation of the non-prompt estimate as a result of varying leading lepton $f$ by 50 $\%$. Uncertainty bars only include statistical uncertainties.}
+ \caption{The impact of matching leptons to trigger objects on \emph{nonprompt} estimate. From left to right: \emph{nonprompt} estimate in top production enriched \ac{SR}, \emph{nonprompt} estimate in top decay enriched \ac{SR}. The nominal configuration of the matrix method is to match the leading lepton with trigger objects. Matching the sub-leading with the trigger objects is taken as an alternative to evaluate the robustness of the \emph{nonprompt} estimate. The uncertainty band only covers the variation of the \emph{nonprompt} estimate as a result of varying leading lepton $f$ by 50 $\%$. Uncertainty bars only include statistical uncertainties.}
  \label{fig:MM_trigger}
  \end{center}
 \end{figure}
 
-The five components of the uncertainties discussed in this section are propagated through the matrix inversion. The resulting variations of the non-prompt estimates are taken as the shape uncertainties assigned to non-prompt backgrounds. These uncertainties are treated as correlated between the years. In addition to these shape uncertainties, an overall normalization uncertainty of 10$\%$ is assigned in order to cover any other potential bias.
+The five components of the uncertainties discussed in this section are propagated through the matrix inversion. The resulting variations of the \emph{nonprompt} estimates are taken as the uncertainties, which contain both normalization and differential effects to the BDT templates. These uncertainties are treated uncorrelated between different components but correlated between the years. In addition to these five uncertainties, an overall normalization uncertainty of 10$\%$ is assigned to cover any other potential variations of the \emph{nonprompt} backgrounds.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Diboson Uncertainties}
 \label{sec:DiUnc}
 
-Mismodeling of the jet multiplicity is observed in WZ control region (See autoref{sec:CRWZ}). This is largely due to the fact that jets generated from diboson samples are coming from radiation (due to our trilepton selection). Therefore, the accuracy of the jet multiplicity distribution is suboptimal. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson control region:
+Mismodeling of the jet multiplicity is observed in WZ control region, as is shown in Figure~\ref{fig:WZ}. This is largely due to the fact WZ process is modeled at \ac{LO} with one extra parton in the \ac{ME}. Any other extra jets are modeled by the parton shower, which is suboptimal when compared to the modeling from \ac{ME}. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson \ac{VR} that has the same OnZ requirement as the WZ \ac{VR}, no jet multiplicity requirement, a MET $>$ 85 GeV requirement, and a requirement of no b-tagged jets with $\pt$ $>$ 20 GeV. Unlike for the WZ \ac{VR}, events with different lepton flavor compositions are combined.
 
-\begin{itemize}
-\item Exactly three leptons (any flavor composite),
-\item OnZ,
-\item MET$>$85GeV,
-\item Veto events with at least one b-tag jet ($p_T>$20GeV).
-\end{itemize}
-
-The jet multiplicity distributions are shown in Figure \ref{fig:VV_CR}. For each year, a scale factor parameterized as bins of jet multiplicity is derived:
+The jet multiplicity distributions in diboson \ac{VR} are shown in Figure~\ref{fig:VV_CR}. For each year, a scale factor parameterized as bins of jet multiplicity is derived,
 
 \begin{equation}
-\epsilon=\frac{N_{data}-N_{VVV}-N_{TX}-N_{TTbar}-N_{others}}{N_{VV}}.
+\epsilon=\frac{N_{data}-N_{\textsf{VVV}}-N_{\textsf{t}\overline{\textsf{t}}+\textsf{X(X)}}-N_{\ttbar}-N_{others}}{N_{\textsf{VV}}}.
 \end{equation}
 
 \begin{figure}[tbh!]
@@ -135,12 +110,12 @@ The jet multiplicity distributions are shown in Figure \ref{fig:VV_CR}. For each
     \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2017}&
   \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2018}\\
  \end{tabular}
- \caption{Diboson control region, from left to right: 2016, 2017 and 2018 datasets.}
+ \caption{The diboson \acp{VR}, from left to right: 2016, 2017 and 2018 datasets.}
  \label{fig:VV_CR}
  \end{center}
 \end{figure}
 
-The scale factor $\epsilon$ is used to estimate the uncertainty, denoted by $\Delta$:
+The scale factor $\epsilon$ is used to estimate the uncertainty, denoted by $\Delta$,
 
 \begin{equation}
 \Delta=|1-\epsilon|
@@ -153,12 +128,12 @@ The scale factor $\epsilon$ is used to estimate the uncertainty, denoted by $\De
     \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2017_VV_Sys_1D}&
   \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2018_VV_Sys_1D}\\
  \end{tabular}
- \caption{Scale factors derived from diboson control region, from left to right: 2016, 2017 and 2018 datasets.}
+ \caption{Scale factors derived from the diboson \acp{VR}, from left to right: 2016, 2017 and 2018 datasets.}
  \label{fig:SF_VV}
  \end{center}
 \end{figure}
 
-This uncertainty is about 10-20$\%$, as is shown in Figure \ref{fig:SF_VV}.
+This uncertainty shifts the predictions of WZ and ZZ processes by up to 20$\%$, as is shown in Figure \ref{fig:SF_VV}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
