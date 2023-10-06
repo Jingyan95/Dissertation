@@ -1,14 +1,15 @@
 \chapter{Statistical Analysis}
 \label{chap:Results}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Profile Likelihood Fit}
 \label{sec:PLF}
 
-A binned likelihood function $\mathcal{L}(\mu, \theta)$ is constructed to perform the statistical analysis on the BDT discriminator distributions. The parameter of interest (POI), denoted by $\mu$, is the signal strength that governs the cross section of the ST and TT signals simultaneously. All the uncertainties are incorporated into the likelihood function as nuisance parameters, denoted by $\theta$. The uncertainties that affect the shape of the BDT discriminator distributions are considered with Gaussian distributions while other uncertainties that only affect the normalizations are considered with log-normal distributions. 
+A binned likelihood function $\mathcal{L}(\mu, \theta)$ is constructed to perform the statistical analysis on the BDT discriminator distributions. The parameter of interest (POI), denoted by $\mu$, is the signal strength that governs the cross section of the top decay and production signals simultaneously. All the uncertainties are incorporated into the likelihood function as nuisance parameters, denoted by $\theta$. The uncertainties that affect the shape of the BDT discriminator distributions are considered with Gaussian distributions while other uncertainties that only affect the normalizations are considered with log-normal distributions. 
 
-To control the systematic uncertainties, a profile likelihood fit is performed simultaneously in six regions (three data-taking years and two signal regions) by maximizing the likelihood function $\mathcal{L}(\hat{\mu}, \hat{\theta})$. Both $\hat{\mu}$ and $\hat{\theta}$ are the maximum likelihood estimators for the signal strength and nuisance parameters, respectively. The scaling of the signal for the purpose of a better visualization is optimized based on ``VecU" signal, and it is kept the same for the other signals to compare their cross sections relative to each other. The post-fit distributions of the BDT discriminator are shown in Fig.~\ref{fig:bdt_postfit_VecU}-\ref{fig:bdt_postfit_ScalarC}. The most prominent uncertainties affecting the likelihood fit are the statistical uncertainties on MC samples.
+To control the systematic uncertainties, a profile likelihood fit is performed simultaneously in six regions (three data-taking years and two \acp{SR}) by maximizing the likelihood function $\mathcal{L}(\hat{\mu}, \hat{\theta})$. Both $\hat{\mu}$ and $\hat{\theta}$ are the maximum likelihood estimators for the signal strength and nuisance parameters, respectively. The post-fit distributions of the BDT discriminator are shown in Fig.~\ref{fig:bdt_postfit_VecU}. The most prominent uncertainties affecting the likelihood fit are the statistical uncertainties that arise from limited sample size.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -16,12 +17,13 @@ To control the systematic uncertainties, a profile likelihood fit is performed s
   \includegraphics[width=0.48\textwidth]{figures/Part3/Results/BDT_TT_VecU}&
   \includegraphics[width=0.48\textwidth]{figures/Part3/Results/BDT_ST_VecU}\\
  \end{tabular}
- \caption{Distributions of the posterior BDT discriminator distributions for the TT-enriched SR (left) and the ST-enriched SR (right). Signals are generated with vector-like operator involving an Up quark. The three data-taking years are aggregated for better visualization.}
+ \caption{Distributions of the post-fit BDT discriminator targeting the CLFV top quark decay (left) and production (right) signal. Contributions from the two signal modes (production and decay) are combined within each SR and are shown as the solid red line. The post-fit signal strength ($\mu_{\emut{u}}^{\textsf{vector}}=\hat{\mu}_{\emut{u}}^{\textsf{vector}}$) is used to normalise the signal cross sections. The hatched bands indicate post-fit uncertainties (statistical and systematic) for the SM background predictions.}
  \label{fig:bdt_postfit_VecU}
  \end{center}
 \end{figure} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Upper Limits}
 \label{sec:Limits}
 
@@ -30,6 +32,7 @@ The results for the one-dimensional limits are summarized in Table~\ref{tab:limi
 \begin{table}[th]
 \sffamily
 \centering
+\caption{Upper limits at 95\% CL on Wilson coefficients and the branching fractions. The expected and observed upper limits are shown in regular and bold fonts, respectively. The intervals that contain 68\% of the distribution of the expected upper limits are shown in parentheses.}
 \resizebox{0.95\linewidth}{!}{%
 \begin{tabular}{cccccc}
 \toprule
@@ -46,7 +49,6 @@ coupling  & structure & exp (68\% range) & obs & exp (68\% range) & obs \\
  \bottomrule
 \end{tabular}
 }
-\caption{Upper limit on the LFV signal using the full Run 2 data set.}
 \label{tab:limit}
 \end{table}
 
@@ -56,7 +58,7 @@ coupling  & structure & exp (68\% range) & obs & exp (68\% range) & obs \\
   \includegraphics[width=0.48\textwidth]{figures/Part3/Results/Hist2D_WC}&
   \includegraphics[width=0.48\textwidth]{figures/Part3/Results/Hist2D_BR}\\
  \end{tabular}
- \caption{Two-dimensional upper limits on the Wilson coefficients (left) and the branching ratios (right).}
+ \caption{Two-dimensional 95$\%$ CL upper limits on the Wilson coefficients (left) and the branching fractions (right). The observed (expected) upper limits for tensor-, vector-, and scalar-like CLFV interactions are shown in red, blue, and black solid (dotted) lines, respectively. The shaded bands contain $68\%$ of the distribution of the expected upper limits.}
  \label{fig:2dlimit}
  \end{center}
 \end{figure}
