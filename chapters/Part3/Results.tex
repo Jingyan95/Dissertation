@@ -1,15 +1,18 @@
 \chapter{Statistical Analysis}
 \label{chap:Results}
 
+In absence of significant excess over the \ac{SM} prediction, the observed distributions of the \ac{BDT} discriminator are used to test various hypophyses, where coexistence of the \ac{CLFV} signals and backgrounds are assumed. A statistical method called ``profile likelihood'' is used to move the focus on the cross sections of the \ac{CLFV} signals while also keeping track of the systematic uncertainties. The profile likelihood fit performed on the distributions of the \ac{BDT} discriminator is discussed in \autoref{sec:PLF}. Upper limits on various \acp{WC} and branching fractions established by this analysis are presented in \autoref{sec:Limits}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Profile Likelihood Fit}
 \label{sec:PLF}
 
-A binned likelihood function $\mathcal{L}(\mu, \theta)$ is constructed to perform the statistical analysis on the BDT discriminator distributions. The parameter of interest (POI), denoted by $\mu$, is the signal strength that governs the cross section of the top decay and production signals simultaneously. All the uncertainties are incorporated into the likelihood function as nuisance parameters, denoted by $\theta$. The uncertainties that affect the shape of the BDT discriminator distributions are considered with Gaussian distributions while other uncertainties that only affect the normalizations are considered with log-normal distributions. 
+A binned likelihood function $\mathcal{L}(\mu, \theta)$ is constructed to perform the statistical analysis using the BDT discriminator distributions. The top quark production and decay signal modes are combined. The signal strength $\mu$, defined previously in Equation~\ref{eq:signal_strength}, governs the cross section of the two signal modes simultaneously. 
 
-To control the systematic uncertainties, a profile likelihood fit is performed simultaneously in six regions (three data-taking years and two \acp{SR}) by maximizing the likelihood function $\mathcal{L}(\hat{\mu}, \hat{\theta})$. Both $\hat{\mu}$ and $\hat{\theta}$ are the maximum likelihood estimators for the signal strength and nuisance parameters, respectively. The post-fit distributions of the BDT discriminator are shown in Fig.~\ref{fig:bdt_postfit_VecU}. The most prominent uncertainties affecting the likelihood fit are the statistical uncertainties that arise from limited sample size.
+All systematic uncertainties are incorporated into the likelihood function as nuisance parameters, denoted by $\theta$. The uncertainties that affect the shape of the BDT discriminator distributions utilize Gaussian distributions while other uncertainties that only affect the normalizations utilize log-normal distributions. The ``Barlow-Beeston lite'' method \cite{Barlow:1993dm} is used to incorporate the statistical uncertainties in the signal and background predictions. 
+
+A profile likelihood fit is performed simultaneously in six regions (three data-taking years and two \acp{SR}) by maximizing the likelihood function $\mathcal{L}(\mu, \hat{\theta}_{\mu})$, where $\hat{\theta}_{\mu}$ are the values of the nuisance parameters that maximize the likelihood for a specific signal strength. The post-fit distributions of the BDT discriminators are shown in Figure~\ref{fig:bdt_postfit_VecU}. The largest post-fit uncertainties are the statistical uncertainties from the limited number of simulated events.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -21,13 +24,31 @@ To control the systematic uncertainties, a profile likelihood fit is performed s
  \label{fig:bdt_postfit_VecU}
  \end{center}
 \end{figure} 
+
+The impacts of the nuisance parameters on the profile likelihood fit is quantified and a representative ranking of the impacts is shown in Figure~\ref{fig:Impact}. In general, the most prominent uncertainties affecting the likelihood fit are the statistical uncertainties that arise from limited sample size. A full collection of nuisance parameter impacts can be found in \autoref{chap:Impact}.
+
+\begin{figure}[tbh!] 
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/Part3/Results/Impact_VecU}
+ \caption{The nominal value of the observed signal strength $\hat{\mu}$ and its uncertainty is shown in the top right corner. Ranking of the nuisance parameters according to their observed impacts on $\hat{\mu}$ (represented with error bars) is shown in the right panel. Only the 10 nuisance parameters with the largest observed impacts are shown. The expected impacts (represented with red and blue rectangles) are derived using Asimov fits, where data is replaced by a background-only template (i.e. the nominal value of the expected $\hat{\mu}$ is 0). The impact of each nuisance parameter, $\Delta\hat{\mu}$, is calculated as the difference between the nominal $\hat{\mu}$ and the value of $\hat{\mu}$ when the corresponding nuisance parameter is fixed to $\hat{\theta}\pm\sigma$, where $\hat{\theta}$ ($\sigma$) is its post-fit value (uncertainty). The left panel shows the pulls (represented with black dots) and uncertainties (represented with error bars and grey rectangles) of the nuisance parameters in units of the pre-fit uncertainties. The pulls are calculated as the difference between the nominal and the post-fit values of the nuisance parameters. The ``SR2" quoted in the label corresponds to the top quark production enriched signal region.}
+ \label{fig:Impact}
+ \end{center}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Upper Limits}
 \label{sec:Limits}
 
-The results for the one-dimensional limits are summarized in Table~\ref{tab:limit}. Assuming a linear relationship between $\mathcal{B}(\tto{c})$ and $\mathcal{B}(\tto{c})$ in the case of nonvanishing signals, the two-dimensional limits can also be obtained through interpolation (see Fig.~\ref{fig:2dlimit}). This analysis constitutes the most stringent limits on these processes to date.
+The compatibility between the data and the combined signal plus background expectation under the hypothesized value of the signal strength $\mu$ is quantified by a test statistic that considers the profile likelihood ratio:
+
+\begin{equation}
+q(\mu)=-2\ln\frac{\mathcal{L}(\mu,\hat{\theta}_{\mu})}{\mathcal{L}(\hat{\mu},\hat{\theta})}.
+\end{equation}
+
+Using the asymptotic modified frequentist CL$_{s}$ method~\cite{Junk:1999kv,Read2002,Cowan:2010js} with the profile likelihood ratio as the test statistic, upper limits are placed on $\mu$ at 95\% confidence level (CL). The one-dimensional upper limits on a given Wilson coefficient, $\WC{}{a}/\Lam^2$, are obtained by taking the square root of the corresponding signal strength $\mu_a$ while setting other Wilson coefficients to zero. The branching fractions, $\mathcal{B} (\tto{q})$ with q=u or c, are obtained assuming a top quark mass (width) of 172.5 (1.33) GeV in Equation~\ref{eq:4} taken from~\cite{Kile:2008rp}.
+
+The resulting one-dimensional limits are summarized in Table~\ref{tab:limit}. Assuming a linear relationship between $\mathcal{B}(\tto{u})$ and $\mathcal{B}(\tto{c})$ in the case of nonvanishing signals, the two-dimensional limits can be obtained through interpolation and are shown in Figure~\ref{fig:2dlimit}. 
 
 \begin{table}[th]
 \sffamily
