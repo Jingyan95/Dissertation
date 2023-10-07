@@ -323,6 +323,12 @@
 \old@endpart}
 \makeatother
 
+\RequirePackage{titlesec}%Add text to part page
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\huge\bfseries\centering\color{red}}{\partname~\thepart}{0pt}{}
+\titlespacing*{\part}{0pt}{1.25in}{1in}
+
 \setcounter{tocdepth}{1}%Only show parts, chapters, and sections in TOC
 \renewcommand{\cftpartfont}{\color{red}\sffamily\bfseries}%chapter font in TOC
 \setlength{\cftbeforepartskip}{9pt}%part spacing
@@ -388,7 +394,6 @@
 
 % Set the format of the section and subsection titles.
 \RequirePackage{sectsty}
-\partfont{\sffamily\bfseries\color{red}}%set font color in part page
 \sectionfont{\SgIntSecTitleFormat}
 \subsectionfont{\SgIntSubsecTitleFormat}
 
@@ -451,6 +456,10 @@
         (Cited on pages #2.) 
     \fi
 }
+
+%capitalize chapter in autoref
+\AtBeginDocument{\def\chapterautorefname{Chapter}}%
+\AtBeginDocument{\def\sectionautorefname{Section}}%
 
 % Define the colors of the hyperlink.
 \ifthenelse{\equal{\SgIntMedia}{screen}}
