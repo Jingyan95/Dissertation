@@ -1,11 +1,11 @@
-\chapter{Previous Searches}
+\chapter{Overview of Past and Present Analyses}
 \label{chap:History}
 
-\ac{CLFV} search involving top quarks is an active area of research at the \ac{LHC} experiments. So far, no significant excess over the \ac{SM} predictions has been reported, and the observations from the \ac{ATLAS} and \ac{CMS} experiments are both interpreted using the framework of \ac{EFT}. Two existing \ac{ATLAS} analyses are described in \autoref{sec:CLFV_ATLAS} and one existing \ac{CMS} analysis is described in \autoref{sec:CLFV_CMS}.
+\ac{CLFV} search involving top quarks is an active area of research at the \ac{LHC} experiments. So far, no significant excess over the \ac{SM} predictions has been reported, and the observations from the \ac{ATLAS} and \ac{CMS} experiments are both interpreted using the framework of \ac{EFT}. Overviews of two past \ac{ATLAS} analyses and one past \ac{CMS} analysis are described in \autoref{sec:CLFV_ATLAS} and \autoref{sec:CLFV_CMS}, respectively. An overview of the present analysis is given in \autoref{sec:CLFV_This}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{ATLAS}
+\section{Past ATLAS Analyses}
 \label{sec:CLFV_ATLAS}
 
 The flavor-violating $\emut{q}$ interactions were first studied by the \ac{ATLAS} Collaboration~\cite{ATLAS-CONF-2018-044} using data collected during 2015-2017 with an integrated luminosity of 79.8 fb$^{-1}$. In addition to three leptons, this analysis targets final states with two or more jets. Only the top quark decay signal mode is considered. Lorentz structures of dimension-6 operators are not probed separately. Discriminating variables, such as the $\pt$ of the leptons, are combined into a \ac{BDT}, which is used to interpret the observation. A representative Feynman diagram targeted by this analysis and the distributions of the \ac{BDT} discriminator is shown in Figure~\ref{fig:ATLAS_results1}.
@@ -59,7 +59,7 @@ Due to limited statistics, event yields of the \acp{SR} are directly used to int
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{CMS}
+\section{Past CMS Analysis}
 \label{sec:CLFV_CMS}
 
 The \ac{CMS} Collaboration followed up with a search for $\emut{q}$ interactions using data corresponds to 138 fb$^{-1}$~\cite{CMS:2022ztx}. Unlike the previous \ac{ATLAS} analysis~\cite{ATLAS-CONF-2018-044}, this \ac{CMS} analysis targets final states with two leptons and a hadronically decaying top quark. Both top quark production and decay signals are considered in this analysis. Operators with different Lorentz structures are considered separately. Representative Feynman diagrams are shown in Figure~\ref{fig:CMS_FD}. 
@@ -88,3 +88,24 @@ A \ac{BDT} using multiple discriminating variables is trained to further enhance
  \label{fig:CMS_results}
  \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Overview of the Present CMS Analysis}
+\label{sec:CLFV_This}
+
+The targeted final states of this analysis~\cite{CMS:2023phe} contain exactly three charged-leptons, similar to the past ATLAS analysis~\cite{ATLAS-CONF-2018-044}. In addition to the top quark decay signals, this analysis also considers the top quark production signals, which was first introduced by~\cite{CMS:2022ztx}. Separate \acp{SR} are defined to target these two different signals. Operators with different Lorentz structures and quark flavors are considered separately. Representative Feynman diagrams are shown in Figure~\ref{fig:CMS_FD_This}. 
+ 
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{ccc}
+ \includegraphics[width=0.31\textwidth]{figures/Part3/History/TT}&
+ \includegraphics[width=0.33\textwidth]{figures/Part3/History/ST1}&
+ \includegraphics[width=0.31\textwidth]{figures/Part3/History/ST2}\\
+ \end{tabular}
+ \caption{Representative Feynman diagrams for the signal processes that are targeted by this analysis. Both top quark decay (left) and production (middle and right) \ac{CLFV} processes are shown. The top quark that does not participate in the \ac{CLFV} interaction is required to produce leptonic final states.}
+ \label{fig:CMS_FD_This}
+ \end{center}
+ \end{figure}
+ 
+For each \ac{SR}, one binary \ac{BDT} is trained to enhance the sensitivity of the corresponding signal mode. The \emph{nonprompt} background is estimated using a data-driven method. An upper limit at 95\% \ac{CL} is placed on the branching fraction of $\mathcal{B}(\tto{q})$ $<$ 1.2 $\times$ 10$^{-8}$, which further improves the constraint from the previous \ac{CMS}~\cite{CMS:2022ztx} by nearly a factor of 60.
