@@ -186,13 +186,13 @@ Steps other than the \ac{ME} calculation concerning signal \ac{MC} generation fo
 
 Besides tZq, tHq, tHW, and tWZ processes, the \ac{NLO} \ac{PDF} set from NNPDF3.0~\cite{NNPDF:2014otw} is used in 2016 to generate background \ac{MC} samples. The \ac{NNLO} \ac{PDF} set from NNPDF3.1~\cite{NNPDF:2017mvq} is used for tZq while the \ac{LO} \ac{PDF} set from NNPDF3.0 is used for tHq, tHW, and tWZ in 2016. In 2017 and 2018, the \ac{NNLO} \ac{PDF} set from NNPDF3.1 was used to generate all the samples. 
 
-The default choice of \ac{ME} event generator is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. Samples with small contributions (tHq, tWZ, tHW, and low mass DY ) are generated at \ac{LO} while other samples are generated at \ac{NLO}. Whenever possible and relevant, theoretical cross sections from high-order \ac{QCD} calculations are used. The references of these calculations are included in \ref{tab:MCsample}.
+The default choice of \ac{ME} event generator is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. Samples with small contributions (tHq, tWZ, tHW, and low mass \ac{DY} ) are generated at \ac{LO} while other samples are generated at \ac{NLO}. Whenever possible and relevant, theoretical cross sections from high-order \ac{QCD} calculations are used. The references of these calculations are included in \ref{tab:MCsample}.
 
 The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} was used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} was used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more \emph{prompt} leptons in the final states are classified as ``\emph{prompt} background'', and (ii) other processes are classified as ``\emph{nonprompt} background''. The \emph{nonprompt} backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in ``\emph{nonprompt}'' category in Table \ref{tab:MCsample} are therefore only used for validations. 
 
 \begin{table}
 \sffamily
-\caption{Summary of the configurations of the \ac{MC} samples. DYM50 (DYM10to50) denotes a DY sample with a dilepton invariant mass greater than 50 GeV (between 10 and 50 GeV). V includes W and Z bosons. The cross-sections for samples without a citation are taken directly from their event generators.}
+\caption{Summary of the configurations of the \ac{MC} samples. DYM50 (DYM10to50) denotes a \ac{DY} sample with a dilepton invariant mass greater than 50 GeV (between 10 and 50 GeV). V includes W and Z bosons. The cross-sections for samples without a citation are taken directly from their event generators.}
 \centering
  \resizebox{\linewidth}{!}{%
  \begin{tabular}{cccccc}

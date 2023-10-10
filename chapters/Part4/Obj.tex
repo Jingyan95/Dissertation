@@ -1,26 +1,43 @@
 \chapter{Object Selection}
 \label{chap:Obj}
 
-Similar to the analysis documented in the \autoref{Part3}, the high lepton multiplicity requirement removes vast majority of the $\ttbar$ and Drell-Yan processes. However, these processes, especially Drell-Yan.
+Similar to the analysis documented in the \autoref{Part3}, the high lepton multiplicity requirement removes vast majority of the $\ttbar$ and \ac{DY} events produced in the collisions. However, these processes, especially \ac{DY}, still enter and dominate the event selection due to their sheer volumes. In general, $\ttbar$ or \ac{DY} events do not promptly produce three genuine leptons (including hadronic taus), and they can only enter a three-lepton selection if at least one of the light lepton is \emph{nonprompt}, as defined in \autoref{chap:Nonprompt}. Alternatively, jets might also be misidentified as hadronic taus at the reconstruction level, contributing to the so called ``\emph{fake} tau background''. One example is the \ac{DY}+jets events, where the two \ac{OSSF} light leptons are correctly identified but a jet is misidentified as a hadronic tau. Stringent selection criteria are applied to lepton candidates in order to suppress these backgrounds, which are discussed in \autoref{sec:EandM} and \autoref{sec:Taus}. Additionally, selection criteria on jets and \ac{MET} are discussed in \autoref{sec:JME}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Electrons and Muons}
 \label{sec:EandM}
 
-An updated version of the \TOP\cite{CMS:2023ftu} is used to select \emph{prompt} leptons.
+An updated version of the \TOP\cite{CMS:2023ftu} is used to select \emph{prompt} leptons. The same set of features used in the previous version is also used in this new version even though the training set in this new version is constructed solely from simulated $\ttbar$ events, as opposed to from $\ttbar$, $\ttbar W$, $\ttbar Z$, and tZq. The previous version of the \TOP is originally designed for a multi-lepton analysis like tZq, which is why samples other than $\ttbar$ are included in the training. For this analysis with two leptons (excluding hadronic tau), the new version of the \TOP is better suited. One notable upgrade of this new version is the switch from TMVA \cite{TMVA:2007ngy} to \textsc{XGBoost} \cite{Chen:2016:XST:2939672.2939785} in its \ac{BDT} implementation. This improves the signal efficiency by a few percentage points while keeping the same background efficiency. 
+
+Both electron and muon candidates are required to have a minimum \TOP score of 0.64, corresponding to roughly the same background efficiency (1\%) that is chosen for the previous analysis. However, this working point corresponds to a signal efficiency of 92\%, which is 2\% higher than the previous implementation.
+
+On top of the \TOP requirement, a set of selection criteria are added to select electron and muon candidates, which are largely derived from the existing strategy described in \autoref{sec:Leptons}. The minimum $\pt$ requirement is lowered from 38 GeV to 30 GeV for the leading lepton when compared to the previous analysis. This change helps improves the signal acceptance as this analysis faces an even lower statistics. The $\pt$ threshold on the sub-leading lepton is kept at 20 GeV. The requirements on $\eta$, $d_{\textsf{xy}}$, $d_{\textsf{z}}$, and SIP$_3$ are kept the same as they come from the same pre-selection requirements used in the \ac{BDT} training. 
+
+The same ``mini isolation'' variable $I^{\textsf{rel}}_{\textsf{mini}}$ defined in Equation~\ref{eq:mini} is used to create isolated lepton candidates, even though the threshold is loosened from 0.12 to 0.4. Similar to the lowering of of the $\pt$ on the leading lepton, this change helps improves the signal acceptance.
+
+Only lepton candidates that pass all the requirements stated above are considered by this analysis. They are referred to as ``\emph{tight}'' leptons, which does not not include hadronic tau.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Hadronic Taus}
 \label{sec:Taus}
 
-A \ac{NN}-based algorithm~\cite{CMS:2022prd} is used to identify hadronic tau leptons.
+A \ac{NN}-based algorithm called ``\textsc{DeepTau}''~\cite{CMS:2022prd} is used to simultaneously discriminates
+against jets, electrons, and muons. The core feature of this algorithm is the use of convolutional layers to exploit the translational invariance of the problem. A combination of lower-level and high-level variables are used as input features to the \ac{NN}. The lower-level variables are derived from individual particle reconstructed by the \ac{PF} algorithm while the high-level variables are mostly taken from the previously trained \ac{MVA}~\cite{CMS:2015pac}. Two grids are defined in $\eta-\phi$ plane to encode the position as well as other low-level inputs from \ac{PF} candidates. The outer grid and the inner grid consist of 21$\times$21 cells and 11$\times$11 cells, respectively. A total of 105703 input features are used which consists of 47 high-level variables and 188 low-level variables per gird cell.
+
+When compared to the existing algorithms~\cite{CMS:2018jrd,CMS:2015pac}, the discriminators against jets and electrons from \textsc{DeepTau} algorithm provides a 10-30\% improvement in signal efficiency while maintaining the same background efficiency. The discriminator against muons from \textsc{DeepTau} algorithm provides a factor of 3-10 larger background rejection while maintaining the signal efficiency at a very high level (99.1-99.4\%).
+
+Tau candidates are required to simultaneously pass ``VLoose'', ``Tight'', and ``Tight'' working points of the discriminators against electrons, muons, and jets, respectively. These working points correspond to over 99\% signal efficiency for discriminators against electrons and muons, and 60\% for the discriminator against jets. The working point chosen for the discriminator against jets is a lot tighter as vast majority of \emph{fake} taus in this analysis originate from jets.
+
+In addition to the \textsc{DeepTau} working points, a set of selection criteria is applied to tau candidates, which is mostly derived from the pre-selection requirements of the \textsc{DeepTau} algorithm. Tau candidates are required to have a minimum $pt$ of 20 GeV with $|\eta|~<$ 2.3. Similar to the requirements on electron and muon candidates, $|d_{\textsf{xy}}|$ and $|d_{\textsf{z}}|$ of tau candidates are required to be smaller than 0.05 and 0.1, respectively. Tau candidates reconstructed from decay modes with missing charged hadrons are excluded.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Jets and MET}
+\section{Jets}
 \label{sec:JME}
+
+Strategy to select jet candidates described in \autoref{sec:Jets} are largely kept intact. The only notable change is the lowering of the $\pt$ threshold of jets from 30 GeV to 25 GeV. The \DeepJ algorithm~\cite{Bols:2020bkb} described in \autoref{sec:Btag} is also used to tag jets that originate from b quark in this analysis. The ``Loose'' working point is chosen to tag b jet candidates, which corresponds to roughly 10\% improvement in signal efficiency when compared to the ``Medium'' working point used by the previous analysis.
 
 
 
