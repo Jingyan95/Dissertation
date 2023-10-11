@@ -8,7 +8,7 @@ Different sources of systematic uncertainty contribute to the estimation of back
 \section{Theoretical Uncertainties}
 \label{sec:ThUnc}
 
-Variations on theoretical cross sections for \emph{prompt} backgrounds are introduced to cover the uncertainties in perturbative \ac{QCD} calculations. A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to tZq process, which is a conservative estimate taken from the MC generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated across the years. 
+Variations on theoretical cross sections for \emph{prompt} backgrounds are introduced to cover the uncertainties in perturbative \ac{QCD} calculations. A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to tZq process, which is a conservative estimate taken from the \ac{MC} generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated across the years. 
 
 Uncertainties associated with the \ac{PDF} are evaluated by using 100 replicas of the NNPDF sets~\cite{NNPDF:2014otw,NNPDF:2017mvq}. The procedure described in~\cite{CMS:2012nsv} is followed. Firstly, the sum of the generator weights of each replica is normalized to the nominal sum of the generator weights. This is done before any event selection to ensure no additional normalization effect is introduced. After the previous step, the bin-by-bin variations of the \ac{BDT} templates are obtained by calculating the bin-by-bin difference of the \ac{BDT} templates when switching from nominal \ac{PDF} to each \ac{PDF} replica. Finally, \ac{PDF} uncertainty for each bin is assigned by taking the root mean square value of the 100 variations of the corresponding bin. This uncertainty is treated as uncorrelated between different processes but correlated across the years. This uncertainty is considered for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 
@@ -59,7 +59,7 @@ Statistical uncertainty is also considered when determining $f$. A comparison of
  \end{center}
 \end{figure}
 
-Since the \emph{prompt} efficiency $r$ is measured in simulated $\ttbar$ events, \ac{MC} uncertainties described in \autoref{sec:OthUnc} are propagated to $r$ as the uncertainties. Additionally, statistical uncertainty is added in quadrature to the MC uncertainties to form the final uncertainty on $r$.
+Since the \emph{prompt} efficiency $r$ is measured in simulated $\ttbar$ events, \ac{MC} uncertainties described in \autoref{sec:OthUnc} are propagated to $r$ as the uncertainties. Additionally, statistical uncertainty is added in quadrature to the \ac{MC} uncertainties to form the final uncertainty on $r$.
 
 The uncertainties associated with the \emph{prompt} efficiency are relatively small when compared to the \emph{nonprompt} efficiency uncertainties. A comparison of different sources of \emph{prompt} efficiency uncertainties is shown in Figure \ref{fig:r_comp}.
 
@@ -210,7 +210,7 @@ RelativePtEC2			& -			&   & \\
 
 One additional uncertainty is assigned to the unclustered \ac{MET} is considered~\cite{CMS:2019ctu}, and is treated as uncorrelated across the years.
 
-In the 2016 and 2017 runs, \ac{L1} ECAL triggers fired early~\cite{CMS:2020cmk} causing many uninteresting events to be recorded while the later interesting events were rejected. Since this effect is not present in the MC simulation, a correction is applied to all signals and \emph{prompt} backgrounds. This correction is varied by 20\% and the resulting change in per-event weight is taken as the uncertainty. This uncertainty is treated as correlated across the years. 
+In the 2016 and 2017 runs, \ac{L1} ECAL triggers fired early~\cite{CMS:2020cmk} causing many uninteresting events to be recorded while the later interesting events were rejected. Since this effect is not present in the \ac{MC} simulation, a correction is applied to all signals and \emph{prompt} backgrounds. This correction is varied by 20\% and the resulting change in per-event weight is taken as the uncertainty. This uncertainty is treated as correlated across the years. 
 
 In the 2018 runs, two HCAL modules whose power supply died in the middle of the data taking. This affected the measurement of jet energy and \ac{MET}. No correction is applied as this effect is not well-understood and likely not significant relative to other corrections. Nevertheless, an uncertainty, denoted by ``HEM'', is assigned to cover the variations of jet energy and \ac{MET} caused by those two dead modules. 
 

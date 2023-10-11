@@ -23,14 +23,16 @@ Only lepton candidates that pass all the requirements stated above are considere
 \section{Hadronic Taus}
 \label{sec:Taus}
 
-A \ac{NN}-based algorithm called ``\textsc{DeepTau}''~\cite{CMS:2022prd} is used to simultaneously discriminates
-against jets, electrons, and muons. The core feature of this algorithm is the use of convolutional layers to exploit the translational invariance of the problem. A combination of lower-level and high-level variables are used as input features to the \ac{NN}. The lower-level variables are derived from individual particle reconstructed by the \ac{PF} algorithm while the high-level variables are mostly taken from the previously trained \ac{MVA}~\cite{CMS:2015pac}. Two grids are defined in $\eta-\phi$ plane to encode the position as well as other low-level inputs from \ac{PF} candidates. The outer grid and the inner grid consist of 21$\times$21 cells and 11$\times$11 cells, respectively. A total of 105703 input features are used which consists of 47 high-level variables and 188 low-level variables per gird cell.
+A \ac{NN}-based algorithm called ``\textsc{DeepTau}''~\cite{CMS:2022prd} is used to simultaneously discriminate
+against jets, electrons, and muons. The core feature of this algorithm is the use of convolutional layers to exploit the translational invariance of the input variables. A combination of lower-level and high-level variables are used as input features to the \ac{NN}. The lower-level variables are derived from individual particle reconstructed by the \ac{PF} algorithm while the high-level variables are mostly taken from the previously trained \ac{MVA}~\cite{CMS:2015pac}. Two grids are defined in $\eta-\phi$ plane to encode the positions as well as other low-level inputs from \ac{PF} candidates. The outer grid and the inner grid consist of 21$\times$21 cells and 11$\times$11 cells, respectively. The total number of input variables is 105703, which consists of 188 low-level variables per gird cell and 47 high-level variables.
 
-When compared to the existing algorithms~\cite{CMS:2018jrd,CMS:2015pac}, the discriminators against jets and electrons from \textsc{DeepTau} algorithm provides a 10-30\% improvement in signal efficiency while maintaining the same background efficiency. The discriminator against muons from \textsc{DeepTau} algorithm provides a factor of 3-10 larger background rejection while maintaining the signal efficiency at a very high level (99.1-99.4\%).
+When compared to the discriminators from existing algorithms~\cite{CMS:2018jrd,CMS:2015pac}, the discriminators against jets and electrons from the \textsc{DeepTau} algorithm provides a 10-30\% improvement in signal efficiency while maintaining the same background efficiency. The discriminator against muons from the \textsc{DeepTau} algorithm provides a factor of 3-10 larger background rejection while maintaining the signal efficiency at a very high level (99.1-99.4\%).
 
 Tau candidates are required to simultaneously pass ``VLoose'', ``Tight'', and ``Tight'' working points of the discriminators against electrons, muons, and jets, respectively. These working points correspond to over 99\% signal efficiency for discriminators against electrons and muons, and 60\% for the discriminator against jets. The working point chosen for the discriminator against jets is a lot tighter as vast majority of \emph{fake} taus in this analysis originate from jets.
 
 In addition to the \textsc{DeepTau} working points, a set of selection criteria is applied to tau candidates, which is mostly derived from the pre-selection requirements of the \textsc{DeepTau} algorithm. Tau candidates are required to have a minimum $pt$ of 20 GeV with $|\eta|~<$ 2.3. Similar to the requirements on electron and muon candidates, $|d_{\textsf{xy}}|$ and $|d_{\textsf{z}}|$ of tau candidates are required to be smaller than 0.05 and 0.1, respectively. Tau candidates reconstructed from decay modes with missing charged hadrons are excluded.
+
+To enter event selection of this analysis, tau candidates are required to pass all the requirements stated above. Tau candidates that satisfy all the requirements are referred to as ``\emph{tight}'' taus in this analysis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -38,6 +40,3 @@ In addition to the \textsc{DeepTau} working points, a set of selection criteria 
 \label{sec:JME}
 
 Strategy to select jet candidates described in \autoref{sec:Jets} are largely kept intact. The only notable change is the lowering of the $\pt$ threshold of jets from 30 GeV to 25 GeV. The \DeepJ algorithm~\cite{Bols:2020bkb} described in \autoref{sec:Btag} is also used to tag jets that originate from b quark in this analysis. The ``Loose'' working point is chosen to tag b jet candidates, which corresponds to roughly 10\% improvement in signal efficiency when compared to the ``Medium'' working point used by the previous analysis.
-
-
-
