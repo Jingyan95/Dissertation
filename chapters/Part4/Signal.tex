@@ -7,7 +7,7 @@ As discussed in \autoref{chap:History}, the \ac{CLFV} processes involving top qu
 \section{Targeted Final States}
 \label{sec:Target}
 
-One of the central features of this analysis is the inclusion of hadronic tau lepton, which remains relatively unexplored in the top quark sector. The target final states of this analysis contain exactly two light leptons (electron or muon) and one hadronic tau. The two light leptons can come with any flavor- and charge-compositions, as long as the sum of the electric charges of all three leptons is 1 or -1. Effectively, this guarantees all three lepton flavor mixing modes are covered by this analysis. In addition to leptons, the target final states at \ac{LO} also feature one or two jets with exactly one jet originating from b quark, and some imbalances in $\pt$ caused by neutrinos. Representative Feynman diagrams are shown in Figure~\ref{fig:Target}.
+One of the central features of this analysis is the inclusion of hadronic tau lepton, which remains relatively unexplored in the top quark sector. The target final states of this analysis contain exactly two light leptons (electron or muon) and one hadronic tau. The two light leptons can come with any flavor- and charge-compositions, as long as the sum of the electric charges of all three leptons is 1 or -1. Effectively, this guarantees all three lepton flavor mixing modes are covered by this analysis. In addition to leptons, the target final states at \ac{LO} also feature one or two jets with exactly one jet originating from a b quark and some imbalances in $\pt$ caused by neutrinos. Representative Feynman diagrams are shown in Figure~\ref{fig:Target}.
 
  \begin{figure}[tbh!]
  \begin{center}
@@ -16,7 +16,7 @@ One of the central features of this analysis is the inclusion of hadronic tau le
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/ST1}&
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/ST2}\\
  \end{tabular}
- \caption{Representative Feynman diagrams for the signal processes that are targeted by this analysis. Both top quark decay (left) and production (middle and right) \ac{CLFV} processes are shown. The indices $i$,  $j$, and $k$ are lepton flavor indices that run from 1 to 3 with the following conditions: i) $i\neq j$, ii) one of these three indices is 3, and iii) the other two are smaller than 3.}
+ \caption{Representative Feynman diagrams for the signal processes that are targeted by this analysis. Both top quark decay (left) and production (middle and right) \ac{CLFV} processes are shown. The indices $i$, $j$, and $k$ are lepton flavor indices that run from 1 to 3 with the following conditions: i) $i\neq j$, ii) one of these three indices is 3, and iii) the other two are smaller than 3.}
  \label{fig:Target}
  \end{center}
  \end{figure}
@@ -46,11 +46,11 @@ In general, the strategy to generate the \ac{CLFV} signal events for this analys
 \label{eq:example}
 \end{eqnarray}
 
-This is only done to simplify the \ac{MC} production procedure as the number of unique samples can be reduced by a factor of three. From a theoretical point of view, each flavor mixing mode corresponds to an independent \ac{WC} without any presumed correlations with other \acp{WC}. The generated signal events from one sample are therefore categorized into three groups using information at the generator level. Since the lepton masses are neglected in the \ac{ME} calculation, the theoretical cross-section is identical across different flavor mixing modes. Therefore, events from all three groups are normalized to same cross-section listed in Table~\ref{tab:signal}. 
+This is only done to simplify the \ac{MC} production procedure as the number of unique samples can be reduced by a factor of three. From a theoretical point of view, each flavor mixing mode corresponds to an independent \ac{WC} without any presumed correlations with other \acp{WC}. The generated signal events from one sample are therefore categorized into three groups using information at the generator level. Since the lepton masses are neglected in the \ac{ME} calculation, the theoretical cross-section is identical across different flavor mixing modes. Therefore, events from all three groups are normalized to the same cross-section listed in Table~\ref{tab:signal}. 
 
 The effective Lagrangian is implemented using the SMEFTsim~\cite{Brivio:2017btx} model, which is the common standard agreed by the \ac{ATLAS} and \ac{CMS} Collaborations. Other than the differences in signal cross-sections reported by different models. The \ac{CKM} and \ac{PMNS} matrices are also treated differently by SmeftFR~\cite{Dedes:2019uzs} and SMEFTsim. More specifically, nonzero off-diagonal terms are added to the entries of the \ac{CKM} and \ac{PMNS} matrices by SmeftFR while both matrices are set to identity by SMEFTsim. Effectively, this means SMEFTsim allows no contributions from \acp{FCCC} to the signal processes. Consequently, this results in a softer kinematic distribution of final-state particles even though the difference is largely negligible, as is shown in Figure~\ref{fig:reweight}.
 
-Generator-level leptons that emerge from the \ac{EFT} vertex are generally far more energetic in the top quark production events than the top quark decay events. This notable distinction between the two signal modes are exploited to benefit of sensitivity, which is discussed in \autoref{sec:SRInclusive}. Representative kinematic distributions of the simulated signal events at the generator level are shown in Figure~\ref{fig:SigGen}.
+Generator-level leptons that emerge from the \ac{EFT} vertex are generally far more energetic in the top quark production events than the top quark decay events. This notable distinction between the two signal modes is exploited to benefit sensitivity, which is discussed in \autoref{sec:SRInclusive}. Representative kinematic distributions of the simulated signal events at the generator level are shown in Figure~\ref{fig:SigGen}.
 
  \begin{figure}[tbh!]
  \begin{center}
@@ -58,11 +58,11 @@ Generator-level leptons that emerge from the \ac{EFT} vertex are generally far m
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llM_emu}&
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llM_etau}&
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llM_mutau}\\
-  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llDr_emu}&
+ \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llDr_emu}&
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llDr_etau}&
  \includegraphics[width=0.33\textwidth]{figures/Part4/Signal/llDr_mutau}\\
  \end{tabular}
- \caption{Normalized kinematic distributions of the \ac{CLFV} signal events at the generator level. These events are generated by the scalar-like operator involving an up quark in the \ac{EFT} vertex. Events from the original samples are catergorized into the e$\upmu$ (left), e$\uptau$ (middle), and $\upmu\uptau$ (right) modes. Distributions of the LFV dilepton mass and the opening angle between the two LFV leptons are shown in the top row and the bottom row, respectively. The top quark decay signals are shown in red line with open square while the top quark production signals are shown in black line with closed circle.}
+ \caption{Normalized kinematic distributions of the \ac{CLFV} signal events at the generator level. These events are generated by the scalar-like operator involving an up quark in the \ac{EFT} vertex. Events from the original samples are categorized into the e$\upmu$ (left), e$\uptau$ (middle), and $\upmu\uptau$ (right) modes. Distributions of the LFV dilepton mass and the opening angle between the two LFV leptons are shown in the top row and the bottom row, respectively. The top quark decay signals are shown in a red line with an open square while the top quark production signals are shown in a black line with a closed circle.}
  \label{fig:SigGen}
  \end{center}
  \end{figure}
