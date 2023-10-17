@@ -240,37 +240,31 @@ A comparison of different sources of systematic uncertainties of the signal esti
  \end{center}
 \end{figure}
 
-A representative range of systematic uncertainties on $\ttbar$ background and signal are summarized in Table~\ref{tab:repsys}. These uncertainties are extracted from pre-fit \ac{BDT} templates shown in Figure~\ref{fig:bdt_output}.
+A summary of systematic uncertainties and their average impact on predicted yields in the \acp{SR} can be found in Table~\ref{tab:repsys}. These uncertainties are extracted from pre-fit \ac{BDT} templates shown in Figure~\ref{fig:bdt_output}.
 
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Representive range of all systematic uncertainties extracted from the 2017 dataset, excluding luminosity and cross-section uncertainties. \ac{JES}, \ac{JER}, and HEM are combined into ``JEC''. Sources of b-tagging uncertainties listed in Table~\ref{tab:btagsys} are combined into ``BtagSF''.}
+\caption{Summary of systematic uncertainties and the average change in signal and overall background yields in the SRs. Uncertainties that only contain normalization effects, such as luminosity uncertainties and uncertainties on theoretical cross sections, are not included in this table.}
 \resizebox{0.95\linewidth}{!}{%
 \begin{tabular}{ccccc}
 \toprule
-\multirow{2}{*}{Sys. Unc.} & \multicolumn{2}{c}{SR1} & \multicolumn{2}{c}{SR2} \\
-             & $\ttbar$W & LFV signal     & $\ttbar$W & LFV signal \\
+\multirow{2}{*}{Systematic uncertainty} & \multicolumn{2}{c}{$\memu~<~150$ GeV} & \multicolumn{2}{c}{$\memu~>~150$ GeV} \\
+             & Background & Signal     & Background & Signal \\
 \midrule
-eleRecoSF & 0.5$\%$-0.55$\%$ & 0.6$\%$-0.65$\%$ & 0.59$\%$-0.64$\%$ & 0.64$\%$-0.72$\%$\\
-muRecoSF & 0.12$\%$-0.16$\%$ & 0.14$\%$-0.23$\%$ & 0.25$\%$-0.35$\%$ & 0.31$\%$-1.13$\%$\\
-eleIDSys & 0.72$\%$-0.87$\%$ & 0.82$\%$-0.99$\%$ & 0.73$\%$-0.76$\%$ & 0.79$\%$-0.95$\%$\\
-eleIDStat & 0.3$\%$-0.32$\%$ & 0.4$\%$-0.49$\%$ & 0.57$\%$-0.62$\%$ & 0.69$\%$-0.73$\%$\\
-eleIDHighPt & 0.03$\%$-0.06$\%$ & 0.17$\%$-0.61$\%$ & 0.46$\%$-0.87$\%$ & 0.89$\%$-3.95$\%$\\
-muIDSys & 0.68$\%$-0.69$\%$ & 0.54$\%$-0.61$\%$ & 0.37$\%$-0.45$\%$ & 0.22$\%$-0.37$\%$\\
-muIDStat & 0.15$\%$-0.15$\%$ & 0.12$\%$-0.13$\%$ & 0.08$\%$-0.1$\%$ & 0.05$\%$-0.08$\%$\\
-muIDHighPt & 0.06$\%$-0.12$\%$ & 0.09$\%$-0.53$\%$ & 0.43$\%$-1.12$\%$ & 0.84$\%$-3.97$\%$\\
-MuonScale & 0.09$\%$-1.12$\%$ & 0.1$\%$-2.61$\%$ & 1.04$\%$-4.82$\%$ & 0.01$\%$-0.99$\%$\\
-pu & 0.55$\%$-1.89$\%$ & 0.01$\%$-0.53$\%$ & 0.22$\%$-0.72$\%$ & 0.15$\%$-0.57$\%$\\
-prefiring & 0.65$\%$-0.7$\%$ & 0.66$\%$-0.71$\%$ & 0.86$\%$-0.96$\%$ & 0.88$\%$-1.18$\%$\\
-MET & 0.09$\%$-1.18$\%$ & 0.12$\%$-0.89$\%$ & 0.07$\%$-1.9$\%$ & 0.08$\%$-0.14$\%$\\
-ISR & - & 0.65$\%$-1.11$\%$ & - & 0.29$\%$-0.66$\%$\\
-FSR & - & 3.79$\%$-4.87$\%$ & - & 0.18$\%$-2.58$\%$\\
-Qscale & 11.16$\%$-13.08$\%$ & 2.88$\%$-3.28$\%$ & 14.82$\%$-16.71$\%$ & 1.35$\%$-2.33$\%$\\
-PDF & 0.07$\%$-0.09$\%$ & 2.33$\%$-2.66$\%$ & 0.18$\%$-0.18$\%$ & 1.28$\%$-1.6$\%$\\
-VV & 0.0$\%$-0.0$\%$ & - & 0.0$\%$-0.0$\%$ & -\\
-JEC & 0.75$\%$-1.74$\%$ & 0.57$\%$-1.83$\%$ & 0.61$\%$-2.28$\%$ & 0.23$\%$-1.08$\%$\\
-BtagSF & 4.39$\%$-5.65$\%$ & 0.31$\%$-1.2$\%$ & 1.42$\%$-2.29$\%$ & 0.44$\%$-0.83$\%$\\
+Lepton reconstruction & $<0.1\%$ & 0.6$\%$ & $<0.1\%$ & 1.7$\%$\\
+Lepton identification and isolation & 1.0$\%$ & 1.4$\%$ & 1.0$\%$ & 1.3$\%$\\
+High $\pt$ lepton & $<0.1\%$ & 0.2$\%$ & $<0.1\%$ & 3.4$\%$\\
+Muon momentum scale and resolution & $<0.1\%$ & 0.3$\%$ & $<0.1\%$ & 0.1$\%$\\
+PDF & $<0.1\%$ & 2.3$\%$ & $<0.1\%$ & 1.3$\%$\\
+QCD scale & 4.0$\%$ & 2.8$\%$ & 5$\%$ & 1.4$\%$\\
+ISR/FSR & - & 7.6$\%$ & - & 1.0$\%$\\
+Pileup & $<0.1\%$ & 0.4$\%$ & $<0.1\%$ & 0.3$\%$\\
+L1 prefiring & $<0.1\%$ & 0.4$\%$ & $<0.1\%$ & 0.4$\%$\\
+Jet energy scale and resolution& $<0.1\%$ & 1.0$\%$ & 1.0$\%$ & 0.4$\%$\\
+b tagging & $<0.1\%$ & 0.9$\%$ & 1.0$\%$ & 0.5$\%$\\
+Nonprompt & 11.0$\%$ & - & 9.0$\%$ & - \\
+Jet modeling & 6.0$\%$ & - & 7.0$\%$ & - \\
 \bottomrule
 \end{tabular}
 \label{tab:repsys}
