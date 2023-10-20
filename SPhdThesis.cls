@@ -96,8 +96,6 @@
 \newcommand{\SgIntHeaderFormat}{\large\sffamily\bfseries}
 \newcommand{\SgIntPageNumFormat}{\sffamily\bfseries}
 
-
-
 % -----------------------------------------------------------------------------
 % C A P T I O N S
 % 
