@@ -96,6 +96,11 @@
 \newcommand{\SgIntHeaderFormat}{\large\sffamily\bfseries}
 \newcommand{\SgIntPageNumFormat}{\sffamily\bfseries}
 
+% small pmatrix
+\newenvironment{psmallmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+
 % -----------------------------------------------------------------------------
 % C A P T I O N S
 % 
