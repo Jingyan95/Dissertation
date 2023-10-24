@@ -6,6 +6,65 @@ Developed in the 1960s, the Glashow–Weinberg–Salam theory of \ac{EW} interac
 \section{Gauge Theory}
 \label{sec:Gauge}
 
+Fundamental forces in the \ac{SM} are formulated with a principle known as gauge invariance, where Lagrangian is invariant under local transformations of gauge groups. Taking \ac{QED} as an example, the local symmetry for a Dirac fermion is,
+
+\begin{equation}
+\psi\rightarrow e^{i\alpha(x)}\psi,
+\end{equation}
+
+where $\alpha(x)$ is a space-time dependent phase angle, hence the name ''local transformation''. The gauge group associated to this symmetry is $U(1)_{EM}$, where the subscript is a shorthand expression for ``electromagnetism''. Under a local $U(1)_{EM}$ rotation, Equation~\ref{eq:Dirac} can be written as:
+
+\begin{equation}
+\begin{split}
+\label{eq:QEDGauge}
+\mathcal{L}&=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+ie^{-i\alpha(x)}\bar{\psi}\gamma^{\mu}\partial_{\mu}e^{i\alpha(x)}\psi-m\bar{\psi}\psi-e\bar{\psi}\gamma^{\mu}(A_{\mu}+\delta A_{\mu})\psi\\
+&=\mathcal{L}_{Dirac}-\bar{\psi}\gamma^{\mu}\psi\partial_{\mu}\alpha(x)-e\bar{\psi}\gamma^{\mu}\delta A_{\mu}\psi.
+\end{split}
+\end{equation}
+
+The gauge invariance requires $\delta A_{\mu}=-\frac{1}{e}\partial_{\mu}\alpha(x)$. This means the photon field transforms as:
+
+\begin{equation}
+A_{\mu}\rightarrow A_{\mu}-\frac{1}{e}\partial_{\mu}\alpha(x).
+\end{equation}
+
+This behavior of the photon field under gauge transformation cancels out the gauge dependency of the free Dirac Lagrangian, which ensures the gauge invariance of the theory. Therefore, vector bosons such as photons also called gauge bosons, and the associated quantum fields are also known as gauge fields. 
+
+The mass term associated to the photon field 
+
+\begin{equation}
+\frac{1}{2}m^2A_{\mu}A^{\mu}
+\end{equation}
+
+is however not gauge invariant as
+
+\begin{equation}
+[A_{\mu}-\frac{1}{e}\partial_{\mu}\alpha(x)][A^{\mu}-\frac{1}{e}\partial^{\mu}\alpha(x)]\neq A_{\mu}A^{\mu}.
+\end{equation}
+
+Effectively, this means gauge bosons such as photons must be massless in a gauge invariant theory. As a consequence, a new mechanism, known as the Higgs mechanism, is needed to explain the origin of weak boson masses. 
+
+\ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative. Chinese physicist Yang Chen-Ning and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the famed Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. Not long after this, physicists had understood that only left-handed fermions and right-handed anti-fermions are involved in weak charged-current interactions. Efforts by physicists to relate electromagnetism and the weak interaction under the framework of non-abelian gauge theory started in the late 1950s to early 1960s. 
+
+Since fermions with different chiral structures were understood to be treated differently by the weak interaction, it was natural to apply different gauge transformations to left-handed and right-handed fermionic fields. Initial work towards unification was done by American physicist Sheldon Glashow, who proposed the \ew~symmetry in 1961~\cite{Glashow:1961tr}, where $L$ denotes left-handed fields, and Y refers to the quantum number for hypercharge. Under this framework, left-handed components of the Dirac fields are organized into $SU(2)_{L}$ doublet,
+
+\begin{equation}
+L_{L}^{j}=\begin{pmatrix}\upnu_{\ell}^{j}\\ \ell^{j}\end{pmatrix}_{L}, Q_{L}^{\prime j}=\begin{pmatrix}q^{\prime j}_{u}\\q^{\prime j}_{d}\end{pmatrix}_{L}, j=1, 2, 3,
+\end{equation}
+
+where $\upnu_{\ell}^{j}$, $\ell^{j}$, $q^{\prime j}_{u}$, and $q^{\prime j}_{d}$ correspond to Dirac fields of neutrino, charged-lepton, up-type quark, and down-type quark, respectively. The right-handed components of the Dirac fields are treated as $SU(2)_{L}$ singlet: $\ell_{R}^{j}, u_{R}^{\prime j}, d_{R}^{\prime j}$, where a neutrino term is missing as only left-handed neutrinos have been observed in nature. The index $j$ in both doublets and singlets runs over the fermion generations. The left-handed doublets carry $\frac{1}{2}$ weak isospin charge, denoted by $T$. The third component of $T$, denoted by $T_3$, is $\frac{1}{2}$ for neutrinos and up-type quarks, and -$\frac{1}{2}$ for charged-leptons and down-type quarks in the $SU(2)_{L}$ doublets. All right-handed singlets carries 0 weak isospin charge, which prevents them from participating in the weak interaction. 
+
+The \ew~symmetry introduces the following local gauge transformations:
+
+\begin{equation}
+\begin{split}
+&\Psi_{L}\rightarrow\textsf{exp}[i\alpha^{i}(x)\frac{\tau^{i}}{2}+i\beta(x)\frac{Y}{2}]\Psi_{L},\\
+&\Psi_{R}\rightarrow\textsf{exp}[i\beta(x)\frac{Y}{2}]\Psi_{R},
+\end{split}
+\end{equation}
+
+where $\tau^{i}$ denotes generators of the $SU(2)_{L}$ group.
+
 \section{Higgs Mechanism}
 \label{sec:Higgs}
 
