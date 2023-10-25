@@ -72,6 +72,7 @@ The \ew~symmetry introduces the following local gauge transformations:
 where $\hat{T}_{i}$ and $\hat{Y}$ denotes generators of the $SU(2)_{L}$ and $U(1)_{Y}$ group, respectively. To preserve gauge invariance, two massless gauge fields $W_{\mu}$ and $B_{\mu}$ are introduced. The corresponding gauge covariant derivative can be written as
 
 \begin{equation}
+\label{eq:EWCov}
 D_{\mu}=\partial_{\mu}-ig\hat{T}_{i}W_{\mu}^{i}-ig^{\prime}\hat{Y}B_{\mu},
 \end{equation}
 
@@ -96,10 +97,24 @@ The relation between electric charge, weak isospin, and hyperchage is given by t
 Q=\frac{Y}{2}+T_{3}.
 \end{equation}
 
-The preliminary version of the \ac{EW} theory developed by Glashow didn't collect very good reception initially as all gauge fields in this theory were massless due to gauge invariance. Luckily, physicists didn't have to wait for long as the mechanism proposed by American physicist P. W. Anderson~\cite{Anderson:1963pc} in the following year (1962) had quickly gained attention. Extending on Anderson's work, the theory of symmetry breaking and mass generation was published by Higgs and others in 1964~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}, which led to the eventual completion of the \ac{EW} theory in the following years~\cite{Salam:1964ry,Weinberg:1967tq}.
+The preliminary version of the \ac{EW} theory developed by Glashow didn't collect very good reception initially as all gauge fields in this theory were massless due to gauge invariance. Luckily, physicists didn't have to wait for long as the mechanism proposed by American physicist P. W. Anderson~\cite{Anderson:1963pc} in the context of non-relativistic field theory in the following year (1962) had quickly gained attention. Extending on Anderson's work, the theory of symmetry breaking and mass generation was published by Higgs and others in 1964~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}, which led to the eventual completion of the \ac{EW} theory in the following years~\cite{Salam:1964ry,Weinberg:1967tq}.
 
 \section{Higgs Mechanism}
 \label{sec:Higgs}
+
+The Higgs mechanism provides a way to generate a mass term for gauge bosons without explicitly breaking the gauge symmetry. The core feature of this mechanism is a $SU(2)_{L}$ doublet of complex scalar fields $\phi=\begin{psmallmatrix}\phi^{+}\\\phi^{0}\end{psmallmatrix}$, which is subject to the potential:
+
+\begin{equation}
+V(\phi)=-\mu^2(\phi^{\dagger}\phi)+\lambda(\phi^{\dagger}\phi)^2,
+\end{equation}
+
+where $\lambda$ is a real parameter that determines the Higgs quartic coupling, and is required to be positive to ensure the stability of the \ac{EW} vacuum. The parameter $\mu^2$ determines the minimum of the Higgs potential. The Lagrangian of this scalar field is written as 
+
+\begin{equation}
+\mathcal{L}_{Higgs}=(D_{\mu}\phi)^{\dagger}(D^{\mu}\phi)-V(\phi),
+\end{equation}
+
+where $D_{\mu}$ is same gauge covariant derivative shown in Equation~\ref{eq:EWCov}. The $\mathcal{L}_{Higgs}$ is invariant under \ew~gauge transformation when $\mu^2~<~0$, which corresponds to the early universe when temperature is very high, as illustrated in Figure~\ref{fig:HiggsPotential}. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -110,6 +125,24 @@ The preliminary version of the \ac{EW} theory developed by Glashow didn't collec
  \label{fig:HiggsPotential}
  \end{center}
 \end{figure}
+
+Eventually, the universe becomes cold and $\mu^2$ becomes positive. As a consequence, an infinite number of degenerate fields arise as ground states of the potential, which corresponds to 
+
+\begin{equation}
+\phi_{min}=e^{i\varphi}\begin{pmatrix}0\\\sqrt{\mu^2/2\lambda}\end{pmatrix}\equiv\frac{e^{i\varphi}}{\sqrt{2}}\begin{pmatrix}0\\v\end{pmatrix},
+\end{equation}
+
+where $\varphi$ is phase angle that corresponds to the choice of the degenerate field, and $v$ is the so called vacuum expectation value that corresponds to the physical meaning of the minimum. The ground states in this case are not invariant under \ew~symmetry. In other words, upon acquiring a vacuum expectation value by the scalar field $\phi$, the \ac{EW} symmetry will be spontaneously broken. Since the phase angle will eventual cancel out in ($\phi^{\dagger}\phi$), we can arbitrarily choose to expand the ground-state field around $\frac{1}{\sqrt{2}}\begin{psmallmatrix}0\\v\end{psmallmatrix}$:
+
+\begin{equation}
+\phi=\frac{e^{iT_{i}\xi^{i}(x)/v}}{\sqrt{2}}\begin{pmatrix}0\\v+h\end{pmatrix},
+\end{equation}
+
+where $T_{i}$ corresponds to the generators of the broken $SU(2)_{L}$ symmetry and $\xi^{i}$ corresponds to three massless scalar bosons referred to as the goldstone bosons. This phase factor can be removed by choosing the so called unitary gauge:
+
+\begin{equation}
+x
+\end{equation}
 
 \section{Flavor Sector}
 \label{sec:Flavor}
