@@ -12,7 +12,7 @@ Fundamental forces in the \ac{SM} are formulated under a principle known as gaug
 \psi\rightarrow e^{i\alpha(x)}\psi,
 \end{equation}
 
-where $\alpha(x)$ is a space-time dependent phase angle, hence the name ''local transformation''. The gauge group associated to this symmetry is $U(1)_{EM}$, where the subscript is a shorthand expression for ``electromagnetism''. Under a local $U(1)_{EM}$ rotation, Equation~\ref{eq:Dirac} can be written as:
+where $\alpha(x)$ is a space-time dependent phase angle, hence the name ``local transformation''. The gauge group associated to this symmetry is $U(1)_{EM}$, where the subscript is a shorthand expression for ``electromagnetism''. Under a local $U(1)_{EM}$ rotation, Equation~\ref{eq:Dirac} can be written as:
 
 \begin{equation}
 \begin{split}
@@ -49,47 +49,62 @@ It should be pointed out that gauge symmetry is not a symmetry of nature. Unlike
 
 \ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative. Chinese physicist Yang Chen-Ning and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the legendary Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. 
 
-Not long after the Wu experiment, physicists had understood that only left-handed fermions and right-handed anti-fermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ would result in divergence at high energy unless there is a new massive neutral particle that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of non-abelian gauge theory in early 1960s. 
+Not long after the Wu experiment, physicists had understood that only left-handed fermions and right-handed anti-fermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ would lead to divergence at high energy unless there is a new massive neutral particle that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of non-abelian gauge theory in early 1960s. 
 
 Since fermions with different chiral structures were understood to be treated differently by the weak interaction, it was 
 imperative to apply different gauge transformations to left-handed and right-handed fermionic fields. Initial work toward unification was done by American physicist Sheldon Glashow, who proposed the \ew~symmetry in 1961~\cite{Glashow:1961tr}, where $L$ denotes left-handed fields, and Y refers to the quantum number for hypercharge. Under this framework, left-handed components of the Dirac fields are organized into $SU(2)_{L}$ doublet,
 
 \begin{equation}
-L_{L}^{j}=\begin{pmatrix}\upnu_{\ell}^{j}\\ \ell^{j}\end{pmatrix}_{L}, Q_{L}^{\prime j}=\begin{pmatrix}q^{\prime j}_{u}\\q^{\prime j}_{d}\end{pmatrix}_{L}, j=1, 2, 3,
+L_{L}^{j}=\begin{pmatrix}\upnu^{j}\\ e^{j}\end{pmatrix}_{L}, Q_{L}^{j}=\begin{pmatrix}u^j\\d^j\end{pmatrix}_{L}, j=1, 2, 3,
 \end{equation}
 
-where $\upnu_{\ell}^{j}$, $\ell^{j}$, $q^{\prime j}_{u}$, and $q^{\prime j}_{d}$ correspond to Dirac fields of neutrino, charged-lepton, up-type quark, and down-type quark, respectively. The right-handed components of the Dirac fields are treated as $SU(2)_{L}$ singlet: $\ell_{R}^{j}, u_{R}^{\prime j}, d_{R}^{\prime j}$, where a neutrino term is missing as only left-handed neutrinos have been observed in nature. The index $j$ in both doublets and singlets runs over the fermion generations. The left-handed doublets carry $\frac{1}{2}$ weak isospin charge, denoted by $T$. The third component of $T$, denoted by $T_3$, is $\frac{1}{2}$ for neutrinos and up-type quarks, and -$\frac{1}{2}$ for charged-leptons and down-type quarks in the $SU(2)_{L}$ doublets. All right-handed singlets carries 0 weak isospin charge, which prevents them from participating in the weak interaction. 
+where $\upnu^{j}$, $e^{j}$, $u^{j}$, and $d^{j}$ correspond to Dirac fields of neutrino, charged-lepton, up-type quark, and down-type quark, respectively. The right-handed components of the Dirac fields are treated as $SU(2)_{L}$ singlet: $e_{R}^{j}, u_{R}^{j}, d_{R}^{j}$, where a neutrino term is missing as only left-handed neutrinos have been observed in nature. The index $j$ in both doublets and singlets runs over the fermion generations. The left-handed doublets carry $\frac{1}{2}$ weak isospin charge, denoted by $T$. The third component of $T$, denoted by $T_3$, is $\frac{1}{2}$ for neutrinos and up-type quarks, and -$\frac{1}{2}$ for charged-leptons and down-type quarks in the $SU(2)_{L}$ doublets. All right-handed singlets carries 0 weak isospin charge, which prevents them from participating in the weak interaction. 
 
 The \ew~symmetry introduces the following local gauge transformations:
 
 \begin{equation}
 \begin{split}
-&\Psi_{L}\rightarrow\textsf{exp}[i\hat{T}_{i}\alpha^{i}(x)+i\frac{\hat{Y}}{2}\beta(x)]\Psi_{L},\\
+&\Psi_{L}\rightarrow\textsf{exp}[i\hat{T}^{i}\alpha^{i}(x)+i\frac{\hat{Y}}{2}\beta(x)]\Psi_{L},\\
 &\Psi_{R}\rightarrow\textsf{exp}[i\frac{\hat{Y}}{2}\beta(x)]\Psi_{R},
 \end{split}
 \end{equation}
 
-where $\hat{T}_{i}$ and $\hat{Y}$ denotes generators of the $SU(2)_{L}$ and $U(1)_{Y}$ group, respectively. To preserve gauge invariance, two massless gauge fields $W_{\mu}$ and $B_{\mu}$ are introduced. The corresponding gauge covariant derivative can be written as
+where $\Psi_{L}=\{L_{L}^{j},Q_{L}^{j}\}$, and $\Psi_{R}=\{e_{R}^{j}, u_{R}^{j}, d_{R}^{j}\}$. $\hat{T}^{i}$ and $\hat{Y}$ denotes generators of the $SU(2)_{L}$ and $U(1)_{Y}$ group, respectively. To preserve gauge invariance, two massless gauge fields $W_{\mu}$ and $B_{\mu}$ are introduced. The corresponding gauge covariant derivative can be written as
 
 \begin{equation}
 \label{eq:EWCov}
-D_{\mu}=\partial_{\mu}-ig\hat{T}_{i}W_{\mu}^{i}-ig^{\prime}\hat{Y}B_{\mu},
+D_{\mu}=\partial_{\mu}-ig\hat{T}^{i}W_{\mu}^{i}-ig^{\prime}\frac{\hat{Y}}{2}B_{\mu},
 \end{equation}
 
-where $g$ and $g^{\prime}$ coupling strength of the $SU(2)$ and $U(1)$ gauge fields, respectively. A linear combination of the first and second component $W_{\mu}^{i}$ gives rise to the weak charge-current interactions observed in experiments:
+where $g$ and $g^{\prime}$ correspond to coupling strengths of the $SU(2)$ and $U(1)$ gauge fields, respectively. The \ew~gauge Lagrangian can therefore be written as:
 
 \begin{equation}
+\label{eq:LagGauge}
+\mathcal{L}_{gauge}=-\frac{1}{2}trW_{\mu\nu}W^{\mu\nu}-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}+i\bar{\Psi}_{L}\gamma^{\mu}D_{\mu}\Psi_{L}+i\bar{\Psi}_{R}\gamma^{\mu}D_{\mu}\Psi_{R}
+\end{equation}
+
+A linear combination of the first and second component $W_{\mu}^{i}$ gives rise to the weak charge-current interactions observed in experiments:
+
+\begin{equation}
+\label{eq:CC}
 W^{\pm}_{\mu}=\frac{1}{\sqrt{2}}(W^{1}_{\mu}\mp W^{2}_{\mu}),
 \end{equation}
 
 while neutral-current interactions can be constructed by the remaining fields:
 
 \begin{equation}
-\label{}
-\begin{pmatrix}B_{\mu}\\W_{\mu}^{3}\end{pmatrix}=\begin{pmatrix}\cos\theta_{W}&-\sin\theta_{W}\\\sin\theta_{W}&\cos\theta_{W}\end{pmatrix}\begin{pmatrix}A_{\mu}\\Z_{\mu}\end{pmatrix},
+\label{eq:NC}
+\begin{pmatrix}B_{\mu}\\W_{\mu}^{3}\end{pmatrix}=\begin{pmatrix}\cos\theta_{\omega}&-\sin\theta_{\omega}\\\sin\theta_{\omega}&\cos\theta_{\omega}\end{pmatrix}\begin{pmatrix}A_{\mu}\\Z_{\mu}\end{pmatrix},
 \end{equation}
 
-where $A_{\mu}$ and $Z_{\mu}$ corresponds to the photon and Z boson, respectively, and $g\sin\theta_{W}=g^{\prime}\cos\theta_{W}=e$. The free parameter $\theta_{W}$ is referred to as the week mixing angle, or Weinberg angle, which has to be measured experimentally.
+where $A_{\mu}$ and $Z_{\mu}$ corresponds to the photon and Z boson, respectively, and 
+
+\begin{equation}
+\label{eq:MixAngle}
+g\sin\theta_{\omega}=g^{\prime}\cos\theta_{\omega}=e.
+\end{equation}
+
+The free parameter $\theta_{\omega}$ is referred to as the week mixing angle, or Weinberg angle, which can be measured experimentally.
 
 The relation between electric charge, weak isospin, and hyperchage is given by the Gell-Mann-Nishijima formula~\cite{Nakano:1953zz,Gell-Mann:1956iqa}:
 
@@ -97,7 +112,7 @@ The relation between electric charge, weak isospin, and hyperchage is given by t
 Q=\frac{Y}{2}+T_{3}.
 \end{equation}
 
-The preliminary version of the \ac{EW} theory developed by Glashow didn't collect very good reception initially as all gauge fields in this theory were massless due to gauge invariance. Luckily, physicists didn't have to wait for long as the mechanism proposed by American physicist P. W. Anderson~\cite{Anderson:1963pc} in the context of non-relativistic field theory in the following year (1962) had quickly gained attention. Extending on Anderson's work, the theory of symmetry breaking and mass generation was published by Higgs and others in 1964~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}, which led to the eventual completion of the \ac{EW} theory in the following years~\cite{Salam:1964ry,Weinberg:1967tq}.
+The preliminary version of the \ac{EW} theory developed by Glashow didn't collect good reception initially as all gauge fields in his theory were massless due to gauge invariance, resulting in long range forces that matched with no experimental observations. Luckily, physicists didn't have to wait long as the mechanism proposed by American physicist P. W. Anderson~\cite{Anderson:1963pc} in the context of non-relativistic field theory in the following year (1962) had quickly gained attention. Extending on Anderson's work, the theory of symmetry breaking and gauge boson mass generation was published by Higgs and others in 1964~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}, which led to the eventual completion of the \ac{EW} theory in the following years by Salam and Weinberg~\cite{Salam:1964ry,Weinberg:1967tq}.
 
 \section{Higgs Mechanism}
 \label{sec:Higgs}
@@ -111,10 +126,10 @@ V(\phi)=-\mu^2(\phi^{\dagger}\phi)+\lambda(\phi^{\dagger}\phi)^2,
 where $\lambda$ is a real parameter that determines the Higgs quartic coupling, and is required to be positive to ensure the stability of the \ac{EW} vacuum. The parameter $\mu^2$ determines the minimum of the Higgs potential. The Lagrangian of this scalar field is written as 
 
 \begin{equation}
-\mathcal{L}_{Higgs}=(D_{\mu}\phi)^{\dagger}(D^{\mu}\phi)-V(\phi),
+\mathcal{L}_{Scalar}=(D_{\mu}\phi)^{\dagger}(D^{\mu}\phi)-V(\phi),
 \end{equation}
 
-where $D_{\mu}$ is same gauge covariant derivative shown in Equation~\ref{eq:EWCov}. The $\mathcal{L}_{Higgs}$ is invariant under \ew~gauge transformation when $\mu^2~<~0$, which corresponds to the early universe when temperature is very high, as illustrated in Figure~\ref{fig:HiggsPotential}. 
+where $D_{\mu}$ is same gauge covariant derivative shown in Equation~\ref{eq:EWCov}. The $\mathcal{L}_{Scalar}$ is invariant under \ew~gauge transformation when $\mu^2~<~0$, which corresponds to the early universe when temperature is very high, as illustrated in Figure~\ref{fig:HiggsPotential}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -126,23 +141,129 @@ where $D_{\mu}$ is same gauge covariant derivative shown in Equation~\ref{eq:EWC
  \end{center}
 \end{figure}
 
-Eventually, the universe becomes cold and $\mu^2$ becomes positive. As a consequence, an infinite number of degenerate fields arise as ground states of the potential, which corresponds to 
+Eventually, the universe cools down and $\mu^2$ becomes positive. As a consequence, an infinite number of degenerate fields arise as ground states of the potential, which corresponds to 
 
 \begin{equation}
 \phi_{min}=e^{i\varphi}\begin{pmatrix}0\\\sqrt{\mu^2/2\lambda}\end{pmatrix}\equiv\frac{e^{i\varphi}}{\sqrt{2}}\begin{pmatrix}0\\v\end{pmatrix},
 \end{equation}
 
-where $\varphi$ is phase angle that corresponds to the choice of the degenerate field, and $v$ is the so called vacuum expectation value that corresponds to the physical meaning of the minimum. The ground states in this case are not invariant under \ew~symmetry. In other words, upon acquiring a vacuum expectation value by the scalar field $\phi$, the \ac{EW} symmetry will be spontaneously broken. Since the phase angle will eventual cancel out in ($\phi^{\dagger}\phi$), we can arbitrarily choose to expand the ground-state field around $\frac{1}{\sqrt{2}}\begin{psmallmatrix}0\\v\end{psmallmatrix}$:
+where $\varphi$ is phase angle that corresponds to the choice of the degenerate field, and $v$ is the so called vacuum expectation value that corresponds to the physical meaning of the minimum. The ground states in this case are not invariant under \ew~symmetry. In other words, upon acquiring a vacuum expectation value by the scalar field $\phi$, the \ac{EW} symmetry will be spontaneously broken. Since the phase angle will eventual cancel out in ($\phi^{\dagger}\phi$), it is free to expand the ground-state field around the arbitrarily selected minimum $\frac{1}{\sqrt{2}}\begin{psmallmatrix}0\\v\end{psmallmatrix}$:
 
 \begin{equation}
-\phi=\frac{e^{iT_{i}\xi^{i}(x)/v}}{\sqrt{2}}\begin{pmatrix}0\\v+h\end{pmatrix},
+\phi=\frac{e^{i\hat{T}^{i}\pi^{i}(x)/v}}{\sqrt{2}}\begin{pmatrix}0\\v+h(x)\end{pmatrix},
 \end{equation}
 
-where $T_{i}$ corresponds to the generators of the broken $SU(2)_{L}$ symmetry and $\xi^{i}$ corresponds to three massless scalar bosons referred to as the goldstone bosons. This phase factor can be removed by choosing the so called unitary gauge:
+where $\hat{T}^{i}$ corresponds to the generators of the broken $SU(2)_{L}$ symmetry and $\pi^{i}(x)$ corresponds to three massless scalar bosons referred to as the Goldstone bosons~\cite{Goldstone:1962es}. The meaning of the field $h(x)$ will become clear later. The dependency on $\pi^{i}(x)$ can be removed by performing the following gauge transformation:
 
 \begin{equation}
-x
+\phi\rightarrow\phi e^{-i\hat{T}^{i}\pi^{i}(x)/v},
 \end{equation}
 
-\section{Flavor Sector}
+which corresponds to the so called unitary gauge~\cite{Weinberg:1971fb}. Expanding the kinetic term from $\mathcal{L}_{Scalar}$,
+
+\begin{equation}
+\label{eq:ScalarKin}
+(D_{\mu}\phi)^{\dagger}(D^{\mu}\phi)=\frac{1}{2}\partial_{\mu}h(x)\partial^{\mu}h(x)+(v+h(x))^2\frac{g^2}{8}[(W_{\mu}^1)^2+(W_{\mu}^1)^2+(W_{\mu}^3-\frac{g^{\prime}}{g}B_{\mu})^2].
+\end{equation}
+
+Using the relation specified in Equation~\ref{eq:CC}-\ref{eq:MixAngle}, the $v^2$ terms in Equation~\ref{eq:ScalarKin} can be rewritten as 
+
+\begin{equation}
+\begin{split}
+&m_{W}^2W^{\dagger}_{\mu}W_{\mu},\\
+&\frac{1}{2}m_{Z}^2Z_{\mu}Z^{\mu},
+\end{split}
+\end{equation}
+
+where $m_{W}=\frac{gv}{2}$, and $m_{Z}=\frac{gv}{2\cos\theta_{\omega}}$, which corresponds to the mass of the gauge bosons W and Z, respectively. The mass of the W and Z bosons can therefore be related by $m_{Z}/m_{W}=\cos\theta_{\omega}$, which can be used to test the self-consistency of the \ac{SM}~\cite{CDF:2022hxs}. The linear combination of $v^2$ terms orthogonal to $Z_{\mu}$ cancels out and corresponds to the massless photon field:
+
+\begin{equation}
+A_{\mu}=\sin\theta_{\omega}W_{\mu}^3+\cos\theta_{\omega}B_{\mu}.
+\end{equation}  
+
+Therefore, the Z boson and photon observed at experiments can be understood as different manifestations of the same fields in the \ac{EW} theory. 
+
+The massless gauge fields before the symmetry breaking have 2 degrees of freedom, which correspond to the two transverse polarizations. The longitudinal polarization is left empty for these massless fields because they have no rest frame as they propagate in space at the speed of light. After the symmetry breaking, the $W^{\pm}_{\mu}/Z_{\mu}$ gauge fields acquire masses, which also also mean that they acquire the longitudinal polarizations. Therefore, it can be said that the three ``woud-be'' Goldstone bosons are ``eaten'' by the three gauge bosons, becoming their longitudinal components.
+
+The remaining scalar field $h(x)$ gives rise to the only elementary scalar boson in the \ac{SM}, known as the Higgs boson. With the exception of two mass terms for W and Z bosons, and a constant term 
+
+\begin{equation}
+\frac{1}{2}\mu^2v^2-\frac{\lambda}{2}v^4=\frac{1}{2}v^4
+\end{equation}
+
+coming from the potential, all terms in $\mathcal{L}_{Scalar}$ are related to the $h(x)$ field. They can be collected together as $\mathcal{L}_{Higgs}$:
+
+\begin{equation}
+\label{eq:LHiggs}
+\begin{split}
+\mathcal{L}_{Higgs}=&\frac{1}{2}\partial_{\mu}h(x)\partial^{\mu}h(x)-\frac{1}{2}m_{H}^2h(x)^2-\frac{1}{2v}m_{H}^2h(x)^3-\frac{1}{8v^2}m_{H}^2h(x)^4\\
+&+[\frac{2}{v}h(x)+\frac{1}{v^2}h(x)^2](m_{W}^2W_{\mu}^{\dagger}W^{\mu}+\frac{1}{2}m_{Z}^2Z_{\mu}Z^{\mu}),
+\end{split}
+\end{equation}
+
+where $m_{H}=\sqrt{2\lambda}v$. The third and fourth term on the first line of Equation~\ref{eq:LHiggs} correspond to the Higgs triple and quartic couplings, respectively, and they come from the potential term in $\mathcal{L}_{Scalar}$. The terms on the second line of Equation~\ref{eq:LHiggs} correspond to the Higgs-Gauge boson couplings, and they come from the kinetic terms in $\mathcal{L}_{Scalar}$. The strength of these coupling s are proportional to the masses of the gauge bosons. 
+
+\section{Yukawa Coupling and Flavor Sector}
 \label{sec:Flavor}
+
+Adding Dirac mass terms $-m\bar{\psi}\psi=-m(\bar{\psi}_{L}\psi_{R}+\bar{\psi}_{R}\psi_{L})$ to the \ac{EW} theory directly will not be allowed, because they explicitly break the \ew~symmetry. Instead, the origin of the fermion masses is explained by the Yukawa coupling between fermionic fields and the scalar field introduced earlier:
+
+\begin{equation}
+\mathcal{L}_{Yukawa}=-(Y_{u})_{ij}\bar{Q}_{L}^{i}u_{R}^{j}\tilde{\phi}-(Y_{d})_{ij}\bar{Q}_{L}^{i}d_{R}^{j}\phi-(Y_{e})_{ij}\bar{L}_{L}^{i}e_{R}^{j}\phi + h.c.,
+\end{equation}
+
+where $Y_{f}~(f=u,d,e)$ are complex 3$\times$3 matrices, $\tilde{\phi}=i\sigma_{2}\phi^{*}$ with $\sigma_{2}$ being the second Pauli matrix. Indices i and j run over fermion generations. After the \ac{EW}~symmetry breaking, the $\mathcal{L}_{Yukawa}$ in unitary gauge becomes:
+
+\begin{equation}
+\mathcal{L}_{Yukawa}=-\frac{1}{\sqrt{2}}(v+h(x))[(Y_{u})_{ij}\bar{u}_{L}^{i}u_{R}^{j}-(Y_{d})_{ij}\bar{d}_{L}^{i}d_{R}^{j}-(Y_{e})_{ij}\bar{e}_{L}^{i}e_{R}^{j}] + h.c.,
+\end{equation}
+
+which can be rewritten as:
+
+\begin{equation}
+\mathcal{L}_{Yukawa}=-(1+\frac{h(x)}{v})[(m_{u})_{ij}\bar{u}_{L}^{i}u_{R}^{j}+(m_{d})_{ij}\bar{d}_{L}^{i}d_{R}^{j}+(m_{e})_{ij}\bar{e}_{L}^{i}e_{R}^{j}] + h.c.,
+\end{equation}
+
+where $m_f=\frac{v}{\sqrt{2}}Y_{f}~(f=u,d,e)$ is known as the fermion mass matrices. The mass matrices can be diagonalised by unitary rotations:
+
+\begin{equation}
+m_{f}=V_{f}\hat{m}_{f}W^{\dagger}_{f}~(f=u,d,e),
+\end{equation}
+
+where $\hat{m}_{f}$ are the diagonalizes mass matrices. The mass term becomes:
+
+\begin{equation}
+\mathcal{L}_{mass}=-(\bar{u}_{L}V_{u}\hat{m}_{u}W_{u}^{\dagger}u_{R}+\bar{d}_{L}V_{d}\hat{m}_{d}W^{\dagger}_{d}d_{R}+\bar{e}_{L}V_{e}\hat{m}_{e}W_{e}^{\dagger}e_{R}) + h.c.
+\end{equation}
+
+Going to the so called ``mass basis'' with $u_{L}\rightarrow V_{u}u_{L}$, $u_{R}\rightarrow W_{u}u_{R}$, ...
+
+\begin{equation}
+\mathcal{L}_{mass}=-(\bar{u}_{L}\hat{m}_{u}u_{R}+\bar{d}_{L}\hat{m}_{d}d_{R}+\bar{e}_{L}\hat{m}_{e}e_{R}) + h.c.,
+\end{equation}
+
+which corresponds to the Dirac mass observed in experiments. 
+
+On the other hand, these basis transformation will affect the charged-current interactions contained in the third term of $\mathcal{L}_{gauge}$ (Equation~\ref{eq:LagGauge}):
+
+\begin{equation}
+\mathcal{L}_{cc}=-\frac{g}{\sqrt{2}}[\bar{u}_{L}\gamma^{\mu}(V_{u}^{\dagger}V_{d})d_{L}+\bar{\upnu}_{L}\gamma^{\mu}(V_{\nu}^{\dagger}V_{e})e_{L}]W_{\mu}^{+} + h.c, 
+\end{equation}
+
+where fermion flavor indices are suppressed, $V_{u}^{\dagger}V_{d}$ is known as the \ac{CKM} matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}, and $V_{\nu}^{\dagger}V_{e}$ is known as the \ac{PMNS} matrix~\cite{Pontecorvo:1957cp,Maki:1962mu}. 
+
+The \ac{CKM} matrix is a 3$\times$3 complex unitary matrix and is generally not diagonal as $V_{u}\neq V_{d}$. This enables quark flavor mixings in the charged-current interactions. For leptons, however, it is free to choose $V_{\upnu}=V_{e}$ as there is no neutrino term in the $\mathcal{L}_{Yukawa}$. The lepton flavor is therefore conserved in the \ac{SM}.   
+
+Looking closely at the charged-current interactions in the lepton sector:
+
+\begin{equation}
+\label{eq:LepCC}
+\begin{split}
+\mathcal{L}_{cc}^{lep}&=-\frac{g}{\sqrt{2}}[(\bar{\upnu}_{L}^{e},\bar{\upnu}_{L}^{\mu},\bar{\upnu}^{\tau}_{L})\gamma^{\mu}\begin{psmallmatrix}1&0&0\\0&1&0\\0&0&1\end{psmallmatrix}(e_{L},\mu_{L},\tau_{L})^{T}]W_{\mu}^{+} + h.c.\\
+&=-\frac{g}{\sqrt{2}}(\bar{\upnu}_{L}^{e}\gamma^{\mu}e_{L}+\bar{\upnu}_{L}^{\mu}\gamma^{\mu}\mu_{L}+\bar{\upnu}_{L}^{\tau}\gamma^{\mu}\tau_{L})W^{+}_{\mu} + h.c.
+\end{split}
+\end{equation}
+
+The Lagrangian is invariant under three independent global $U(1)$ symmetry, namely $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$, which correspond to the conserved charges: family numbers of three flavors. Moreover, since the coupling strength is the same across lepton generations in Equation~\ref{eq:LepCC}, which implies that leptons of different flavors are treated equally by the weak interactions. This is the principle known as the lepton flavor universality.
+
+It should be pointed out that the global $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$ symmetry is accidental in a sense that it does not arrive by construction. Instead, it is driven by the field content of the \ac{SM}, namely the absence of right handed neutrinos. Moreover, the observation of neutrino neutrinos oscillation~\cite{Super-Kamiokande:1998kpq,SNO:2002tuh} implies that neutrinos have mass and 
