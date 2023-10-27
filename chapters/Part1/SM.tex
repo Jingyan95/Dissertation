@@ -12,7 +12,7 @@ Fundamental forces in the \ac{SM} are formulated under a principle known as gaug
 \psi\rightarrow e^{i\alpha(x)}\psi,
 \end{equation}
 
-where $\alpha(x)$ is a space-time dependent phase angle, hence the name ``local transformation''. The gauge group associated to this symmetry is $U(1)_{EM}$, where the subscript is a shorthand expression for ``electromagnetism''. Under a local $U(1)_{EM}$ rotation, Equation~\ref{eq:Dirac} can be written as:
+where $\alpha(x)$ is a phase angle defined at each spacetime point, hence the name ``local transformation''. The gauge group associated to this symmetry is $U(1)_{EM}$, where the subscript is a shorthand expression for ``electromagnetism''. Under a local $U(1)_{EM}$ rotation, Equation~\ref{eq:Dirac} can be written as:
 
 \begin{equation}
 \begin{split}
@@ -45,11 +45,11 @@ The mass term associated to the photon field $\frac{1}{2}m^2A_{\mu}A^{\mu}$ is h
 
 Effectively, this means gauge bosons such as photons must be massless in a gauge invariant theory. As a consequence, a new mechanism, known as the Higgs mechanism, is needed to explain the origin of weak boson masses, which is discussed in the following chapter. 
 
-It should be pointed out that gauge symmetry is not a symmetry of nature. Unlike global symmetry that corresponds conserved current~\cite{Noether1918}, gauge symmetry is not physical and can not be measured by experiments. Nevertheless, its existence is necessary to regulate the redundant degree of freedom in the Lagrangian~\cite{SCHWARTZ}. 
+It should be pointed out that gauge symmetry is not a symmetry of nature. The Noether currents~\cite{Noether1918} associated with local gauge symmetry do not generally correspond to physical observables. Nevertheless, its existence is necessary to regulate the redundant degree of freedom in the Lagrangian using a procedure known as gauge fixing~\cite{SCHWARTZ}. 
 
-\ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative. Chinese physicist Yang Chen-Ning and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the legendary Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. 
+\ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative, meaning the order of sequential group operations do not affect the final result. Chinese physicist Yang Chen-Ning and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the legendary Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. 
 
-Not long after the Wu experiment, physicists had understood that only left-handed fermions and right-handed anti-fermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ would lead to divergence at high energy unless there is a new massive neutral particle that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of non-abelian gauge theory in early 1960s. 
+Not long after the Wu experiment, physicists had understood that only left-handed fermions and right-handed antifermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ would lead to divergence at high energy unless there is a new massive neutral particle that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of non-abelian gauge theory in early 1960s. 
 
 Since fermions with different chiral structures were understood to be treated differently by the weak interaction, it was 
 imperative to apply different gauge transformations to left-handed and right-handed fermionic fields. Initial work toward unification was done by American physicist Sheldon Glashow, who proposed the \ew~symmetry in 1961~\cite{Glashow:1961tr}, where $L$ denotes left-handed fields, and Y refers to the quantum number for hypercharge. Under this framework, left-handed components of the Dirac fields are organized into $SU(2)_{L}$ doublet,
@@ -80,7 +80,7 @@ where $g$ and $g^{\prime}$ correspond to coupling strengths of the $SU(2)$ and $
 
 \begin{equation}
 \label{eq:LagGauge}
-\mathcal{L}_{gauge}=-\frac{1}{2}trW_{\mu\nu}W^{\mu\nu}-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}+i\bar{\Psi}_{L}\gamma^{\mu}D_{\mu}\Psi_{L}+i\bar{\Psi}_{R}\gamma^{\mu}D_{\mu}\Psi_{R}
+\mathcal{L}_{gauge}=-\frac{1}{2}\textsf{tr}W_{\mu\nu}W^{\mu\nu}-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}+i\bar{\Psi}_{L}\gamma^{\mu}D_{\mu}\Psi_{L}+i\bar{\Psi}_{R}\gamma^{\mu}D_{\mu}\Psi_{R}
 \end{equation}
 
 A linear combination of the first and second component $W_{\mu}^{i}$ gives rise to the weak charge-current interactions observed in experiments:
@@ -203,10 +203,10 @@ coming from the potential, all terms in $\mathcal{L}_{Scalar}$ are related to th
 
 where $m_{H}=\sqrt{2\lambda}v$. The third and fourth term on the first line of Equation~\ref{eq:LHiggs} correspond to the Higgs triple and quartic couplings, respectively, and they come from the potential term in $\mathcal{L}_{Scalar}$. The terms on the second line of Equation~\ref{eq:LHiggs} correspond to the Higgs-Gauge boson couplings, and they come from the kinetic terms in $\mathcal{L}_{Scalar}$. The strength of these coupling s are proportional to the masses of the gauge bosons. 
 
-\section{Yukawa Coupling and Flavor Sector}
+\section{Yukawa Interaction and Flavor Sector}
 \label{sec:Flavor}
 
-Adding Dirac mass terms $-m\bar{\psi}\psi=-m(\bar{\psi}_{L}\psi_{R}+\bar{\psi}_{R}\psi_{L})$ to the \ac{EW} theory directly will not be allowed, because they explicitly break the \ew~symmetry. Instead, the origin of the fermion masses is explained by the Yukawa coupling between fermionic fields and the scalar field introduced earlier:
+Adding Dirac mass terms $-m\bar{\psi}\psi=-m(\bar{\psi}_{L}\psi_{R}+\bar{\psi}_{R}\psi_{L})$ to the \ac{EW} theory directly will not be allowed, because they explicitly break the \ew~symmetry. Instead, the origin of the fermion masses is explained by the interaction between fermionic fields and the scalar field introduced earlier, which was first pointed out by Weinberg in his famous 1967 paper~\cite{Weinberg:1967tq}. This interaction is described by the $\mathcal{L}_{Yukawa}$ written as:
 
 \begin{equation}
 \mathcal{L}_{Yukawa}=-(Y_{u})_{ij}\bar{Q}_{L}^{i}u_{R}^{j}\tilde{\phi}-(Y_{d})_{ij}\bar{Q}_{L}^{i}d_{R}^{j}\phi-(Y_{e})_{ij}\bar{L}_{L}^{i}e_{R}^{j}\phi + h.c.,
@@ -230,7 +230,7 @@ where $m_f=\frac{v}{\sqrt{2}}Y_{f}~(f=u,d,e)$ is known as the fermion mass matri
 m_{f}=V_{f}\hat{m}_{f}W^{\dagger}_{f}~(f=u,d,e),
 \end{equation}
 
-where $\hat{m}_{f}$ are the diagonalizes mass matrices. The mass term becomes:
+where $\hat{m}_{f}$ are the diagonalized mass matrices. The mass term becomes:
 
 \begin{equation}
 \mathcal{L}_{mass}=-(\bar{u}_{L}V_{u}\hat{m}_{u}W_{u}^{\dagger}u_{R}+\bar{d}_{L}V_{d}\hat{m}_{d}W^{\dagger}_{d}d_{R}+\bar{e}_{L}V_{e}\hat{m}_{e}W_{e}^{\dagger}e_{R}) + h.c.
@@ -242,7 +242,7 @@ Going to the so called ``mass basis'' with $u_{L}\rightarrow V_{u}u_{L}$, $u_{R}
 \mathcal{L}_{mass}=-(\bar{u}_{L}\hat{m}_{u}u_{R}+\bar{d}_{L}\hat{m}_{d}d_{R}+\bar{e}_{L}\hat{m}_{e}e_{R}) + h.c.,
 \end{equation}
 
-which corresponds to the Dirac mass observed in experiments. 
+where the diagonal elements of $\hat{m}_{f}~(f=u,d,e)$ corresponds to the Dirac mass observed in experiments. 
 
 On the other hand, these basis transformation will affect the charged-current interactions contained in the third term of $\mathcal{L}_{gauge}$ (Equation~\ref{eq:LagGauge}):
 
@@ -252,7 +252,7 @@ On the other hand, these basis transformation will affect the charged-current in
 
 where fermion flavor indices are suppressed, $V_{u}^{\dagger}V_{d}$ is known as the \ac{CKM} matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}, and $V_{\nu}^{\dagger}V_{e}$ is known as the \ac{PMNS} matrix~\cite{Pontecorvo:1957cp,Maki:1962mu}. 
 
-The \ac{CKM} matrix is a 3$\times$3 complex unitary matrix and is generally not diagonal as $V_{u}\neq V_{d}$. This enables quark flavor mixings in the charged-current interactions. For leptons, however, it is free to choose $V_{\upnu}=V_{e}$ as there is no neutrino term in the $\mathcal{L}_{Yukawa}$. The lepton flavor is therefore conserved in the \ac{SM}.   
+The \ac{CKM} matrix is a 3$\times$3 complex unitary matrix and is generally not diagonal as $V_{u}\neq V_{d}$. This enables quark flavor mixings in the charged-current interactions. For leptons, however, it is free to choose $V_{\upnu}=V_{e}$ as there is no neutrino term in the $\mathcal{L}_{Yukawa}$. Therefore, the \ac{PMNS} matrix only contains diagonal elements \ac{SM} which implies the conservation of the lepton flavors.   
 
 Looking closely at the charged-current interactions in the lepton sector:
 
@@ -264,6 +264,6 @@ Looking closely at the charged-current interactions in the lepton sector:
 \end{split}
 \end{equation}
 
-The Lagrangian is invariant under three independent global $U(1)$ symmetry, namely $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$, which correspond to the conserved charges: family numbers of three flavors. Moreover, since the coupling strength is the same across lepton generations in Equation~\ref{eq:LepCC}, which implies that leptons of different flavors are treated equally by the weak interactions. This is the principle known as the lepton flavor universality.
+The Lagrangian is invariant under three independent global $U(1)$ symmetry, namely $U(1)_{e}\bigotimes\\U(1)_{\mu}\bigotimes U(1)_{\tau}$, which correspond to the conserved charges: family numbers of three flavors. Moreover, since the coupling strength is the same across lepton generations in Equation~\ref{eq:LepCC}, which implies that leptons of different flavors are treated equally by the weak interactions. This is the principle known as the lepton flavor universality.
 
-It should be pointed out that the global $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$ symmetry is accidental in a sense that it does not arrive by construction. Instead, it is driven by the field content of the \ac{SM}, namely the absence of right handed neutrinos. Moreover, the observation of neutrino neutrinos oscillation~\cite{Super-Kamiokande:1998kpq,SNO:2002tuh} implies that neutrinos have mass and 
+It should be pointed out that the global $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$ symmetry is accidental in a sense that it does not arrive by construction. Instead, it is driven by the field content of the \ac{SM}, namely the absence of right handed neutrinos. 
