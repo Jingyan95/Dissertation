@@ -35,9 +35,15 @@ where $g_{S}$ corresponds to the strength of the gauge coupling. The strong coup
 D_{\mu}=\partial_{\mu}-ig_{S}t_{a}A^{a}_{\mu}.
 \end{equation}
 
-The non-abelian structure of the $SU(3)_{C}$ group implies that the third term in Equation~\ref{eq:G} is nonzero as  $SU(3)_{C}$ generators do not commute with each other. This leads to the trilinear and quartic gluon self-interactions when expanding the kinetic (first) term of the QCD Lagrangian. 
+The non-abelian structure of the $SU(3)_{C}$ group implies that the third term in Equation~\ref{eq:G} is nonzero as  $SU(3)_{C}$ generators do not commute with each other. This leads to the trilinear and quartic gluon self-interactions when expanding the kinetic (first) term of the \ac{QCD} Lagrangian. 
 
-In parallel to the development of the quark model, Feynman proposed a model to explain the behavior of hadron collisions~\cite{Feynman:1969wa}. Feynman postulated that protons are made of point-like constituents called ``partons'', and they behave like free particles at high momentum transfer, or equivalently short distance. The parton model was an immediate success as it was able to predict the short distance ``scaling'' effects of the strong interaction at a very good precision~\cite{Bjorken:1969ja}. Despite the success at describing experimental data, the parton model was still viewed as a phenomenological approximation as Feynman provided no microscopic description of the strong interactions. It was later understood that partons were matched to a collection of quarks and gluons within the nucleons.
+In parallel to the development of the quark model, Feynman proposed a model to explain the behavior of deep inelastic scatterings~\cite{Feynman:1969wa}. In this model, Feynman postulated that protons are made of point-like constituents called ``partons'', and they behave like free particles at high momentum transfer. Since the de Broglie wavelength~\cite{deBroglie:1924ldk} is given by 
+
+\begin{equation}
+\lambda=\frac{h}{p}, 
+\end{equation}
+
+a high momentum transfer corresponds to smaller wavelength and consequently better experimental resolution at distance scale. The parton model was an immediate success as it was able to predict the short distance ``Bjorken scaling'' effects of the strong interaction at a very good precision~\cite{Bjorken:1969ja}. Despite the success at describing experimental data, the parton model was still viewed as a phenomenological approximation as Feynman provided no microscopic description of the strong interactions. It was later recognized that partons were matched to quarks, anti-quarks, and gluons within the nucleons.
 
 Two years after Dutch physicist Gerard 't Hooft showed that non-abelian gauge theories were renormalizable~\cite{tHooft:1971akt}, major breakthrough came in 1973 when American physicists H. D. Politzer, David Gross, and Frank Wilczek~\cite{Gross:1973id,Politzer:1973fx} investigated the scale dependency of the strong coupling const $\alpha_{S}$. 't Hooft also arrived at similar results himself sometime earlier but he didn't publish his work. At one-loop precision, the $\alpha_{S}(\mu^2)$ is given by:
 
@@ -46,19 +52,52 @@ Two years after Dutch physicist Gerard 't Hooft showed that non-abelian gauge th
 \alpha_{S}(\mu^2)=\frac{\alpha_{S}(\mu_{R}^2)}{1+\beta_{0}\alpha_{S}(\mu_{R}^2)\textsf{ln}(\frac{\mu^2}{\mu_{R}^2})}
 \end{equation}
 
-where $\mu$ is the energy scale, $\mu_{R}$ is known as the renormalization scale, which corresponds to the energy initial scale at which $\alpha_{S}$ is evaluated. $\beta_{0}=(33-2n_{f})/12\pi$ is a constant that depends on the number quark flavors that can be considered massless. 
+where $\mu$ is the energy scale, $\mu_{R}$ is known as the renormalization scale, which corresponds to the initial energy scale at which $\alpha_{S}$ is evaluated. $\beta_{0}=(33-2n_{f})/12\pi$ is a constant that depends on the number quark flavors that can be considered massless. Even though the strong coupling constant can not be predicted from the first principle, Equation~\ref{eq:af} allows physicists to predict its value at an energy scale $\mu$ using its measured value at a different scale $\mu_{R}$.
 
-Equation~\ref{eq:af} reveals that when $n_{f}~<16$, the strength of the strong coupling decreases as energy increases. In other words, quarks and gluons behave like free particles at very short distance. The discovery of this property, known as ``asymptotic freedom'', by Politzer, Gross, and Wilczek brought the \ac{SM} to its current formulation. Since then it has withstood the test of numerous measurements of conducted at various experiments across a wide range of energy spectrum. A summary of recent measurements of $\alpha_{S}$ is given in Figure~\ref{fig:alphaS}.
+Equation~\ref{eq:af} also reveals that when $n_{f}~<16$, the strength of the strong coupling decreases as energy increases. In other words, quarks and gluons behave like free particles at very short distance. The discovery of this property, known as ``asymptotic freedom'', by Politzer, Gross, and Wilczek brought the \ac{SM} to its current formulation. Since then it has withstood the test of numerous measurements conducted at various experiments across a wide range of energy spectrum. A summary of recent measurements of $\alpha_{S}$ is given in Figure~\ref{fig:alphaS}.
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{c}
  \includegraphics[width=0.8\textwidth]{figures/Part1/QCD/alphaS}
  \end{tabular}
- \caption{Summary of the running of $\alpha_{S}$ measured by \ac{CMS}, \ac{ATLAS} and other experiments. \cite{cms:twiki}}
+ \caption{The strong coupling constant $\alpha_{S}$ as a function of energy scale $Q$. Measurements done by \ac{CMS}, \ac{ATLAS} and other experiments were shown in points with uncertainty bars. Theoretical predictions based on the renormalization group equation are shown in the dashed line.~\cite{cms:twiki}}
  \label{fig:alphaS}
  \end{center}
 \end{figure}
 
 \section{Nonperturbative QCD and Hadron Collisions}
 \label{sec:Collision}
+
+Perturbation theory is by far the best developed tool for calculating scattering cross-sections from the first principle. Despite being very successful, its predicting power becomes increasingly worse as the expansion parameter grows larger. As discussed earlier, the strong interaction grows stronger very rapidly at low energy which invalidates the perturbative expansions of parameter $\alpha_{S}$. The transition from perturbative \ac{QCD} regime to nonperturbative \ac{QCD} regime is illustrated in Figure~\ref{fig:pQCD}. The energy scales at which $\alpha_{S}$ diverges is known as $\mathrm{\Lambda}_{QCD}$, which is roughly $\mathcal{O}$(300 MeV)~\cite{Deur:2016tte}.
+
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{c}
+ \includegraphics[width=0.7\textwidth]{figures/Part1/QCD/pQCD}
+ \end{tabular}
+ \caption{The strong coupling constant $\alpha_{S}$ as a function of distance scale. Experimental determinations are shown in filled points while theoretical predictions are shown in the red line. The dashed blue band separates the regime where perturbative approach is still valid with the regime where perturbative approach is no longer valid.~\cite{Messchendorp:2013ysj}}
+ \label{fig:pQCD}
+ \end{center}
+\end{figure}
+
+The high energy hadron collisions involve phenomena occurred on a wide range of distance or energy scales. The process that carries the highest momentum transfer in a collision event, referred to as ``hard scattering'', typically involves short-distance quark-gluon interactions where production cross-sections calculated by perturbative \ac{QCD} are still valid. It is therefore critically important to separate the hard scattering from those long-distance effects in order to apply the perturbative \ac{QCD} in any cross-section calculations. This is achieved through the so called \ac{QCD} ``factorization theorem''~\cite{Collins:1989gx} whereby scattering cross-sections are decomposed as the product of several ``factors''. Each of these factors involves phenomena occurred on a single distance scale. An illustration of the factorization is shown in Figure~\ref{fig:factorization}.
+
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{c}
+ \includegraphics[width=0.9\textwidth]{figures/Part1/QCD/factorization}
+ \end{tabular}
+ \caption{Illustration of the physics of proton-proton collisions. The two incoming protons are shown on the left. The \ac{PDF} characterizes the properties the two partons that participate in hard interaction. The short-distance physics is handled by the perturbative \ac{QCD} which is represented with the rectangular box. The outgoing partons undergoes hadronization which is described by the fragmentation function.~\cite{Huston:fact}}
+ \label{fig:factorization}
+ \end{center}
+\end{figure}
+
+Protons are made of two up quarks and one down quark, known as the ``valence quarks''. Since the total mass of the three valence quarks is much smaller than the mass of a proton, most of the proton mass manifests as strong interactions within the nucleons. The mediators of the these interactions -- the gluons can also spawn a pair of quark and anti-quark, forming part of the proton internal structure known as the ``proton sea''. Therefore, it is possible for strange, charm or even bottom quarks to initiate a hard scattering,  and the three-quark view of the proton is largely ineffective in the context of hadron collisions. Moreover, before the initial state of the hard scattering reveals itself, the quarks and gluons inside the proton maintain a relatively large distance between each other, exchanging largely nonperturbative effects. This makes it virtually impossible to predict how the proton is structured from the first principle. Instead, a phonological approach, inspiration by Feynman's parton mode, is used to describe the proton internal structure. Under this approach, protons are seen as streams of quarks and gluons, collectively known as partons. These partons are considered collinear with the proton movement and each carry a fraction of the total proton momentum. The probability of a specific parton that carries x fraction of the proton moment is given by the \ac{PDF}.
+
+
+In high-energy collisions involving hadrons, the large-momentum scattering is under- stood as the interaction between fundamental hadron constituents, called partons. In such collisions, the production cross section for any process can be calculated using a master formula known as QCD factorization theorem, which postulates the full factorization between short-distance (i.e. non-perturbative) and long-distance (i.e. perturbative) physics. The scale that defines the boundary between short- and long-distance dynamics is known as factorization scale, and is indicated with  According to the factorization theorem, the cross section for a proton-proton inter- action of the kind can be expressed as the convolution of the partonic cross section with the parton distribution functions (PDFs) of the proton 
+
+In high-energy collisions involving hadrons, the large-momentum scattering is under- stood as the interaction between fundamental hadron constituents, called partons. In such collisions, the production cross section for any process can be calculated using a master formula known as QCD factorization theorem, which postulates the full factorization between short-distance (i.e. non-perturbative) and long-distance (i.e. perturbative) physics. The scale that defines the boundary between short- and long-distance dynamics is known as factorization scale, and is indicated with  According to the factorization theorem, the cross section for a proton-proton inter- action of the kind can be expressed as the convolution of the partonic cross section with the parton distribution functions (PDFs) of the proton 
+
+In high-energy collisions involving hadrons, the large-momentum scattering is under- stood as the interaction between fundamental hadron constituents, called partons. In such collisions, the production cross section for any process can be calculated using a master formula known as QCD factorization theorem, which postulates the full factorization between short-distance (i.e. non-perturbative) and long-distance (i.e. perturbative) physics. The scale that defines the boundary between short- and long-distance dynamics is known as factorization scale, and is indicated with  According to the factorization theorem, the cross section for a proton-proton inter- action of the kind can be expressed as the convolution of the partonic cross section with the parton distribution functions (PDFs) of the proton 
