@@ -642,13 +642,33 @@ ALL RIGHTS RESERVED
 % "Acknowledgments" label at the top of the page. The acknowledgments
 % themselves appear in a quote environment, i.e. tabbed in at both 
 % sides, and on its own page.
+\RequirePackage{CJKutf8}
 \newenvironment{acknowledgments}%
 {%
 	\thispagestyle{plain}
 	\begin{center}
 		\vspace*{1.5cm}
 		{%
-			\Large \bfseries Acknowledgments
+			\Large \bfseries \begin{CJK*}{UTF8}{gbsn}
+                     致谢
+                         \end{CJK*}
+		}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{quote}
+}
+{%
+    \end{quote}
+	\SgIntClearDoublePage
+}
+
+\newenvironment{dedication}%
+{%
+	\thispagestyle{plain}
+	\begin{center}
+		\vspace*{1.5cm}
+		{%
+			\Large \bfseries Dedication
 		}
 	\end{center}
 	\vspace{0.5cm}
