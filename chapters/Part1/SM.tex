@@ -47,9 +47,9 @@ Effectively, this means gauge bosons such as photons must be massless in a gauge
 
 It should be pointed out that gauge symmetry is not a symmetry of nature. The Noether currents~\cite{Noether1918} associated with local gauge symmetry do not generally correspond to physical observables. Nevertheless, its existence is necessary to regulate the redundant degree of freedom in the Lagrangian using a procedure known as gauge fixing~\cite{SCHWARTZ}. 
 
-\ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative, meaning the order of sequential group operations does not affect the final result. Chinese physicist Yang Chen-Ning and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the legendary Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. 
+\ac{QED} is also known as an abelian gauge theory as the $U(1)$ group operation is commutative, meaning the order of sequential group operations does not affect the final result. Chinese physicist Chen-Ning Yang and his American colleague Robert Mills at BrookHaven first generalized the concept of gauge invariance to the non-abelian Lie group, proposing what's now known as the Yang-Mills theory in 1954~\cite{Yang:1954ek}. Shortly after this work, Yang and his colleague Tsung-Dao Lee suggested parity might be violated in the weak interaction~\cite{Lee:1956qn}, which was later confirmed by the legendary Wu experiment led by Chien-Shiung Wu~\cite{Wu:1957my}. 
 
-Not long after the Wu experiment, physicists understood that only left-handed fermions and right-handed antifermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ (shown in Figure~\ref{fig:eeWW}) would lead to divergence at high energy unless there is a new massive neutral particle that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of non-abelian gauge theory in the early 1960s. 
+Not long after the Wu experiment, physicists understood that only left-handed fermions and right-handed antifermions are involved in weak charged-current interactions. Moreover, the very existence of weak charged-current forced physicists to consider the interaction between photons and weak mediators. This led to many problems in the weak theory, for example, the exchange of photons in $s$-channel $\textsf{e}^{+}\textsf{e}^{-}\rightarrow\textsf{W}^{+}\textsf{W}^{-}$ (shown in Figure~\ref{fig:eeWW}) would lead to divergence at high energy unless there exists a neutral intermediate field that mediates the weak interaction. Hints of the weak neutral current and the interplay between electromagnetism and the weak interaction prompted the efforts by physicists to relate these two forces under the framework of Yang-Mills theory in the early 1960s. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -68,7 +68,7 @@ imperative to apply different gauge transformations to left-handed and right-han
 L_{L}^{j}=\begin{pmatrix}\nu^{j}\\ e^{j}\end{pmatrix}_{L}, Q_{L}^{j}=\begin{pmatrix}u^j\\d^j\end{pmatrix}_{L}, j=1, 2, 3,
 \end{equation}
 
-where $\nu^{j}$, $e^{j}$, $u^{j}$, and $d^{j}$ correspond to Dirac fields of neutrino, charged-lepton, up-type quark, and down-type quark, respectively. The right-handed components of the Dirac fields are treated as $SU(2)_{L}$ singlet: $e_{R}^{j}, u_{R}^{j}, d_{R}^{j}$, where a neutrino term is missing as only left-handed neutrinos have been observed in nature. The index $j$ in both doublets and singlets runs over the fermion generations. The left-handed doublets carry $\frac{1}{2}$ weak isospin charge, denoted by $T$. The third component of $T$, denoted by $T_3$, is $\frac{1}{2}$ for neutrinos and up-type quarks, and -$\frac{1}{2}$ for charged-leptons and down-type quarks in the $SU(2)_{L}$ doublets. All right-handed singlets carry 0 weak isospin charge, which prevents them from participating in the weak interaction. 
+where $\nu^{j}$, $e^{j}$, $u^{j}$, and $d^{j}$ correspond to Dirac fields of neutrino, charged-lepton, up-type quark, and down-type quark, respectively. The right-handed components of the Dirac fields are treated as $SU(2)_{L}$ singlet: $e_{R}^{j}, u_{R}^{j}, d_{R}^{j}$, where neutrino terms are missing as only left-handed neutrinos have been observed in nature. The index $j$ in both doublets and singlets runs over the fermion generations. The left-handed doublets carry $\frac{1}{2}$ weak isospin charge, denoted by $T$. The third component of $T$, denoted by $T_3$, is $\frac{1}{2}$ for neutrinos and up-type quarks, and -$\frac{1}{2}$ for charged-leptons and down-type quarks in the $SU(2)_{L}$ doublets. All right-handed singlets carry 0 weak isospin charge, which prevents them from participating in the weak interaction. 
 
 The \ew~symmetry introduces the following local gauge transformations:
 
@@ -93,7 +93,7 @@ where $g$ and $g^{\prime}$ correspond to coupling strengths of the $SU(2)$ and $
 \mathcal{L}_{gauge}=-\frac{1}{2}\textsf{tr}W_{\mu\nu}W^{\mu\nu}-\frac{1}{4}B_{\mu\nu}B^{\mu\nu}+i\bar{\Psi}_{L}\gamma^{\mu}D_{\mu}\Psi_{L}+i\bar{\Psi}_{R}\gamma^{\mu}D_{\mu}\Psi_{R}
 \end{equation}
 
-A linear combination of the first and second component $W_{\mu}^{i}$ gives rise to the weak charge-current interactions observed in experiments:
+A linear combination of the first and second component of gauge field $W_{\mu}^{i}$ gives rise to the weak charge-current interactions observed in experiments:
 
 \begin{equation}
 \label{eq:CC}
@@ -133,7 +133,7 @@ The Higgs mechanism provides a way to generate a mass term for gauge bosons with
 V(\phi)=-\mu^2(\phi^{\dagger}\phi)+\lambda(\phi^{\dagger}\phi)^2,
 \end{equation}
 
-where $\lambda$ is a real parameter that determines the Higgs quartic coupling and is required to be positive to ensure the stability of the \ac{EW} vacuum. The parameter $\mu^2$ determines the minimum of the Higgs potential. The Lagrangian of this scalar field is written as 
+where $\lambda$ is a real parameter that determines the Higgs quartic coupling and is required to be positive to ensure the stability of the \ac{EW} vacuum~\cite{Cabibbo:1979ay}. The parameter $\mu^2$ determines the minimum of the Higgs potential. The Lagrangian of this scalar field is written as 
 
 \begin{equation}
 \mathcal{L}_{Scalar}=(D_{\mu}\phi)^{\dagger}(D^{\mu}\phi)-V(\phi),

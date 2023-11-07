@@ -95,7 +95,7 @@ The five components of the uncertainties discussed in this section are propagate
 \section{Diboson Uncertainties}
 \label{sec:DiUnc}
 
-Mismodeling of the jet multiplicity is observed in WZ control region, as is shown in Figure~\ref{fig:WZ}. This is largely due to the fact WZ process is modeled at \ac{LO} with one extra parton in the \ac{ME}. Any other extra jets are modeled by the \ac{PS}, which tends to be less accurate~\cite{CMS:2018sgc,CMS:2020mpn}. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson \ac{VR} that has the same OnZ requirement as the WZ \ac{VR}, no jet multiplicity requirement, a \ac{MET} $>$ 85 GeV requirement, and a requirement of no b-tagged jets with $\pt$ $>$ 20 GeV. Unlike for the WZ \ac{VR}, events with different lepton flavor compositions are combined.
+Mismodeling of the jet multiplicity is observed in WZ control region, as is shown in Figure~\ref{fig:WZ}. This is largely due to the fact WZ process is modeled at \ac{LO} with one extra parton in the \ac{ME}. Any other extra jets are modeled by the \ac{PS}, which tends to be less accurate~\cite{CMS:2018sgc,CMS:2020mpn}. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson \ac{VR} that has the same OnZ requirement as the WZ \ac{VR}, no jet multiplicity requirement, a \MET~$>$ 85 GeV requirement, and a requirement of no b-tagged jets with $\pt$ $>$ 20 GeV. Unlike for the WZ \ac{VR}, events with different lepton flavor compositions are combined.
 
 The jet multiplicity distributions in diboson \ac{VR} are shown in Figure~\ref{fig:VV_CR}. For each year, a scale factor parameterized as bins of jet multiplicity is derived,
 
@@ -177,7 +177,7 @@ cferr2		& \checkmark & Quadratic fluctuations of c jets \\
 \label{tab:btagsys}
 \end{table}
 
-Calibrations of \ac{JES} and \ac{JER} are done centrally at \ac{CMS}~\cite{CMS:2016lmd}. Uncertainties associated with the \ac{JES} calibrations are divided into 27 sources to properly account for correlations, which are summarized in Table~\ref{tab:jec}. Uncertainties associated with the calibrations of \ac{JER} are combined into a separate uncertainty, which is considered uncorrelated across the years. Variations of \ac{JES} and \ac{JER} due to these uncertainties are propagated to the \ac{MET} and calibrations of the \DeepJ scores: scale factors used to correct \DeepJ scores and the \ac{MET} vector are recomputed for each of the jet energy variations and treated as uncertainties that are fully correlated to the respective jet energy variation. 
+Calibrations of \ac{JES} and \ac{JER} are done centrally at \ac{CMS}~\cite{CMS:2016lmd}. Uncertainties associated with the \ac{JES} calibrations are divided into 27 sources to properly account for correlations, which are summarized in Table~\ref{tab:jec}. Uncertainties associated with the calibrations of \ac{JER} are combined into a separate uncertainty, which is considered uncorrelated across the years. Variations of \ac{JES} and \ac{JER} due to these uncertainties are propagated to the \MET~and calibrations of the \DeepJ scores: scale factors used to correct \DeepJ scores and the \MET~vector are recomputed for each of the jet energy variations and treated as uncertainties that are fully correlated to the respective jet energy variation. 
 
 \begin{table}[!hbtp]
 \sffamily
@@ -208,11 +208,11 @@ RelativePtEC2			& -			&   & \\
 \end{tabular}
 \end{table}
 
-One additional uncertainty is assigned to the unclustered \ac{MET} is considered~\cite{CMS:2019ctu}, and is treated as uncorrelated across the years.
+One additional uncertainty is assigned to the unclustered \MET~is considered~\cite{CMS:2019ctu}, and is treated as uncorrelated across the years.
 
 In the 2016 and 2017 runs, \ac{L1} ECAL triggers fired early~\cite{CMS:2020cmk} causing many uninteresting events to be recorded while the later interesting events were rejected. Since this effect is not present in the \ac{MC} simulation, a correction is applied to all signals and \emph{prompt} backgrounds. This correction is varied by 20\% and the resulting change in per-event weight is taken as the uncertainty. This uncertainty is treated as correlated across the years. 
 
-In the 2018 runs, two HCAL modules whose power supply died in the middle of the data taking. This affected the measurement of jet energy and \ac{MET}. No correction is applied as this effect is not well-understood and likely not significant relative to other corrections. Nevertheless, an uncertainty, denoted by ``HEM'', is assigned to cover the variations of jet energy and \ac{MET} caused by those two dead modules. 
+In the 2018 runs, two HCAL modules whose power supply died in the middle of the data taking. This affected the measurement of jet energy and \MET. No correction is applied as this effect is not well-understood and likely not significant relative to other corrections. Nevertheless, an uncertainty, denoted by ``HEM'', is assigned to cover the variations of jet energy and \MET~caused by those two dead modules. 
 
 A comparison of different sources of systematic uncertainties of the background estimates in the \acp{SR} is shown in Figure~\ref{fig:Comp_sys_background}.
 
