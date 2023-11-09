@@ -163,9 +163,9 @@ Complementary to the \ac{DT} and \ac{CSC}, the \ac{RPC} chambers are positioned 
 \section{The Trigger System}
 \label{sec:TrigSys}
  
-The \ac{LHC} collides proton bunches every 25 ns, which corresponds to an event rate of 40 MHz. It is beyond the hardware limit to record every events offline. Moreover, majority of the events involve only soft \ac{QCD} processes that are of little interests to particle physicists. The \ac{CMS} trigger system~\cite{CMS:2016ngn} is designed to reduce the data volume to a feasible level and select events that are interesting to the physics programs at the \ac{CMS}. It consists of two layers: the \ac{L1} trigger and \ac{HLT}.
+The \ac{LHC} collides proton bunches every 25 ns, which corresponds to an event rate of 40 MHz. The size of the data generated at this collision rate is too large and it is beyond the hardware limit to record every event offline. Moreover, vast majority of the events involve only soft \ac{QCD} processes that is of little interests to particle physicists. The \ac{CMS} trigger system~\cite{CMS:2016ngn} is designed to reduce the data volume to a feasible level and select events that are interesting to the physics programs at the \ac{CMS}. It consists of two layers: the \ac{L1} trigger and \ac{HLT}.
 
-The \ac{L1} trigger is first layer of the trigger system and is based on custom-designed hardware.
+The \ac{L1} trigger is first layer of the trigger system and is based on custom-designed hardware. Before high resolution collision events are recorded permanently, they are held in memory pipelines at the frontend electronics. The \ac{L1} trigger is tasked to analyze every event by only coarsely using the segmented data from the calorimeters and the muon systems, as illustrated in Figure~\ref{fig:L1T}. It makes an irreversible decision on which events to keep and which events to discard in less than 4 $\mu$s and reduces the event rate to about 100 kHz.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -177,4 +177,6 @@ The \ac{L1} trigger is first layer of the trigger system and is based on custom-
  \end{center}
 \end{figure}
 
-The \ac{HLT} is the second layer of the trigger system and is based on a software-based algorithms that run on computer farms. 
+Before the start of the Run-2, an upgraded version of the \ac{L1} trigger~\cite{Tapper:2013yva} was installed. This upgraded \ac{L1} trigger adds additional layers of correlators between the muon trigger and calorimeter trigger, which allows for more advanced computations such as the muon isolation. 
+
+The \ac{HLT} is the second layer of the trigger system and is based on a software-based algorithms that run on computer farms. Unlike the \ac{L1} trigger, the \ac{HLT} has access to the full readout data, which allows for the deployment of more sophisticated algorithms to select events targeted by different physics groups. The event rate is further reduced by the \ac{HLT} selection to about 400 Hz.
