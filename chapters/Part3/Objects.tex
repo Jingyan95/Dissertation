@@ -1,7 +1,7 @@
 \chapter{Object Selection}
 \label{chap:Objects}
 
-Objects described in \autoref{chap:Event}, referred to as ``candidates'', are further selected with more stringent requirements to suppress the contributions from background processes while maintaining a high signal acceptance. In particular, prompt electron and muon candidates are identified through a custom-trained \ac{BDT} classifier, which is discussed in \autoref{sec:Leptons}. Two jet identification algorithms are deployed to select jet candidates originating from hard collisions, which is discussed in \autoref{sec:Jets}. Furthermore, jet candidates that originate from b quarks are identified with a \ac{NN} based algorithm, which is discussed in \autoref{sec:Btag}. 
+Reconstructed objects described in \autoref{chap:Event}, referred to as ``candidates'', are further selected with more stringent requirements to suppress the contributions from background processes while maintaining a high signal acceptance. In particular, prompt electron and muon candidates are identified through a custom-trained \ac{BDT} classifier, which is discussed in \autoref{sec:Leptons}. Two jet identification algorithms are deployed to select jet candidates originating from hard collisions, which is discussed in \autoref{sec:Jets}. Furthermore, jet candidates that originate from b quarks are identified with a \ac{NN} based algorithm, which is discussed in \autoref{sec:Btag}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lepton Selection}
@@ -36,7 +36,7 @@ R_{\textsf{max}} = \max (0.05, \min(0.2, \frac{10\GeV}{p_{\textsf{T}}^{\ell}})).
 
 This type of isolation variable is known as ``mini isolation'', which maximizes the signal efficiency at $p_{\textsf{T}}^{\ell}$ by reducing the cone size. It is required that lepton candidates to have $I^{\textsf{rel}}_{\textsf{mini}}<$ 0.12.
 
-For electron specifically, candidates are required to have a GSF track with one or less missing inner hits. Electron candidates reconstructed in the transition region between ECAL barrel and endcap (i.e. 1.44 $<~|\eta_{\textsf{SC}}|~<$ 1.57) are removed from consideration. For muon specifically, candidates are required to be \ac{PF} muons and pass the medium working point discussed in \autoref{sec:Muon}.
+For electron specifically, candidates are required to have a GSF track with one or less missing inner hits. Electron candidates reconstructed in the transition region between ECAL barrel and endcap (i.e. 1.44 $<~|\eta_{\textsf{SC}}|~<$ 1.57) are removed from consideration. For muon specifically, candidates are required to be \ac{PF} muons and pass the Medium muon ID discussed in \autoref{sec:Muon}.
 
 Lepton candidates that pass all requirements stated above are referred to as ``\emph{tight}'' leptons. Leptons selected with a separate set of criteria, known as ``\emph{loose}'', is used in estimating the \emph{nonprompt} background, which is discussed in \autoref{chap:Nonprompt}. Unless explicitly stated, all lepton objects pre-sented in this search are \emph{tight} leptons.
 
