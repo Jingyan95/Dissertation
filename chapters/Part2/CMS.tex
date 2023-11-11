@@ -33,7 +33,12 @@ As illustrated in Figure~\ref{fig:axis3D}, the coordinate system adopted by \ac{
 The $x$- and $y$-axis form the transverse plane as they are both orthogonal to the beam line (z-axis). The distance from the \ac{IP} in the transverse plane is defined as $r=\sqrt{x^2+y^2}$. Variables defined entirely in the transverse plane, such as $\pt$, \MET, and $\Ht$, are often indicated by a subscripted T. The azimuthal angle $\phi$ is measured from the positive $x$-axis and the polar angle $\theta$ is measured from the positive z-axis. Another variable $\eta$, known as pseudorapidity, is defined as
 
 \begin{equation}
-\eta=-\ln(\frac{\theta}{2}).
+\eta=-\ln(\frac{\theta}{2}) 
+\end{equation}
+or alternatively 
+\begin{equation}
+\eta=\frac{1}{2}\ln(\frac{p+p_z}{p-p_z}).
+\label{eq:eta}
 \end{equation}
 
 It is preferred over $\theta$ mainly due to: i) particle production rate is roughly uniform in this variable, and ii) a difference in this variables, denoted by $\mathrm{\Delta}\eta$, is invariant under Lorentz boosts. The conversion between $\eta$ and $\theta$ is illustrated in Figure~\ref{fig:axis2D}. The $\mathrm{\Delta}\eta$ and the difference in azimuthal angles, denoted by $\mathrm{\Delta}\phi$, are used to define the distance parameter $\mathrm{\Delta}R$
@@ -116,7 +121,7 @@ The \ac{HCAL}~\cite{CMS:1997xji} is a sampling calorimeter placed outside of the
  \end{center}
 \end{figure}
 
-Similar to the \ac{ECAL}, the \ac{HCAL} aims to stop hadrons entirely as their energy are minimally affected by the tracker and \ac{ECAL}. Unlike the \ac{ECAL}, which is homogeneous in its detector materials, the \ac{HCAL} uses alternating layers of absorbers and scintillators made of different materials and hence it is classified as a sampling calorimeter. Brass absorber plates are placed between plastic scintillators plates in the HB and HE, which provides coverages of $|\eta|~<$ 1.3 and 1.3 $<~|\eta|~<$ 3.0, respectively. The HO is placed outside of the magnetic coil to provide additional materials in barrel. It uses materials from the \ac{CMS} magnet as absorbers. The HF is placed outside of the detector around the beam line. It provides coverage of forward jets and uses steel as absorbing materials. 
+Similar to the \ac{ECAL}, the \ac{HCAL} aims to stop hadrons entirely as their momenta are only minimally affected by the tracker and \ac{ECAL}. Unlike the \ac{ECAL}, which is homogeneous in its detector materials, the \ac{HCAL} uses alternating layers of absorbers and scintillators made of different materials and hence it is classified as a sampling calorimeter. Brass absorber plates are placed between plastic scintillators plates in the HB and HE, which provides coverages of $|\eta|~<$ 1.3 and 1.3 $<~|\eta|~<$ 3.0, respectively. The HO is placed outside of the magnetic coil to provide additional materials in barrel. It uses materials from the \ac{CMS} magnet as absorbers. The HF is placed outside of the detector around the beam line. It provides coverage of forward jets and uses steel as absorbing materials. 
 
 \section{The Superconducting Magnet}
 \label{sec:Magnet}
@@ -165,7 +170,7 @@ Complementary to the \ac{DT} and \ac{CSC}, the \ac{RPC} chambers are positioned 
  
 The \ac{LHC} collides proton bunches every 25 ns, which corresponds to an event rate of 40 MHz. The size of the data generated at this collision rate is too large and it is beyond the hardware limit to record every event offline. Moreover, vast majority of the events involve only soft \ac{QCD} processes that is of little interests to particle physicists. The \ac{CMS} trigger system~\cite{CMS:2016ngn} is designed to reduce the data volume to a feasible level and select events that are interesting to the physics programs at the \ac{CMS}. It consists of two layers: the \ac{L1} trigger and \ac{HLT}.
 
-The \ac{L1} trigger is first layer of the trigger system and is based on custom-designed hardware. Before high resolution collision events are recorded permanently, they are held in memory pipelines at the frontend electronics. The \ac{L1} trigger is tasked to analyze every event by only coarsely using the segmented data from the calorimeters and the muon systems, as illustrated in Figure~\ref{fig:L1T}. It makes an irreversible decision on which events to keep and which events to discard in less than 4 $\mu$s and reduces the event rate to about 100 kHz.
+The \ac{L1} trigger is the first layer of the trigger system and is based on custom-designed hardware. Before high resolution collision events are recorded permanently, they are held in memory pipelines at the frontend electronics. The \ac{L1} trigger is tasked to analyze every event by only coarsely using the segmented data from the calorimeters and the muon systems, as illustrated in Figure~\ref{fig:L1T}. It makes an irreversible decision on which events to keep and which events to discard in less than 4 $\mu$s and reduces the event rate to about 100 kHz.
 
 \begin{figure}[tbh!]
  \begin{center}

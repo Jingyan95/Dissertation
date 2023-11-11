@@ -1,7 +1,7 @@
 \chapter{Event Reconstruction in the CMS detector}
 \label{chap:Event}
 
-Events selected by the \ac{CMS} trigger system typically contains signatures of heavy particles, such as the top quark or the Higgs boson. However, the lifetime of these particles are extremely short and they travel a negligible distance before decaying into more stable particles, refer to as the final-state particles. Therefore, the reconstruction of an event produced in the proton-proton collisions requires the identifications of all final state particles, which can be then used to infer the presence of heavy particles. Except for weakly interacting neutrinos, all final-state particles leave traces of their signatures in at least one subsystem of the \ac{CMS} detector as illustrated in Figure~\ref{fig:PF}.
+Events selected by the \ac{CMS} trigger system typically contains signatures of heavy particles, such as the top quark or the Higgs boson. However, the lifetime of these particles are extremely short and they travel a negligible distance before decaying into more stable particles, referred to as the final-state particles. Therefore, the reconstruction of an event produced in the proton-proton collisions requires the identifications of all final state particles, which can be then used to infer the presence of heavy particles. Except for weakly interacting neutrinos, all final-state particles leave traces of their signatures in at least one subsystem of the \ac{CMS} detector as illustrated in Figure~\ref{fig:PF}.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -13,7 +13,7 @@ Events selected by the \ac{CMS} trigger system typically contains signatures of 
  \end{center}
 \end{figure}
 
-The \ac{PF} algorithm~\cite{CMS:2017yfk} is used by the \ac{CMS} to combine measurements from all subsystems and provide a global event description. This algorithm consists of two main steps: i) reconstructing the \ac{PF} elements (i.e. tracks and calorimeter clusters) using information from various subsystems and ii) linking these \ac{PF} elements together to form the \ac{PF} objects. The \ac{PF} objects include electrons, photons, muons, charged hadrons, and neutral hadrons. Descriptions of the track and vertex reconstruction are given in \autoref{sec:Track}. The reconstruction of \ac{PF} electrons and muons are discussed in \autoref{sec:Electron} and \autoref{sec:Muon}, respectively. The \ac{PF} objects are also used to reconstruct hadronic jets, taus and \ac{MET}, which is discussed in \autoref{sec:Jet}, \autoref{sec:Tau}, and \autoref{sec:MET}, respectively.
+The \ac{PF} algorithm~\cite{CMS:2017yfk} is used by the \ac{CMS} to combine measurements from all subsystems and provide a global event description. This algorithm consists of two main steps: i) reconstructing the \ac{PF} elements (i.e. tracks and calorimeter clusters) using information from various subsystems and ii) linking these \ac{PF} elements together to form the \ac{PF} candidates. The calorimeter clusters refer to a group of adjacent energy deposits in the calorimeters. The \ac{PF} candidates are labelled as electrons, photons, muons, charged hadrons, or neutral hadrons. Descriptions of the track and vertex reconstruction are given in \autoref{sec:Track}. The reconstruction of \ac{PF} electrons and muons are discussed in \autoref{sec:Electron} and \autoref{sec:Muon}, respectively. The \ac{PF} candidates are also used to reconstruct hadronic jets, taus and \ac{MET}, which is discussed in \autoref{sec:Jet}, \autoref{sec:Tau}, and \autoref{sec:MET}, respectively.
 
 \section{Track and Vertex}
 \label{sec:Track}
@@ -32,21 +32,101 @@ The electron reconstruction is fully integrated into the \ac{PF} framework, whic
 \section{Muon}
 \label{sec:Muon}
 
-Three types of muon tracks exist: standalone muons, tracker muons, and global muons~\cite{CMS:2018rym}. The standalone muons refer to the muon tracks reconstructed purely from hits in the muon system. The tracker muons are built ``inside-out'' by propagating tracks from the tracker to the muon system and match it with and at least one hit from the \ac{CSC} or \ac{DT}. The global muon is reconstructed ``outside-in'' by: i) matching the standalone muons with the inner tracks and ii) performing a combined fit using the \ac{KF} to update the muon parameters. 
+In \ac{CMS}, three types of muon tracks exist: standalone muons, tracker muons, and global muons~\cite{CMS:2018rym}. The standalone muons refer to the muon tracks reconstructed purely from hits in the muon system. The tracker muons are built ``inside-out'' by propagating tracks from the tracker to the muon system and match it with and at least one hit from either the \ac{CSC} or \ac{DT}. The global muon is reconstructed ``outside-in'' by: i) matching the standalone muons with the inner tracks and ii) performing a combined fit using the \ac{KF} to update the muon parameters. 
 
-Same as the electron, the muon reconstruction is fully integrated into the \ac{PF} algorithm, which applies a set of selection criteria based on quality parameters in the muon reconstruction to all three types of muon tracks. The so called Medium muon ID~\cite{CMS:2018rym} is used by by analyses described in this thesis. This ID accepts both tracker muons and global muons and adjusts the selection criteria accordingly. The overall efficiency of this ID is estimated to be around 99.5\%  for muons from simulated W and Z events.
+Same as the electron, the muon reconstruction is fully integrated into the \ac{PF} algorithm, which applies a set of selection criteria based on quality parameters in the muon reconstruction to the tracker muons and global muons. The so called Medium muon ID~\cite{CMS:2018rym} is used by analyses described in this thesis. This ID accepts both tracker muons and global muons and adjusts the selection criteria accordingly. The overall efficiency of this ID is estimated to be around 99.5\%  for muons from simulated W and Z events.
 
 \section{Jet}
 \label{sec:Jet}
 
-This chapter summarizes the offline reconstruction techniques used by the \ac{CMS} in order to identify the final-state particles. Descriptions of the track and vertex reconstruction are given in \autoref{sec:Track}. \autoref{sec:Electron} and \autoref{sec:Muon} discuss the reconstruction of electrons and muons, respectively. \autoref{sec:Tau} and \autoref{sec:Jet} discuss the reconstruction of hadronic jets and taus, respectively. The reconstruction of the \ac{MET} is discussed in \autoref{sec:MET}.
+The \ac{CMS} uses a sequential recombination algorithm, known as the anti-$k_t$ algorithm~\cite{Cacciari:2008gp}, to cluster \ac{PF} candidates into jets. The word ``$k_t$'' refers to the transverse momentum. This algorithm is designed to be \ac{IRC} safe, meaning the jet properties are invariant under the soft gluon emissions and collinear gluon splitting. The distance variable between two \ac{PF} candidates $i$ and $j$ in this algorithm is defined by 
+
+\begin{equation}
+\label{eq:ak}
+d_{ij} = \min(\frac{1}{p_{\textsf{T}_i}^2},\frac{1}{p_{\textsf{T}_j}^2})\frac{\mathrm{\Delta}R_{ij}}{R},
+\end{equation}
+
+where $p_{\textsf{T}_i}$ and $p_{\textsf{T}_j}$ corresponds to the transverse momentum of \ac{PF} candidate $i$ and $j$ respectively. $\mathrm{\Delta}R_{ij}$ is the angular distance between the two objects defined by
+
+\begin{equation}
+\mathrm{\Delta}R_{ij} = \sqrt{\mathrm{\Delta}y_{ij}^2+\mathrm{\Delta}\phi_{ij}^2},
+\label{eq:DDR}
+\end{equation}
+
+where $y=\frac{1}{2}\ln(\frac{E+p_z}{E-p_z})$, referred to as the rapidity, is not to be confused with the pseudorapidity $\eta$ defined in Equation~\ref{eq:eta}. $R$ in Equation~\ref{eq:DDR} denotes the size of the jet which is typically chosen to be smaller than 1. A second variable that measures the distance between particle $k$ and the beam axis in momentum space is defined as 
+
+\begin{equation}
+d_{kB} = \frac{1}{p_{\textsf{T}_k}^2}.
+\end{equation}
+
+The recombination procedure begins with calculating all combinations of $d_{ij}$ and concatenate them with every $d_{kB}$ to form the set $\{d_{ij}\}\cup\{d_{kB}\}$. The minimum of of the entire set is then determined. If $d_{ij}$ is the minimum, then \ac{PF} candidates $i$ and $j$ are recombined into one candidate which replaces candidate $i$ and $j$ in the list. If $d_{kB}$ is the minimum, then it is labeled as a jet and removed from the list. This process is iterated until no \ac{PF} candidates are left. The name ``anti-$k_t$'' refers to the fact that the distance variable $d_{ij}$ is defined respect to $k_t$ to the power of -2, which is different from the use of $k_t^2$ in $k_t$ algorithm~\cite{Ellis:1993tq}. 
+
+As indicated in Equation~\ref{eq:ak}, the anti-$k_t$ algorithm is dominated by hard particles. It typically starts with the hardest particle in an event and clusters and walks its way down to softer particles. The final momentum assignment of a jet is determined by the vectorial sum of the momenta of all particles that are clustered into this jet. The softest particles in an event are typically among the last ones to be clustered and they have no effect on hard jets. The infrared safety is therefore guaranteed. Moreover, two collinear particles will also be given high priority to be merged because of the small $d_{ij}$ between them. This effectively ensures the collinear safety of the algorithm. Historically, sequential clustering algorithms are favored by theorists because of its \ac{IRC} properties but not favored by the experimentalists due to its computational complexity. The introduction of the \textsc{FastJet} program~\cite{Cacciari:2011ma} improves significantly the the running speed of these sequential clustering algorithms, and they eventually become the standard jet clustering algorithm at the \ac{LHC}.
+
+The measured energy of a jet is calibrated by applying a multiplicative factor $\mathcal{C}$ to each of its four momentum component:
+
+\begin{equation}
+p^{\textsf{corr}}_{\mu} = \mathcal{C}\cdot p^{\textsf{raw}}_{\mu},
+\end{equation}
+
+where $\mathcal{C}$ is factorized into several components~\cite{CMS:2011shu},
+
+\begin{equation}
+\mathcal{C} = \mathcal{C}_{\textsf{offset}}(\pt^{\textsf{raw}})\cdot\mathcal{C}_{\textsf{MC}}(\pt^{\prime},\eta)\cdot\mathcal{C}_{\textsf{rel}}(\eta)\cdot\mathcal{C}_{\textsf{abs}}(\pt^{\prime\prime})
+\end{equation}
+
+where $\mathcal{C}_{\textsf{offset}}$ is the \ac{PU} offset correction that removes the energy coming from the \ac{PU} events. $\mathcal{C}_{\textsf{MC}}$ refers to the response correction. It accounts for the momentum difference between the reconstructed jets and particle-level jets. It is derived from simulation and applied to both data and \ac{MC}. The $\mathcal{C}_{\textsf{rel}}$ and $\mathcal{C}_{\textsf{abs}}$ correspond to the relative and absolute residual corrections, respectively. They account for the small differences in jet energy scale between data and \ac{MC} and are only applied to data.
 
 \section{Hadronic Tau}
 \label{sec:Tau}
 
-This chapter summarizes the offline reconstruction techniques used by the \ac{CMS} in order to identify the final-state particles. Descriptions of the track and vertex reconstruction are given in \autoref{sec:Track}. \autoref{sec:Electron} and \autoref{sec:Muon} discuss the reconstruction of electrons and muons, respectively. \autoref{sec:Tau} and \autoref{sec:Jet} discuss the reconstruction of hadronic jets and taus, respectively. The reconstruction of the \ac{MET} is discussed in \autoref{sec:MET}.
+Hadronic tau leptons are reconstructed with the \ac{HPS} algorithm~\cite{CMS:2011eio} in \ac{CMS}. This algorithm consists of several main steps: i) seeding, ii) ``strip'' reconstruction, iii) forming $\uptau_{h}$ candidates, iv) choosing the final $\uptau_{h}$ object.
+
+The \ac{HPS} algorithm uses \ac{PF} jets as ``seeds'' for the $\uptau_h$ candidates. It is required that \ac{PF} jets are reconstructed with anti-$k_t$ algorithm with a distance parameter $R$ = 0.4. All \ac{PF} candidates within $\mathrm{\Delta}R~<$ 0.5 of the jets are considered in the following reconstruction steps.
+
+Secondly, \ac{PF} electrons and photons in the seeding area are clustered into one or more rectangular window (0.05$\times$0.2) in the $\eta-\phi$ plane known as ``strips''. Strips are basically proxies for the neutral hadron $\pi^0$, which appears in many decay modes of $\uptau_h$. Strips are narrow in $\phi$ direction but wider in $\phi$ direction to account for the bending of electrons by the magnetic filed. $\uptau_h$ candidates typically have 0, 1, or 2 strips. 
+
+Thirdly, charged hadrons with the highest energy (up to six) are combined with the strips to form $\uptau_h$ candidates. It is required that the combinations of strips and charged hadrons are compatible with one of the seven reconstructed decay modes listed in Table~\ref{tab:DM}.
+
+\begin{table}[th]
+\sffamily
+\centering
+\caption{Decay modes of the $\uptau_h$ targeted by different combinations of charged hadrons and strips.}
+\begin{tabular}{ccc}
+\toprule
+Reconstructed decay mode & DM & Targeted decay mode \\
+\midrule
+1 hadron & 0 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}\nu_{\uptau} $\\
+1 hadron + 1 strip & 1 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}\pi^{0}\nu_{\uptau} $\\
+1 hadron + 2 strips & 2 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}\pi^{0}\pi^{0}\nu_{\uptau} $\\
+2 hadrons + 0 strip & 5 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}h^{\mp}h^{\pm}\nu_{\uptau} $\\
+2 hadrons + 1 strip & 6 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}h^{\mp}h^{\pm}\pi^{0}\nu_{\uptau} $\\
+3 hadrons + 0 strip & 10 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}h^{\mp}h^{\pm}\nu_{\uptau} $\\
+3 hadron + 1 strip & 11 & $\uptau_{h}^{\pm}\rightarrow h^{\pm}h^{\mp}h^{\pm}\pi^{0}\nu_{\uptau} $\\
+\bottomrule
+\end{tabular}
+\label{tab:DM}
+\end{table}
+
+``DM'' is a number assigned to each reconstructed decay mode, which is defined by 
+
+\begin{equation}
+\textsf{DM} = 5\times(N_{\textsf{prongs}}-1)+N_{\textsf{strips}}.
+\end{equation}
+
+DM = 5 or 6 corresponds to the scenario where one of the hadrons in a 3-prong $\uptau_h$ decay is not successfully reconstructed. The final assignment of a $\uptau_h$ candidate momentum is determined by the vectorial sum of all charged hadrons and strips constituents of that candidate. 
+
+Finally, a set of selection criteria is applied to all $\uptau_h$ candidates. The candidate with the highest $\pt$ and passes all the selection criteria is chosen as the final $\uptau_h$ object. 
 
 \section{Missing Transverse Momentum}
 \label{sec:MET}
 
-This chapter summarizes the offline reconstruction techniques used by the \ac{CMS} in order to identify the final-state particles. Descriptions of the track and vertex reconstruction are given in \autoref{sec:Track}. \autoref{sec:Electron} and \autoref{sec:Muon} discuss the reconstruction of electrons and muons, respectively. \autoref{sec:Tau} and \autoref{sec:Jet} discuss the reconstruction of hadronic jets and taus, respectively. The reconstruction of the \ac{MET} is discussed in \autoref{sec:MET}.
+It is assumed that the initial transverse momentum in hadron collisions is zero. It is therefore very useful to compute the vectorial sum of momenta of all reconstructed objects in events to infer the presence of weakly interacting particles that escape detections, such as neutrinos or hypothetical dark matter particles. 
+
+In \ac{CMS}, \ac{PF} candidates are used to reconstruct the \ac{MET} vector~\cite{CMS:2019ctu}:
+
+\begin{equation}
+\overrightarrow{p}_{\textsf{T}}^{\textsf{miss}} = -\sum_{i} \overrightarrow{p}_{\textsf{T}}^{i}.
+\end{equation}
+
+The magnitude of the \ac{MET} vector $\pt^{\textsf{miss}}$ is often considered to be analogous to $\pt$ of the particle that escapes the detector. 
