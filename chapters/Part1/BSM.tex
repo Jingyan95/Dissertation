@@ -8,7 +8,7 @@ Although the \ac{SM} represents our best understanding of the elementary particl
 
 As discussed in \autoref{sec:Flavor}, the renormalizable \ac{SM} Lagrangian exhibits a few continuous global symmetries, namely the $U(1)_{e}\bigotimes U(1)_{\mu}\bigotimes U(1)_{\tau}$ that gives rise to the conservation of lepton family numbers. Unlike gauge symmetries of the \ac{SM}, which arise at the outset of the construction, these global $U(1)$ symmetries emerge accidentally due to the assumption (massless neutrino) that is solely driven by phenomenology. Despite the accidental nature of these symmetries, they have stood up to the tests of almost all particle physics experiments to date.  
 
-In fact, the first and so far the only hint of the broken global symmetries didn't appear until the turn of the century through the oscillation of atmospheric neutrinos \cite{Super-Kamiokande:1998kpq,SNO:2002tuh}. This remarkable observation directed significant interest from both theorists and experimentalists to the flavor sector of the \ac{SM}. On the one hand, it cements the calls for extensions of the \ac{SM} by demonstrating the mixing of neutrino flavors. On the other hand, it also suggests that the $U(1)$ symmetries are indeed broken, and the \ac{CLFV} should also occur. 
+In fact, the first and so far the only hint of the broken global symmetries didn't appear until the turn of the century through the oscillation of atmospheric neutrinos \cite{Super-Kamiokande:1998kpq,SNO:2002tuh}. Figure~\ref{fig:SuperK} shows the strong evidence of neutrino oscillations presented by the the Super-Kamiokande Collaboration. This remarkable observation directed significant interest from both theorists and experimentalists to the flavor sector of the \ac{SM}. On the one hand, it cements the calls for extensions of the \ac{SM} by demonstrating the mixing of neutrino flavors. On the other hand, it also suggests that the $U(1)$ symmetries are indeed broken, and the \ac{CLFV} is also expected to occur. 
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -20,9 +20,21 @@ In fact, the first and so far the only hint of the broken global symmetries didn
  \end{center}
 \end{figure}
 
-Although the exact mechanism behind neutrino mass remains unclear, it can be induced through two distinct ways that only require minimal departures from the original formulation of the \ac{SM}. By adding right-handed neutrino fields, the Yukawa coupling \cite{Weinberg:1967tq} that describes the emergence of Dirac fermion masses can be naturally extended to neutrinos. The neutrino mass can also be realized by introducing the nonrenormalizable Dimension-5 operator \cite{Weinberg:1979sa}, known as the Weinberg operator. This operator gives rise to Majorana neutrino mass terms upon spontaneous symmetry breaking. 
+Although the exact mechanism behind neutrino mass remains unclear, it can be induced through two distinct ways that only require minimal departures from the original formulation of the \ac{SM}. By adding right-handed neutrino fields, the Yukawa coupling \cite{Weinberg:1967tq} that describes the emergence of Dirac fermion masses can be naturally extended to neutrinos. The neutrino mass can also be realized by introducing an effective operator~\cite{Weinberg:1979sa}, sometimes referred to as the Weinberg operator. This operator gives rise to Majorana neutrino mass terms upon spontaneous symmetry breaking. This operator is however nonrenormalizable, which can be viewed as an effectively description of the high-energy physics at a low-energy scale. This type of approach is known as the \ac{EFT}, which is discussed further in \autoref{chap:EFT}.
 
-In either case, the masses of neutrinos are accounted for and the strength of the neutrino flavor mixing is governed by the \ac{PMNS} matrix \cite{Pontecorvo:1957cp,Maki:1962mu}, a nearly perfect analog to the \ac{CKM} matrix \cite{Cabibbo:1963yz,Kobayashi:1973fv} that describes quark mixing in the weak interaction. The same \ac{PMNS} matrix can also give rise to the \ac{CLFV} process through loop diagrams involving charged current. However, these diagrams are highly suppressed and phenomenologically negligible due to the small neutrino mass relative to the electroweak scale. Therefore, any experimental observation of \ac{CLFV} will be unambiguous evidence of new physics beyond the \ac{SM}.
+In either case, the mass of neutrinos are accounted for and Equation~\ref{eq:Yukawa} can be subsequently updated to include neutrino mass terms. The presence of massive neutrino fields also means that the \ac{PMNS} matrix introduced in \autoref{sec:Flavor} will no longer be fully diagonal, for the same reason why the \ac{CKM} matrix contains off-diagonal elements. The strength of the neutrino flavor mixing is therefore governed by the off-diagonal elements of the \ac{PMNS} matrix -- a nearly perfect analog to the \ac{CKM} matrix. 
+
+The same \ac{PMNS} matrix can also give rise to the \ac{CLFV} process through loop diagrams involving charged current, as illustrated in Figure~\ref{fig:mutoe}. However, these diagrams are highly suppressed and phenomenologically negligible due to the small neutrino mass relative to the \ac{EW} scale. Therefore, any experimental observation of \ac{CLFV} will be unambiguous evidence of new physics beyond the \ac{SM}.
+
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{c}
+ \includegraphics[width=0.7\textwidth]{figures/Part1/BSM/mutoe}
+ \end{tabular}
+ \caption{Feynman diagram that shows $\upmu\rightarrow$e transition via W loop. The \ac{PMNS} matrix elements enter this diagram through the starting and end points of the W loop, indicated with red dots. The index $i$ runs over lepton generations.}
+ \label{fig:mutoe}
+ \end{center}
+\end{figure}
 
 Recent tests of lepton flavor universality conducted by the \ac{LHCb}~\cite{LHCb:2023zxo} and various other experiments~\cite{HFLAV} in the b$\rightarrow$c transitions established a mild tension (3$\sigma$) with respect to the \ac{SM} predictions. These experiments measured the following raito of branching fractions:
 
@@ -43,8 +55,6 @@ which is sensitive to new physics where the flavor structure is different.
 \end{figure}
 
 This anomaly is known as the ``$\mathcal{R}(\textsf{D})$'' anomaly and its situation as of Summer 2023 is summarized in Figure~\ref{fig:RD}. As discussed in \autoref{sec:Flavor}, the the coupling strength of the weak charged-current does not distinguish between lepton flavors. However, results from these measurements seem to suggest the W$\rightarrow\uptau\nu$ decay channel is favored over W$\rightarrow\upmu\nu$ decay channel. Not only did these measurements provide a direct hint towards \ac{LFUV}, it also prompted renewed experimental interest in \ac{CLFV} search since models that accommodate \ac{LFUV} generally give rise to \ac{CLFV} as well~\cite{Glashow:2014iga}. 
-
-The \ac{LHC} provides the best sensitivity to \ac{CLFV} processes involving a heavy leg, such as a top quark or a Higgs boson. Moreover, some of these models~\cite{Kim:2018oih} also suggest that \ac{CLFV} involving a top quark is within the reach of the \ac{LHC} sensitivity. Therefore, a search for \ac{CLFV} in the top quark sector could shed light on these flavor anomalies and further our understanding of the broken global symmetries.
 
 \section{Leptoquark Model}
 \label{sec:Leptoquark}
@@ -89,9 +99,9 @@ where $\lambda$ is the coupling strength, and $\beta^{ij}_{L}$ is a 3$\times$3 m
  \begin{center}
  \begin{tabular}{cc}
  \includegraphics[width=0.45\textwidth]{figures/Part1/BSM/SMbtoc}&
- \includegraphics[width=0.45\textwidth]{figures/Part1/BSM/Leptoquark}\\
+ \includegraphics[width=0.45\textwidth]{figures/Part1/BSM/U1}\\
  \end{tabular}
- \caption{Representative Feynman diagram for tree-level $\textsf{b}\rightarrow\textsf{c}\uptau\nu$ transition. The \ac{SM} contribution is shown on the left. Possible contributions from the $U_{1}$ leptoquark, denoted by LQ in the diagram, are shown on the right.}
+ \caption{Representative Feynman diagram for tree-level $\textsf{b}\rightarrow\textsf{c}\uptau\nu$ transition. The \ac{SM} contribution is shown on the left. Possible contributions from the $U_{1}$ leptoquark, represented with dashed line in the diagram, are shown on the right.}
  \label{fig:Leptoquark}
  \end{center}
 \end{figure}
@@ -101,9 +111,24 @@ An explanation of the $\mathcal{R}(\textsf{D})$ anomaly is possible if $U_{1}$ l
 \begin{equation}
 \begin{pmatrix}
 0 & 0 & 0\\
-0 & 0 & 0\\
-0 & 0 & 1\\
+0 & \mathcal{O}(0.01) & \mathcal{O}(0.1)\\
+0 & -\mathcal{O}(0.1) & 1\\
 \end{pmatrix},
 \end{equation}
 
-could be used to explain the the $\mathcal{R}(\textsf{D})$ anomaly, as pointed out by Ref.~\cite{Cornella:2021sby}.
+could be used to explain the $\mathcal{R}(\textsf{D})$ anomaly, as pointed out by Ref.~\cite{Cornella:2021sby}.
+
+Secondly, leptoquark model provides an interesting connection between $\mathcal{R}(\textsf{D})$ anomaly and flavor-changing phenomena at a higher energy scale. For example, $\mathcal{R}(\textsf{D})$ anomaly can also be explained by the $S_1$ leptoquark listed in Table~\ref{tab:Leptoquark}. Because $S_1$ can interact with left-handed fields, the b quark and neutrino in the interaction vertex can be replaced with a top quark and a muon, as illustrated in Figure~\ref{fig:S1}. This results in the flavor-volating t$\rightarrow\ell\ell^{\prime}$q decay, which is strongly suppressed by mass hierarchy of both quarks and leptons. It was suggested in Ref.~\cite{Kim:2018oih} that the $\mathcal{R}(\textsf{D})$ anomaly, if true, can give rise to a sizable rate of \ac{CLFV} events, which reaches $\mathcal{O}(10^{-6})$ at tree-level for t$\rightarrow\ell\ell^{\prime}$c process involving a top quark.
+
+\begin{figure}[tbh!]
+ \begin{center}
+ \begin{tabular}{cc}
+ \includegraphics[width=0.45\textwidth]{figures/Part1/BSM/S1}&
+ \includegraphics[width=0.45\textwidth]{figures/Part1/BSM/S1x}\\
+ \end{tabular}
+ \caption{Feynman diagrams of processes mediated by $S_1$ leptoquark, represented with a dashed line in both diagrams. The left diagram shows a possible explanation for $\mathcal{R}(\textsf{D})$ anomaly offered by the $S_1$. The same $S_1$ can give rise to \ac{CLFV} in the top quark sector, which is shown on the right.}
+ \label{fig:S1}
+ \end{center}
+\end{figure}
+
+Finally, the \ac{CERN} \ac{LHC} can provide sensitivity to \ac{CLFV} searches in two- or three-body decays of heavy particles, X$\rightarrow\ell\ell^{\prime}$(Y), and in heavy-particle production, pp$\rightarrow\ell\ell^{\prime}$X. Here, X refers to a heavy \ac{SM} particle such as a top quark or a Higgs, W, or Z boson, Y denotes an additional generic \ac{SM} particle. For \ac{CLFV} processes involving the heaviest of all elementary particles, the top quark, competitive sensitivity is predicted at the \ac{LHC} compared to previous bounds on such interactions~\cite{Davidson:2015zza}. Therefore, a search for \ac{CLFV} in the top quark sector at the \ac{LHC} could shed light on these flavor anomalies and further our understanding of the broken global symmetries.
