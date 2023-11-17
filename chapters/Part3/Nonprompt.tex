@@ -140,9 +140,9 @@ Only two \acp{PD} ``SingleElectron'' and ``SingleMuon'' are used in the construc
 \caption{Summary of the \ac{HLT} triggers used in the measurement of $r$ and $f$. These are unprescaled single-lepton triggers with the lowest $\pt$ threshold. The threshold of the electron trigger is higher in the 2017 and 2017 datasets due to increased instantaneous luminosity in those two years.}
 \begin{tabular}{llllll}
 \toprule
-Channel  & Path    & Dataset & 2016 & 2017 & 2018 \\ \midrule
+Channel & Path  & Dataset & 2016 & 2017 & 2018 \\ \midrule
 \multirow{2}{*}{Electron} & HLT\_Ele27\_WPTight\_Gsf & Data \& MC & \checkmark & - & - \\ 
-      & HLT\_Ele35\_WPTight\_Gsf & Data \& MC & - & \checkmark & \checkmark \\ \hline
+   & HLT\_Ele35\_WPTight\_Gsf & Data \& MC & - & \checkmark & \checkmark \\ \hline
 \multirow{1}{*}{Muon} & HLT\_IsoMu27 & Data \& MC & \checkmark & \checkmark & \checkmark \\ \bottomrule
 \end{tabular}
 \label{tab:RandF_trigger}
@@ -189,16 +189,16 @@ where the numerator is selected with one \emph{tag} and one \emph{tight} lepton 
 \caption{Summary of the lepton selections needed for the measurement of $r$ and $f$. Please note: (i) the minimum $\pt$ cut for \emph{tag} electron in the 2016 dataset is reduced to 30 GeV to adjust for the trigger threshold, and (ii) the \emph{tight} selection here is the same as the \emph{tight} lepton selection described in \autoref{sec:Leptons}.}
 \begin{tabular}{ccccc}
 \toprule
-Lepton  &Selection  & \emph{loose} & \emph{tag} & \emph{tight}$^{\textsf{ii}}$\\ \midrule
+Lepton &Selection & \emph{loose} & \emph{tag} & \emph{tight}$^{\textsf{ii}}$\\ \midrule
 \multirow{4}{*}{Electron} & $\pt$ & $>$ 20 GeV & $>$ 38 GeV$^{\textsf{i}}$ & $>$ 20 GeV \\  
-   & $I_{\textsf{mini}}^{\textsf{rel}}$ & $<$0.4 & $<$0.1 & $<$0.12 \\
-   & \TOP  & $>$-0.9  & $>$0.95 & $>$0.9 \\ 
-   & Match with trigger objects  & - & \checkmark & - \\ \midrule
+  & $I_{\textsf{mini}}^{\textsf{rel}}$ & $<$0.4 & $<$0.1 & $<$0.12 \\
+  & \TOP & $>$-0.9 & $>$0.95 & $>$0.9 \\ 
+  & Match with trigger objects & - & \checkmark & - \\ \midrule
 \multirow{5}{*}{Muon} & $\pt$ & $>$ 20 GeV & $>$ 30 GeV & $>$ 20 GeV \\
-   & $I_{\textsf{mini}}^{\textsf{rel}}$ & $<$0.4 & $<$0.1 & $<$0.12 \\
-   & Cut-based ID & - & Medium WP & Medium WP \\
-   & \TOP  & $>$0.5 & $>$0.9 & $>$0.9 \\ 
-   & Match with trigger objects  & - & \checkmark & - \\ \bottomrule
+  & $I_{\textsf{mini}}^{\textsf{rel}}$ & $<$0.4 & $<$0.1 & $<$0.12 \\
+  & Cut-based ID & - & Medium WP & Medium WP \\
+  & \TOP & $>$0.5 & $>$0.9 & $>$0.9 \\ 
+  & Match with trigger objects & - & \checkmark & - \\ \bottomrule
 \end{tabular}
 \label{tab:looseandtight}
 \end{table}
@@ -232,16 +232,16 @@ The selection criteria for various \acp{MR} is summarised in Table~\ref{tab:MR}.
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Summary of the selection criteria applied to the measurement regions of $r$ and $f$. ``OffZ'' means events containing two \ac{SS} electrons with an in variant mass between 76 and 106 GeV are removed. $C_i$ denotes the electric charge of the selected lepton.}
+\caption{Summary of the selection criteria applied to the measurement regions of $r$ and $f$. ``OffZ'' means events containing two \ac{SS} electrons with an invariant mass between 76 and 106 GeV are removed. $C_i$ denotes the electric charge of the selected lepton.}
 \resizebox{\textwidth}{!}{ 
 \begin{tabular}{cccccccc}
 \toprule
-\multirow{2}{*}{Observable}  & \multirow{2}{*}{jet bin}     & \multirow{2}{*}{\vtop{\hbox{\strut $\#$ of selected}\hbox{\strut~~~leptons}}} &  \multirow{2}{*}{\vtop{\hbox{\strut lepton flavor}\hbox{\strut~composite}}} & \multirow{2}{*}{$|\sum_iC_i|$} & \multirow{2}{*}{OffZ}        & \multirow{2}{*}{njet} & \multirow{2}{*}{nbjet}\\ 
-  & & &  & &        &  & \\ \midrule
-\multirow{2}{*}{$f$}   & 0 jet        & 2                & any                  & 2            & same-sign ee  & = 0          & = 0  \\  
-                  & 1 or more jet & 2                & any                 & 2             & same-sign ee  & $\geq$ 1 & $\leq$ 1\\ \midrule
-\multirow{2}{*}{$r$}  & 0 jet        & 2                 & e$\upmu$ only           & 0            & -  & = 0           & = 0   \\  
-                 & 1 or more jet & 2                 & e$\upmu$ only           & 0            & -   & $\geq$ 1 & $\leq$ 1 \\ \bottomrule  
+\multirow{2}{*}{Observable} & \multirow{2}{*}{jet bin}   & \multirow{2}{*}{\vtop{\hbox{\strut $\#$ of selected}\hbox{\strut~~~leptons}}} & \multirow{2}{*}{\vtop{\hbox{\strut lepton flavor}\hbox{\strut~composite}}} & \multirow{2}{*}{$|\sum_iC_i|$} & \multirow{2}{*}{OffZ}    & \multirow{2}{*}{njet} & \multirow{2}{*}{nbjet}\\ 
+ & & & & &    & & \\ \midrule
+\multirow{2}{*}{$f$}  & 0 jet    & 2        & any         & 2      & same-sign ee & = 0     & = 0 \\  
+         & 1 or more jet & 2        & any         & 2       & same-sign ee & $\geq$ 1 & $\leq$ 1\\ \midrule
+\multirow{2}{*}{$r$} & 0 jet    & 2         & e$\upmu$ only      & 0      & - & = 0      & = 0  \\  
+         & 1 or more jet & 2         & e$\upmu$ only      & 0      & -  & $\geq$ 1 & $\leq$ 1 \\ \bottomrule  
 \end{tabular}
 }
 \label{tab:MR}
@@ -261,12 +261,12 @@ Distribution of the leading lepton $\eta$ and jet multiplicity are shown in Figu
  \begin{tabular}{cc}
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/eee/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/eee/njet} \\
-  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/lep1Eta}&
+ \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/emul/njet} \\
-  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/lep1Eta}&
+ \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/lep1Eta}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Nonprompt/VR/mumumu/njet} \\
  \end{tabular}
- \caption{Distributions of the leading lepton $\eta$ (left column) and the jet multiplicity (right column) in the \emph{nonprompt} \acp{VR}. Events in the eee, $\emul$, and $\mmm$ \emph{nonprompt} \acp{VR} are shown in the upper, middle, and lower row, respectively. The data are shown as filled points and the \ac{SM} background predictions as histograms. The \emph{nonprompt} background is estimated using control samples in data, while other backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The last bin of the right histogram includes the overflow events.}
+ \caption{Distributions of the leading lepton $\eta$ (left column) and the jet multiplicity (right column) in the \emph{nonprompt} \acp{VR}. Events in the eee, $\emul$, and $\mmm$ \emph{nonprompt} \acp{VR} are shown in the upper, middle, and lower rows, respectively. The data are shown as filled points and the \ac{SM} background predictions as histograms. The \emph{nonprompt} background is estimated using control samples in data, while other backgrounds are estimated using \ac{MC} simulation. The hatched bands indicate statistical and systematic uncertainties for the \ac{SM} background predictions. The last bin of the right histogram includes the overflow events.}
  \label{fig:VR_matrix}
  \end{center}
 \end{figure}

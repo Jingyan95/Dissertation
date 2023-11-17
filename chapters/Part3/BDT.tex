@@ -10,7 +10,7 @@ The top quark production and decay signals are no longer distinguished by the \a
 \section{BDT Configuration}
 \label{sec:Config}
 
-The LFV e$\upmu$ mass of the top quark decay signal is bounded by the \ac{SM} top quark mass, as is shown in Figure~\ref{sec:SR}. On the contrary, the LFV e$\upmu$ mass of the top quark production signal has no such restriction and often reaches TeV level. Therefore, a 150 GeV threshold is used to divide the \ac{SR} into two \acp{SR} enriched in different signal modes. The \ac{MVA} strategy is to combine two signal modes within each \ac{SR} and train binary \acp{BDT} separately for each \ac{SR}. In other words, only two signal datasets and two background datasets are needed.
+The LFV e$\upmu$ mass of the top quark decay signal is bounded by the \ac{SM} top quark mass, as is shown in Figure~\ref{sec:SR}. On the contrary, the LFV e$\upmu$ mass of the top quark production signal has no such restriction and often reaches the TeV level. Therefore, a 150 GeV threshold is used to divide the \ac{SR} into two \acp{SR} enriched in different signal modes. The \ac{MVA} strategy is to combine two signal modes within each \ac{SR} and train binary \acp{BDT} separately for each \ac{SR}. In other words, only two signal datasets and two background datasets are needed.
   
 Other aspects of the signal \ac{MC} samples, such as the Lorentz structure and the flavor of the up-type quark involved in LFV interaction, are shown to have a relatively small impact on the kinematics of final state particles, as is shown in Figure~\ref{fig:Lorentz}. Therefore, they are not distinguished by the \ac{BDT}. The selection criteria used to define \ac{SR}, described in \autoref{sec:SR}, are used to preselect events before the construction of both signal and background datasets. 
 
@@ -20,7 +20,7 @@ The construction of the signal datasets takes a few steps. Firstly, the cross-se
  \begin{center}
  \begin{tabular}{cc}
  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/LFV_VR_emul_lllOffZMetg20Jetgeq1Bleq1_LFVTopmass_N}&
-  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/LFV_VR_emul_lllOffZMetg20Jetgeq1Bleq1_BDT_TT_N}\\
+ \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/LFV_VR_emul_lllOffZMetg20Jetgeq1Bleq1_BDT_TT_N}\\
  \end{tabular}
  \caption{Normalized distributions of the simulated top quark decay signals in \ac{SR}1 using the 2018 dataset. From left to right: LFV top mass, \ac{BDT} output. In the legend of these histograms, ``vector'', ``scalar'', and ``tensor'' denote the Lorentz structures of \ac{EFT} operators, and ``emutu(c)'' denote the $\emut{u(c)}$ interaction vertex.}
  \label{fig:Lorentz}
@@ -36,20 +36,20 @@ A technique known as the ``$k$-fold cross validation'' is used to minimize the l
  \begin{tabular}{c}
  \includegraphics[width=0.8\textwidth]{figures/Part3/BDT/kfold}
  \end{tabular}
-   \caption{Illustration of a 5-fold cross-validation. In this setup, five \acp{BDT} are trained/tested using the same dataset arranged in different configurations. Each of the bottom five rows represents the configuration of a \ac{BDT}.}
+  \caption{Illustration of a 5-fold cross-validation. In this setup, five \acp{BDT} are trained/tested using the same dataset arranged in different configurations. Each of the bottom five rows represents the configuration of a \ac{BDT}.}
  \label{fig:5fold}
  \end{center}
 \end{figure}
 
-The same set of hyperparameters is used for all \acp{BDT}, which are optimized using a randomized grid search algorithm. The number of estimators is set to 1000 with a max depth of 5. The standard loss function implemented in \cite{Chen:2016:XST:2939672.2939785} is used as the evaluation metric. The performance of the \ac{BDT} is visualized using a metric known as ``\ac{ROC} curve'', which is shown in Figure \ref{fig:ROC}. In general, the \acp{BDT} trained in \ac{SR}2 (i.e. $\textsf{m}(\textsf{e}\upmu)~>$ 150 GeV) are much more performant due to the high $\pt$ objects in the final states.
+The same set of hyperparameters is used for all \acp{BDT}, which are optimized using a randomized grid search algorithm. The number of estimators is set to 1000 with a max depth of 5. The standard loss function implemented in \cite{Chen:2016:XST:2939672.2939785} is used as the evaluation metric. The performance of the \ac{BDT} is visualized using a metric known as the ``\ac{ROC} curve'', which is shown in Figure \ref{fig:ROC}. In general, the \acp{BDT} trained in \ac{SR}2 (i.e. $\textsf{m}(\textsf{e}\upmu)~>$ 150 GeV) are much more performant due to the high $\pt$ objects in the final states.
 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/5foldTT}&
-  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/5foldST}\\
+ \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/5foldST}\\
  \end{tabular}
- \caption{\ac{ROC} curves extracted using the test sets specified in the 5-fold cross-validation. The left (right) figure shows the \ac{ROC} curves of the \acp{BDT} trained in \ac{SR}1 (\ac{SR}2). The area under the \ac{ROC} curves are showed in the legends.}
+ \caption{\ac{ROC} curves extracted using the test sets specified in the 5-fold cross-validation. The left (right) figure shows the \ac{ROC} curves of the \acp{BDT} trained in \ac{SR}1 (\ac{SR}2). The area under the \ac{ROC} curves are shown in the legends.}
  \label{fig:ROC}
  \end{center}
 \end{figure}
@@ -65,7 +65,7 @@ The discriminating variables used as input in training are referred to as "featu
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Features shared by \ac{BDT}s trained in both \ac{SR}1 and \ac{SR}2.}
+\caption{Names and descriptions of common features shared by \ac{BDT}s trained in \ac{SR}1 and \ac{SR}2}
  \resizebox{\linewidth}{!}{%
 \begin{tabular}{lc}
 \toprule
@@ -96,7 +96,7 @@ Four additional features are added to the \ac{BDT} trained in \ac{SR}1. Among th
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Features only used by \ac{BDT} trained in \ac{SR}1}
+\caption{Names and descriptions of features only used by \ac{BDT} trained in \ac{SR}1}
  \resizebox{0.8\linewidth}{!}{%
 \begin{tabular}{lc}
 \toprule
@@ -115,7 +115,7 @@ MVA\_JmuDr & $\mathrm{\Delta}R$ between LFV muon and a light jet (non b jet) \\
 \begin{table}[th]
 \sffamily
 \centering
-\caption{Features only used by \ac{BDT} trained in \ac{SR}2}
+\caption{Names and description of features only used by \ac{BDT} trained in \ac{SR}2}
  \resizebox{0.52\linewidth}{!}{%
 \begin{tabular}{lc}
 \toprule
@@ -187,7 +187,7 @@ Distributions of selected features are shown in Figure \ref{fig:Features1}-\ref{
  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/TTranking}&
  \includegraphics[width=0.48\textwidth]{figures/Part3/BDT/STranking}\\
  \end{tabular}
- \caption{List of features ranked by their relative importance. From left to right: \ac{BDT} trained in \ac{SR}1, \ac{BDT}  trained in \ac{SR}2.}
+ \caption{List of features ranked by their relative importance. From left to right: \ac{BDT} trained in \ac{SR}1, \ac{BDT} trained in \ac{SR}2.}
  \label{fig:Ranking}
  \end{center}
 \end{figure}

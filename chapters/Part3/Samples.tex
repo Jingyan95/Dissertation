@@ -1,7 +1,7 @@
 \chapter{Datasets, Simulated Samples and Triggers}
 \label{chap:Samples}
 
-This analysis is based on data collected by the \ac{CMS} experiment in 2016-2018 from pp collisions at a center-of-mass energy of 13 TeV corresponding to an integrated luminosity of 138 fb$^{-1}$. There were approximately 30 simultaneous pp collisions occurring per 25 ns. Based on online selection criteria, fully reconstructed collision data that contain high-level physics objects are divided into ``\acp{PD}''. The \acp{PD} that make use of lepton information for selection include ``DoubleEG'', ``DoubleMu'', ``MuonEG'', ``SingleElectron'', and ``SingleMuon'' for the 2016 and 2017 data-taking era. In 2018, ``SingleElectron'' and ``DoubleEG'' are replaced by ``EGamma''. The names of these \acp{PD} reflect the selection criteria. In addition to these \acp{PD}, \ac{MC} samples are also generated to model both signal and background processes, which are described in \autoref{sec:Signals} and \autoref{sec:Backgrounds}, respectively. To account for the different data-taking conditions across the years, all \ac{MC} samples are generated separately for each year. \ac{HLT} triggers are used to select events offline, which is described in \autoref{sec:Triggers}.
+This analysis is based on data collected by the \ac{CMS} experiment in 2016-2018 from pp collisions at a center-of-mass energy of 13 TeV corresponding to an integrated luminosity of 138 fb$^{-1}$. Approximately 30 simultaneous pp collisions were occurring per 25 ns. Based on online selection criteria, fully reconstructed collision data that contain high-level physics objects are divided into ``\acp{PD}''. The \acp{PD} that make use of lepton information for selection include ``DoubleEG'', ``DoubleMu'', ``MuonEG'', ``SingleElectron'', and ``SingleMuon'' for the 2016 and 2017 data-taking era. In 2018, ``SingleElectron'' and ``DoubleEG'' were replaced by ``EGamma''. The names of these \acp{PD} reflect the selection criteria. In addition to these \acp{PD}, \ac{MC} samples are also generated to model both signal and background processes, which are described in \autoref{sec:Signals} and \autoref{sec:Backgrounds}, respectively. To account for the different data-taking conditions across the years, all \ac{MC} samples are generated separately for each year. \ac{HLT} triggers are used to select events offline, which is described in \autoref{sec:Triggers}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -17,22 +17,22 @@ This analysis is based on data collected by the \ac{CMS} experiment in 2016-2018
 Lorentz Structure & \multicolumn{3}{c}{Operator}\\
 \midrule
 \multirow{4}{*}{vector} & $\textsf{O}_{\textsf{lq}}^{(1)ijmn}$ &=& $(\overline{\textsf{l}}_i\gamma^\mu\textsf{l}_j)
-  (\overline{\textsf{q}}_m\gamma_\mu\textsf{q}_n)$
-  \\
+ (\overline{\textsf{q}}_m\gamma_\mu\textsf{q}_n)$
+ \\
  & $\textsf{O}_{\textsf{lu}}^{ijmn}$ &=& $(\overline{\textsf{l}}_i\gamma^\mu\textsf{l}_j)
-  (\overline{\textsf{u}}_m\gamma_\mu\textsf{u}_n)$
-  \\  
+ (\overline{\textsf{u}}_m\gamma_\mu\textsf{u}_n)$
+ \\  
  & $\textsf{O}_{\textsf{eq}}^{ijmn}$ &=& $(\overline{\textsf{e}}_i\gamma^\mu\textsf{e}_j)
-  (\overline{\textsf{q}}_m\gamma_\mu\textsf{q}_n)$
-  \\ 
+ (\overline{\textsf{q}}_m\gamma_\mu\textsf{q}_n)$
+ \\ 
  & $\textsf{O}_{\textsf{eu}}^{ijmn}$ &=& $(\overline{\textsf{e}}_i\gamma^\mu\textsf{e}_j)
-  (\overline{\textsf{u}}_m\gamma_\mu\textsf{u}_n)$
-  \\ \midrule
+ (\overline{\textsf{u}}_m\gamma_\mu\textsf{u}_n)$
+ \\ \midrule
 \multirow{1}{*}{scalar} & $\textsf{O}_{\textsf{lequ}}^{(1)ijmn}$ &=& $(\overline{\textsf{l}}_i\textsf{e}_j)\;\varepsilon\;
-  (\overline{\textsf{q}}_m\textsf{u}_n)$
-  \\ 
+ (\overline{\textsf{q}}_m\textsf{u}_n)$
+ \\ 
  \multirow{1}{*}{tensor} & $\textsf{O}_{\textsf{lequ}}^{(3)ijmn}$ &=& $(\overline{\textsf{l}}_i \sigma^{\mu\nu}\textsf{e}_j)\;\varepsilon\;
-  (\overline{\textsf{q}}_m\sigma_{\mu\nu}\textsf{u}_n)$
+ (\overline{\textsf{q}}_m\sigma_{\mu\nu}\textsf{u}_n)$
  \\ \bottomrule
 \end{tabular}
 \label{tab:dimension6}
@@ -112,7 +112,7 @@ To generate signal \ac{MC} samples, the effective Lagrangian described above is 
  \begin{center}
  \begin{tabular}{cc}
  \includegraphics[width=0.48\textwidth]{figures/Part3/Samples/LFVePt}&
-  \includegraphics[width=0.48\textwidth]{figures/Part3/Samples/LFVmuPt}\\
+ \includegraphics[width=0.48\textwidth]{figures/Part3/Samples/LFVmuPt}\\
  \end{tabular}
  \caption{Comparison of kinematic distributions at \ac{ME}-level produced by different models: LFV electron $\pt$ (left), LFV muon $\pt$ (right). The ``SmeftFR'' samples (shown in red curve) and ``SMEFTsim'' samples (shown in black curve) are statistically independent of each other. The ``Reweight'' (shown in blue curve) is produced by applying weights calculated by Equation~\ref{eq:2} to ``SmeftFR'' samples.}
  \label{fig:reweight}
@@ -163,16 +163,16 @@ where $\textsf{m}_{\textsf{t}}$ and $\Gam_{\textsf{t}}^{\textsf{SM}}$ are taken 
 \caption{Theoretical cross sections for top production and decay for each \ac{CLFV} coupling, calculated at $\WC{}{}/\Lam^2$ = 1 TeV$^{-2}$ by \MG~with SMEFTsim. Uncertainties related to \ac{PDF} and \ac{QCD} scale in \ac{ME} calculation are given ($\sigma^{+\text{scale}}_{-\text{scale}}\pm \text{PDF}$).}
 \begin{tabular}{clll}
 \toprule 
-Lorentz Structure  & Samples       & XS (fb)  \\ \midrule
+Lorentz Structure & Samples    & XS (fb) \\ \midrule
 \multirow{3}{*}{vector} & top production via u quark & $460^{+81}_{-64}\pm6$ \\ 
-   & top production via c quark & $33^{+5}_{-4}\pm6$  \\
-   & top decay via u/c quark    & $32^{+0.8}_{-1.1}\pm1.3$  \\ \midrule
+  & top production via c quark & $33^{+5}_{-4}\pm6$ \\
+  & top decay via u/c quark  & $32^{+0.8}_{-1.1}\pm1.3$ \\ \midrule
 \multirow{3}{*}{scalar} &top production via u quark & $97^{+18}_{-14}\pm1$ \\ 
-   & top production via c quark    & $6.3^{+0.9}_{-0.8}\pm1.4$ \\
-   & top decay via u/c quark  & $4.0^{+0.1}_{-0.1}\pm0.2$ \\ \midrule 
+  & top production via c quark  & $6.3^{+0.9}_{-0.8}\pm1.4$ \\
+  & top decay via u/c quark & $4.0^{+0.1}_{-0.1}\pm0.2$ \\ \midrule 
 \multirow{3}{*}{tensor} & top production via u quark & $2143^{+368}_{-293}\pm31$ \\
-   & top production via c quark & $164^{+22}_{-18}\pm27$  \\
-   & top decay via u/c quark   & $187^{+5}_{-6}\pm8$  \\ \bottomrule
+  & top production via c quark & $164^{+22}_{-18}\pm27$ \\
+  & top decay via u/c quark  & $187^{+5}_{-6}\pm8$ \\ \bottomrule
 \end{tabular}
 \vspace{-0.5em}
 \label{tab:signal}
@@ -188,7 +188,7 @@ Besides tZq, tHq, tHW, and tWZ processes, the \ac{NLO} \ac{PDF} set from NNPDF3.
 
 The default choice of \ac{ME} event generator is \MG~v2.4.2 (v2.2.2 for 2016), which is used to generate all but ZZ, $\ttbar$H, and $\ttbar$ samples. These three samples are generated with \Pow~v2~\cite{Frixione:2007vw} instead. Samples with small contributions (tHq, tWZ, tHW, and low mass \ac{DY} ) are generated at \ac{LO} while other samples are generated at \ac{NLO}. Whenever possible and relevant, theoretical cross sections from high-order \ac{QCD} calculations are used. The references of these calculations are included in \ref{tab:MCsample}.
 
-The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} was used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} was used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more \emph{prompt} leptons in the final states are classified as ``\emph{prompt} background'', and (ii) other processes are classified as ``\emph{nonprompt} background''. The \emph{nonprompt} backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in ``\emph{nonprompt}'' category in Table \ref{tab:MCsample} are therefore only used for validations. 
+The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadronization. The CUETP8M1~\cite{CMS:2015wcf} was used in 2016 for underlying event tuning while the CP5~\cite{CMS:2019csb} was used in 2017 and 2018. The configurations of the \ac{MC} samples are summarized in Table \ref{tab:MCsample}. The background processes are divided into two categories: (i) processes with three or more \emph{prompt} leptons in the final states are classified as ``\emph{prompt} background'', and (ii) other processes are classified as ``\emph{nonprompt} background''. The \emph{nonprompt} backgrounds in this analysis are modeled with a data-driven technique, which is discussed in \autoref{chap:Nonprompt}. The \ac{MC} samples listed in the ``\emph{nonprompt}'' category in Table \ref{tab:MCsample} are therefore only used for validations. 
 
 \begin{table}
 \sffamily
@@ -199,18 +199,18 @@ The \PY~v8.2~\cite{Sjostrand:2014zea} is used to model parton shower and hadroni
 \toprule
 Category & Process & Event Generator & Perturbative QCD& Tune & XS precision \\ \midrule
 \multirow{7}{*}{\vtop{\hbox{\strut~~\emph{prompt}}\hbox{\strut background}}}  
- & WZ & \textsc{MadGraph}  & NLO & CUETP8M1(CP5)  & NLO~\cite{Campbell:2011bn}  \\ 
- & ZZ & \textsc{powheg}  & NLO & CUETP8M1(CP5)  & NLO~\cite{Campbell:2011bn}  \\
+ & WZ & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO~\cite{Campbell:2011bn} \\ 
+ & ZZ & \textsc{powheg} & NLO & CUETP8M1(CP5) & NLO~\cite{Campbell:2011bn} \\
  &VVV & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO \\ 
- & $\ttbar$W, $\ttbar$Z & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO~\cite{Frederix:2021agh,Kulesza:2020nfh}  \\
+ & $\ttbar$W, $\ttbar$Z & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NLO~\cite{Frederix:2021agh,Kulesza:2020nfh} \\
  & $\ttbar$H & \textsc{powheg} & NLO & CUETP8M1(CP5) & NLO~\cite{Kulesza:2020nfh} \\ 
- & tZq & \textsc{MadGraph} & NLO & CP5 & NLO  \\
- & tHq, tHW, tWZ & \textsc{MadGraph}  & LO & CUETP8M1(CP5) & LO  \\
+ & tZq & \textsc{MadGraph} & NLO & CP5 & NLO \\
+ & tHq, tHW, tWZ & \textsc{MadGraph} & LO & CUETP8M1(CP5) & LO \\
  \midrule
  \multirow{3}{*}{\vtop{\hbox{\strut \emph{nonprompt}}\hbox{\strut background}}}
- & $\ttbar$ & \textsc{powheg} & NLO  & CUETP8M1(CP5)  & NNLO~\cite{Czakon:2011xx}  \\ 
- & DYM50 & \textsc{MadGraph}  & NLO & CUETP8M1(CP5)  & NNLO~\cite{Li:2012wna}  \\
- & DYM10to50 & \textsc{MadGraph}  & LO & CUETP8M1(CP5)  & NLO~\cite{Li:2012wna}  \\
+ & $\ttbar$ & \textsc{powheg} & NLO & CUETP8M1(CP5) & NNLO~\cite{Czakon:2011xx} \\ 
+ & DYM50 & \textsc{MadGraph} & NLO & CUETP8M1(CP5) & NNLO~\cite{Li:2012wna} \\
+ & DYM10to50 & \textsc{MadGraph} & LO & CUETP8M1(CP5) & NLO~\cite{Li:2012wna} \\
  \bottomrule
  \end{tabular}}
  \label{tab:MCsample}

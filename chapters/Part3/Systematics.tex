@@ -8,13 +8,13 @@ Different sources of systematic uncertainty contribute to the estimation of back
 \section{Theoretical Uncertainties}
 \label{sec:ThUnc}
 
-Variations on theoretical cross sections for \emph{prompt} backgrounds are introduced to cover the uncertainties in perturbative \ac{QCD} calculations. A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to tZq process, which is a conservative estimate taken from the \ac{MC} generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated across the years. 
+Variations on theoretical cross sections for \emph{prompt} backgrounds are introduced to cover the uncertainties in perturbative \ac{QCD} calculations. A 6$\%$ normalization uncertainty is assigned to WZ and ZZ processes~\cite{Campbell:2011bn}. A 15$\%$ normalization uncertainty is assigned to $\ttbar$W, $\ttbar$Z, and $\ttbar$H processes~\cite{Frederix:2021agh,Kulesza:2020nfh}. A 20$\%$ normalization uncertainty is assigned to the tZq process, which is a conservative estimate taken from the \ac{MC} generator. A conservative 50 $\%$ normalization uncertainty is assigned to other smaller \emph{prompt} backgrounds. All normalization uncertainties are considered uncorrelated between different processes but correlated across the years. 
 
 Uncertainties associated with the \ac{PDF} are evaluated by using 100 replicas of the NNPDF sets~\cite{NNPDF:2014otw,NNPDF:2017mvq}. The procedure described in~\cite{CMS:2012nsv} is followed. Firstly, the sum of the generator weights of each replica is normalized to the nominal sum of the generator weights. This is done before any event selection to ensure no additional normalization effect is introduced. After the previous step, the bin-by-bin variations of the \ac{BDT} templates are obtained by calculating the bin-by-bin difference of the \ac{BDT} templates when switching from nominal \ac{PDF} to each \ac{PDF} replica. Finally, \ac{PDF} uncertainty for each bin is assigned by taking the root mean square value of the 100 variations of the corresponding bin. This uncertainty is treated as uncorrelated between different processes but correlated across the years. This uncertainty is considered for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 
 \ac{QCD} scale uncertainties are evaluated by varying the renormalization scale $\mu_\textsf{R}$ and factorization scales $\mu_\textsf{F}$ in \ac{ME}. A total of six variations are considered: varying $\mu_\textsf{R}$ by a factor of 2 and 0.5, varying $\mu_\textsf{F}$ by a factor of 2 and 0.5, and varying $\mu_\textsf{R}$ and $\mu_\textsf{F}$ simultaneously by a factor of 2 and 0.5. Similar to \ac{PDF} uncertainty, the normalization effects of each variation are removed. An envelope that covers all six variations is used to represent the scale uncertainty. This uncertainty is treated as uncorrelated between different processes but correlated across the years. This uncertainty is considered for all the signals and major prompt backgrounds (i.e. WZ, $\ttbar$W, $\ttbar$Z, and $\ttbar$H).
 
-Uncertainties associated with the \ac{PS} are evaluated by varying the renormalization scale $\mu_\textsf{R}$ in the initial and final state radiations, which effectively changes the strong coupling constant in the \ac{PS}. Similarly, $\mu_\textsf{R}$ is varied by a factor of 2 and 0.5, and the normalization effects of each variation are removed. This uncertainty is treated as uncorrelated between different processes but correlated across the years. This uncertainty is only considered for signal events.
+Uncertainties associated with the \ac{PS} are evaluated by varying the renormalization scale $\mu_\textsf{R}$ in the initial and final state radiations, which effectively changes the strong coupling constant in the \ac{PS}. Similarly, $\mu_\textsf{R}$ is varied by a factor of 2 and 0.5 and the normalization effects of each variation are removed. This uncertainty is treated as uncorrelated between different processes but correlated across the years. This uncertainty is only considered for signal events.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -73,7 +73,7 @@ The uncertainties associated with the \emph{prompt} efficiency are relatively sm
  \end{center}
 \end{figure}
 
-Uncertainties associated to $r$ and $f$ are determined separately for electron and muon. Therefore, there are four independent uncertainties: $r_{\textsf{e}}$, $r_{\upmu}$, $f_{\textsf{e}}$ and $f_{\upmu}$. 
+Uncertainties associated with $r$ and $f$ are determined separately for electron and muon. Therefore, there are four independent uncertainties: $r_{\textsf{e}}$, $r_{\upmu}$, $f_{\textsf{e}}$ and $f_{\upmu}$. 
 
 A fifth uncertainty is considered that accounts for the potential bias caused by the way the generalized \mm~is implemented. Four out of the eight \acp{AR} that appear on the lefthand side of the Equation \ref{eq:matrix_method3} (i.e. $N^{\overline{T}TT}$, $N^{\overline{T}T\overline{T}}$, $N^{\overline{T}\overline{T}T}$, $N^{\overline{T}\overline{T}\overline{T}}$) are selected by requiring the leading lepton in $\pt$ to fail the \emph{tight} criteria described in Table~\ref{tab:looseandtight}. Effectively this means that the isolation requirement is reversed for leading lepton that enter these four \acp{AR}. Selecting the leading lepton by a loose requirement is not ideal since the leading lepton is required to match with iso-triggers. To account for this bias, a 50 $\%$ uncertainty is assigned to the $f_1$ (\emph{nonprompt} efficiency associated with the leading lepton) for events that enter these four \acp{AR}. The variation of the \emph{nonprompt} estimate due to trigger matching is largely covered by this uncertainty, as is shown in Figure~\ref{fig:MM_trigger}.
 
@@ -95,7 +95,7 @@ The five components of the uncertainties discussed in this section are propagate
 \section{Diboson Uncertainties}
 \label{sec:DiUnc}
 
-Mismodeling of the jet multiplicity is observed in WZ control region, as is shown in Figure~\ref{fig:WZ}. This is largely due to the fact WZ process is modeled at \ac{LO} with one extra parton in the \ac{ME}. Any other extra jets are modeled by the \ac{PS}, which tends to be less accurate~\cite{CMS:2018sgc,CMS:2020mpn}. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson \ac{VR} that has the same OnZ requirement as the WZ \ac{VR}, no jet multiplicity requirement, a \MET~$>$ 85 GeV requirement, and a requirement of no b-tagged jets with $\pt$ $>$ 20 GeV. Unlike for the WZ \ac{VR}, events with different lepton flavor compositions are combined.
+Mismodeling of the jet multiplicity is observed in the WZ control region, as is shown in Figure~\ref{fig:WZ}. This is largely due to the fact WZ process is modeled at \ac{LO} with one extra parton in the \ac{ME}. Any other extra jets are modeled by the \ac{PS}, which tends to be less accurate~\cite{CMS:2018sgc,CMS:2020mpn}. To take this into account, a dedicated jet-dependent uncertainty is assigned to each event. This uncertainty is determined using diboson \ac{VR} that has the same OnZ requirement as the WZ \ac{VR}, no jet multiplicity requirement, a \MET~$>$ 85 GeV requirement, and a requirement of no b-tagged jets with $\pt$ $>$ 20 GeV. Unlike for the WZ \ac{VR}, events with different lepton flavor compositions are combined.
 
 The jet multiplicity distributions in diboson \ac{VR} are shown in Figure~\ref{fig:VV_CR}. For each year, a scale factor parameterized as bins of jet multiplicity is derived,
 
@@ -107,7 +107,7 @@ The jet multiplicity distributions in diboson \ac{VR} are shown in Figure~\ref{f
  \begin{center}
  \begin{tabular}{ccc}
  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2016}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2017}&
+ \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2017}&
  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/njet_2018}\\
  \end{tabular}
  \caption{Distributions of the jet multiplicity in the diboson \acp{VR} in the 2016 (left), 2017 (middle) and 2018 (left) datasets. Events are required to contain exactly three \emph{tight} leptons with any composition of flavors. ``VV'' denotes the WZ and ZZ processes.}
@@ -125,10 +125,10 @@ The scale factor $\epsilon$ is used to estimate the uncertainty, denoted by $\ma
  \begin{center}
  \begin{tabular}{ccc}
  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2016_VV_Sys_1D}&
-  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2017_VV_Sys_1D}&
+ \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2017_VV_Sys_1D}&
  \includegraphics[width=0.325\textwidth]{figures/Part3/Systematics/2018_VV_Sys_1D}\\
  \end{tabular}
- \caption{Scale factors derived from the diboson \acp{VR} in the 2016 (left), 2017 (middle) and 2018 (right) datasets. These scale factors are used to assign uncertainties instead of correcting simulated events.}
+ \caption{Scale factors derived from the diboson \acp{VR} in 2016 (left), 2017 (middle), and 2018 (right) datasets. These scale factors are used to assign uncertainties instead of correcting simulated events.}
  \label{fig:SF_VV}
  \end{center}
 \end{figure}
@@ -158,7 +158,7 @@ Calibrations of the \DeepJ scores are described in \autoref{sec:Jets}. Uncertain
 \sffamily
 \centering
 \caption{
-Summary of the sources of uncertainties associated with the b-tagging calibration, excluding those originate from \ac{JES} and \ac{JER}. A hyphen ($-$) denotes that a source is not correlated across the years.
+Summary of the sources of uncertainties associated with the b-tagging calibration, excluding those originating from \ac{JES} and \ac{JER}. A hyphen ($-$) denotes that a source is not correlated across the years.
 }
 \begin{tabular}{lcl}
 \toprule
@@ -197,18 +197,18 @@ Fragmentation			& \checkmark		&	 RelativeFSR				& -			 \\
 SinglePionECAL			& \checkmark	&	 RelativeStatFSR			& \checkmark			 \\	 
 SinglePionHCAL			& \checkmark	&	 RelativeStatEC			& -			 \\	 
 FlavorQCD				& \checkmark	&	 RelativeStatHF			& -			 \\	 
-TimePtEta				& -			 &     PileUpDataMC			& \checkmark			 \\
-RelativeJEREC1			& -		&	  PileUpPtRef				& \checkmark			 \\
-RelativeJEREC2			& -		&	  PileUpPtBB				& \checkmark			 \\
+TimePtEta				& -			 &   PileUpDataMC			& \checkmark			 \\
+RelativeJEREC1			& -		&	 PileUpPtRef				& \checkmark			 \\
+RelativeJEREC2			& -		&	 PileUpPtBB				& \checkmark			 \\
 RelativeJERHF			& \checkmark		&	 PileUpPtEC1				& \checkmark			 \\
 RelativePtBB			& \checkmark		&	 PileUpPtEC2				& \checkmark			 \\
-RelativePtEC1			& -			&   PileUpPtHF				& \checkmark			 \\
-RelativePtEC2			& -			&   & \\
+RelativePtEC1			& -			&  PileUpPtHF				& \checkmark			 \\
+RelativePtEC2			& -			&  & \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-One additional uncertainty is assigned to the unclustered \MET~is considered~\cite{CMS:2019ctu}, and is treated as uncorrelated across the years.
+One additional uncertainty is assigned to the unclustered \MET~is considered~\cite{CMS:2019ctu} and is treated as uncorrelated across the years.
 
 In the 2016 and 2017 runs, \ac{L1} ECAL triggers fired early~\cite{CMS:2020cmk} causing many uninteresting events to be recorded while the later interesting events were rejected. Since this effect is not present in the \ac{MC} simulation, a correction is applied to all signals and \emph{prompt} backgrounds. This correction is varied by 20\% and the resulting change in per-event weight is taken as the uncertainty. This uncertainty is treated as correlated across the years. 
 
@@ -219,7 +219,7 @@ A comparison of different sources of systematic uncertainties of the background 
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
-  \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_bkg_2017}&
+ \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_bkg_2017}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_TT_bkg_2017} \\
  \end{tabular}
  \caption{Distributions of relative uncertainties on total expected backgrounds as a function of \ac{BDT} output in top production enriched \ac{SR} (left), top decay enriched \ac{SR} (right). Luminosity and cross-section uncertainties are not included in these plots. \ac{JES}, \ac{JER}, and HEM are combined into ``JEC''. Sources of b-tagging uncertainties listed in Table~\ref{tab:btagsys} are combined into ``BtagSF''.}
@@ -232,7 +232,7 @@ A comparison of different sources of systematic uncertainties of the signal esti
 \begin{figure}[tbh!]
  \begin{center}
  \begin{tabular}{cc}
-  \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_sig_2017}&
+ \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_ST_sig_2017}&
  \includegraphics[width=0.45\textwidth]{figures/Part3/Systematics/sysBDT_TT_sig_2017} \\
  \end{tabular}
  \caption{Distributions of relative uncertainties on signal ($\WC{\textsf{vector}}{\emut{u}}$ is used as an example) as a function of \ac{BDT} output in top production enriched \ac{SR} (left), top decay enriched \ac{SR} (right). Luminosity and cross-section uncertainties are not included in these plots. \ac{JES}, \ac{JER}, and HEM are combined into ``JEC''. Sources of b-tagging uncertainties listed in Table~\ref{tab:btagsys} are combined into ``BtagSF''.}
@@ -250,7 +250,7 @@ A summary of systematic uncertainties and their average impact on predicted yiel
 \begin{tabular}{ccccc}
 \toprule
 \multirow{2}{*}{Systematic uncertainty} & \multicolumn{2}{c}{$\memu~<~150$ GeV} & \multicolumn{2}{c}{$\memu~>~150$ GeV} \\
-             & Background & Signal     & Background & Signal \\
+       & Background & Signal   & Background & Signal \\
 \midrule
 Lepton reconstruction & $<0.1\%$ & 0.6$\%$ & $<0.1\%$ & 1.7$\%$\\
 Lepton identification and isolation & 1.0$\%$ & 1.4$\%$ & 1.0$\%$ & 1.3$\%$\\
