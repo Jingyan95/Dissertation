@@ -1,4 +1,4 @@
-\documentclass{SPhdThesis}
+\documentclass{configs/SPhdThesis}
 
 % PDF and title properties.
 \SgSetTitle{Search for charged-lepton flavor violation in the production and decay of top quarks at \\ $\sqrt{\textbf{s}}$ = 13 TeV with the CMS detector}
@@ -16,9 +16,9 @@
 	\begin{frontmatter}
 		\SgAddTitle%
 		\SgAddDeclaration%
-		\input{dedication}%
-		\input{acknowledgments}%
-		\input{abstract}%
+		\input{miscs/dedication}%
+		\input{miscs/acknowledgments}%
+		\input{miscs/abstract}%
 		\SgAddToc%  Table of contents.
 		\SgAddLof%  List of figures.
 		\SgAddLot%  List of tables.
@@ -31,7 +31,7 @@
 	\input{chapters/Part4}
 	\ChapterOutsidePart
 	\input{chapters/Conclusion}
-	\SgIncludeBib{biblio}
+	\SgIncludeBib{miscs/biblio}
 	\appendix
 	\input{chapters/Appendix}
 \end{document}

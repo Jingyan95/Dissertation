@@ -127,7 +127,7 @@
 
 % -----------------------------------------------------------------------
 % MACRO
-\input{utilities/marco}
+\input{configs/marco}
 
 % -----------------------------------------------------------------------
 % P A G E   L A Y O U T.
@@ -238,7 +238,7 @@
 	\clearpage                                 % Fix the page number in TOC.
 	\phantomsection                            % Fix the link in PDF.
 	\addcontentsline{toc}{chapter}{References} % Add the bibliography to TOC.
-	\bibliographystyle{unsrturl}                  % Set the bibliography style.
+	\bibliographystyle{configs/unsrturl}                  % Set the bibliography style.
 	\bibliography{#1}                          % Include the bibliography file.
 }
 
@@ -368,7 +368,7 @@
 %	\sectionfont{\LARGE\bfseries\sffamily}
 	\chapter*{List of Acronyms}
 	\lhead{\sffamily\bfseries{List of Acronyms}}
-	\input{utilities/acronym}
+	\input{configs/acronym}
 	\SgIntClearDoublePage
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 }
