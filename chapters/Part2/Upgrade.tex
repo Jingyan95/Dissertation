@@ -72,7 +72,7 @@ The Phase-2 Outer Tracker consists of six cylindrical barrel layers (L1-L6) and 
  \end{center}
 \end{figure}
 
-The 2S module consists of two 90 cm$^{-2}$ strip sensors separated by a few millimeters using a \ac{Al-CF} spacer. Each strip sensor consists of over two thousand strips arranged in two rows. Each strip is 5 cm long with a pitch of 90 $\mu$m. The two sensors are connected to hybrid circuits known as the frontend hybrid and service hybrid. The frontend hybrid consists of eight \ac{CBC}~\cite{Raymond:2012zz}, which is responsible for readout. The service hybrid is mainly responsible for powering.
+The 2S module consists of two 90 cm$^{2}$ strip sensors separated by a few millimeters using a \ac{Al-CF} spacer. Each strip sensor consists of over two thousand strips arranged in two rows. Each strip is 5 cm long with a pitch of 90 $\mu$m. The two sensors are connected to hybrid circuits known as the frontend hybrid and service hybrid. The frontend hybrid consists of eight \ac{CBC}~\cite{Raymond:2012zz}, which is responsible for readout. The service hybrid is mainly responsible for powering.
 
 The PS module is about half the size of the 2S module in its active area. It has one strip sensor on the top and one macro-pixel sensor on the bottom, which provides very precise measurements of $z$-coordinates. Similar to the 2S module, the strip sensor of the PS module consists of roughly two thousand strips. Each strip is about 2.4 cm long with a pitch of 100 $\mu$m. The macro-pixel sensor contains 960 $\times$ 32 macro-pixels with a length and pitch of 1.5 cm and 100 $\mu$m, respectively. The two sensors are connected to hybrid circuits that are responsible for readout~\cite{Ceresa:2016mqm} and powering.
 
@@ -81,7 +81,7 @@ The PS module is about half the size of the 2S module in its active area. It has
 
 The task for track finding algorithms at \ac{L1} can be broken down into two main parts: i) performing a pattern recognition to identify and correlate all possible stubs that belong to the same charged particle trajectory and ii) obtaining the parameters of the trajectory by fitting the reconstructed tracks. A latency of roughly 4 $\mu$s is allocated to track finding algorithms, which becomes one of the cruitial constraints in algorithm development. Multiple approaches~\cite{CMS:2017lum} have demonstrated the feasibility of delivering tracking information within the allowed the latency and a so called ``hybrid'' approach~\cite{Zabi:2020gjd} is adopted by \ac{CMS} as the way forward.
 
-To meet the latency requirement, the hybrid approach is parallelized both in space and in time. The Outer Tracker is partitioned into nine $\phi$ sectors and stubs in each sector is processed in parallel with a time-multiplexing factor of up to 18. Main stages of the hybrid approach are similar to the offline \ac{CTF} algorithm described in \autoref{sec:Track}: i) seeding, pattern recognition, and parameter fitting, as illustrated in Figure~\ref{fig:algorithm}. The main difference is that the parameter fitting is disentangled from the pattern recognition in the hybrid approach while these two stages are intergraded in the \ac{CTF} algorithrm.
+To meet the latency requirement and increase redundancy, the hybrid approach is parallelized both in space and in time. The Outer Tracker is partitioned into nine $\phi$ sectors and stubs in each sector is processed in parallel with a time-multiplexing factor of up to 18. Main stages of the hybrid approach are similar to the offline \ac{CTF} algorithm described in \autoref{sec:Track}, including: seeding, pattern recognition, and parameter fitting, as illustrated in Figure~\ref{fig:algorithm}. The main difference is that the parameter fitting is disentangled from the pattern recognition in the hybrid approach while these two stages are intergraded in the \ac{CTF} algorithrm.
 
 \begin{figure}[tbh!]
  \begin{center}
@@ -148,7 +148,7 @@ The central feature of this algorithm is the fine-tuned matching between tracks 
  \end{center}
 \end{figure}
 
-The baseline algorithm provides roughly a factor of three reduction in event rate while keeping the efficiency loss under control, as shown in Table~\ref{fig:L1Ele_Rate}-Table~\ref{fig:L1Ele_Eff}. The efficiency loss is largely driven by the inefficiencies in electron tracking, as illustrated in Figure~\ref{fig:electronperformance}.
+The baseline algorithm provides roughly a factor of three reduction in event rate while keeping the efficiency loss under control, as shown in Table~\ref{tab:L1EleRate}-Table~\ref{tab:L1EleEff}. The efficiency loss is largely driven by the inefficiencies in electron tracking, as illustrated in Figure~\ref{fig:electronperformance}.
 
 \begin{table}[th]
 \sffamily
@@ -159,7 +159,7 @@ Rate & calorimeter only & track-matched \\    \midrule
  30 GeV     & 78.2 kHz      & 19.0 kHz\\ \midrule
  40 GeV &  25.5 kHz     & 8.3 kHz\\ \bottomrule
 \end{tabular}
-\label{tab:L1Ele_Rate}
+\label{tab:L1EleRate}
 \end{table}
 
 \begin{table}[th]
@@ -171,7 +171,7 @@ Efficiency & calorimeter only & track-matched \\    \midrule
  30 GeV     & 97.5\%      & 84.5\%\\ \midrule
  40 GeV &  98.7\%     & 88.0\%\\ \bottomrule
 \end{tabular}
-\label{tab:L1Ele_Eff}
+\label{tab:L1EleEff}
 \end{table}
 
 An alternative version of this algorithm uses the energy estimate from the calorimeter instead of the Outer Tracker to extrapolate \ac{L1} tracks. The superior energy resolution delivered by the calorimeters further constraints the projected track $\eta$ and $\phi$ coordinates to the targeted calorimeter clusters, as illustrated in \ref{fig:DR_electron}. This enables the implementation of a much tighter ellipse in the $\eta-\phi$ plane.
