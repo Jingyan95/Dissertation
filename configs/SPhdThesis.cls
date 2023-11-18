@@ -310,7 +310,7 @@
 \setlength{\cftfigindent}{0in}
 \setlength{\cfttabindent}{0in}
 
-\newcommand{\SgAddToc}{\tableofcontents\SgIntClearDoublePage}
+\newcommand{\SgAddToc}{\renewcommand\contentsname{Table of Contents}\subpdfbookmark{Table of Contents}{}\tableofcontents\SgIntClearDoublePage}
 
 \makeatletter%Add a chapter outside of a part
 \newcommand{\ChapterOutsidePart}{%
