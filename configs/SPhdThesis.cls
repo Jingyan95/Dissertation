@@ -84,6 +84,7 @@
 \newcommand{\SgIntTocSectionFormat}{\sffamily\bfseries}
 
 % Specify the format for chapter name and number in chapter headings.
+\setcounter{chapter}{-1}
 \newcommand{\SgIntChapNameFormat}{\fontsize{20}{50}\fontshape{sc}\selectfont}
 \newcommand{\SgIntChapNumberFormat}{\fontsize{76}{80}\selectfont\textcolor{red}}
 
