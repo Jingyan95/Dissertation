@@ -135,7 +135,7 @@ The hybrid track-finding algorithm has demonstrated a robust performance in soft
 
 With the increase of the instantaneous luminosity, triggering on electrons at \ac{L1} will face unprecedented challenges as the data volume generated in the calorimeters becomes too large for the legacy trigger algorithms. The addition of tracking information provides a much-needed handle for the electron trigger. It enables precise track-calorimeter shower matching to control the trigger rate. To take advantage of this new tool, a new electron trigger algorithm is developed and documented in Ref.~\cite{Zabi:2020gjd}. 
 
-The central feature of this algorithm is the fine-tuned matching between tracks produced by the \ac{L1} track finder and calorimeter clusters reconstructed in the \ac{ECAL} Barrel or \ac{HGCAL}. The baseline version of this algorithm extrapolates tracks to the calorimeter surface using the track $\pt$ and matches them with calorimeter clusters. An elliptical cut in the $\eta-\phi$ plane is applied and illustrated in Figure~\ref{fig:electron}.
+The central feature of this algorithm is the fine-tuned matching between tracks produced by the \ac{L1} track finder and calorimeter clusters reconstructed in the \ac{ECAL} Barrel or \ac{HGCAL}. The baseline version of this algorithm extrapolates tracks to the calorimeter surface using the track $\pt$ and matches them with calorimeter clusters. An elliptical cut in the $\eta-\phi$ plane is applied and illustrated in Figure~\ref{fig:electron}. A wider window of $\mathrm{\Delta}\phi$ is implemented to account for the bending of the electron trajectory in the $\phi$ direction, and the slightly less accurate $\phi$ resolution delivered by the \ac{L1} track finder.
   
  \begin{figure}[tbh!]
  \begin{center}
@@ -148,7 +148,7 @@ The central feature of this algorithm is the fine-tuned matching between tracks 
  \end{center}
 \end{figure}
 
-The baseline algorithm provides roughly a factor of three reduction in event rate while keeping the efficiency loss under control, as shown in Table~\ref{tab:L1EleRate}-Table~\ref{tab:L1EleEff}. The efficiency loss is largely driven by the inefficiencies in electron tracking, as illustrated in Figure~\ref{fig:electronperformance}.
+When compared to algorithms that only use calorimeter information, the baseline version of this new algorithm provides roughly a factor of three reduction in event rate while keeping the efficiency loss under control, as shown in Table~\ref{tab:L1EleRate}-Table~\ref{tab:L1EleEff}. The efficiency loss is largely driven by the inefficiencies in electron tracking, as illustrated in Figure~\ref{fig:electronperformance}.
 
 \begin{table}[th]
 \sffamily
