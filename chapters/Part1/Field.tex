@@ -30,7 +30,7 @@ or
 \mathcal{L}=i\psi_{L}^{\dagger}\bar{\sigma}^{\mu}\partial_{\mu}\psi_{L},
 \end{equation}
 
-where $\sigma^{\mu}$ is the 2$\times$2 Pauli matrix. The spinors in Equation~\ref{eq:lefthand}-\ref{eq:righthand} are known as Weyl spinors, which correspond to two-dimensional irreducible representations of the Lorentz group. Weyl spinors can be classified into left-handed spinors $\psi_{L}$ or right-handed spinors $\psi_{R}$ depending on the orientation of their spin relative to their momentum. More formally, $\psi_{R}$ and $\psi_{L}$ correspond to the ($\frac{1}{2}$,0) and (0,$\frac{1}{2}$) representation of the Lorentz group~\cite{zee:group}.
+where $\sigma^{\mu}$ is the 2$\times$2 Pauli matrix. The spinors in Equation~(\ref{eq:lefthand})-(\ref{eq:righthand}) are known as Weyl spinors, which correspond to two-dimensional irreducible representations of the Lorentz group. Weyl spinors can be classified into left-handed spinors $\psi_{L}$ or right-handed spinors $\psi_{R}$ depending on the orientation of their spin relative to their momentum. More formally, $\psi_{R}$ and $\psi_{L}$ correspond to the ($\frac{1}{2}$,0) and (0,$\frac{1}{2}$) representation of the Lorentz group~\cite{zee:group}.
 
 In addition to Lorentz invariance, the free Lagrangians should also be invariant under parity transformation. For Weyl spinors, however, this symmetry is violated as right-handed spinors transform into left-hand spinors under parity, and vice versa. To describe elementary fermions, the two irreducible representations must be stacked together, forming a four-dimensional reducible representation ($\frac{1}{2}$,0) $\bigoplus$ (0,$\frac{1}{2}$),
 
@@ -39,14 +39,14 @@ In addition to Lorentz invariance, the free Lagrangians should also be invariant
 \mathcal{L}=i\psi_{R}^{\dagger}\sigma^{\mu}\partial_{\mu}\psi_{R}+i\psi_{L}^{\dagger}\bar{\sigma}^{\mu}\partial_{\mu}\psi_{L}.
 \end{equation}
 
-It is also possible to introduce additional Lorentz- and parity-invariant terms $m(\psi_{R}^{\dagger}\psi_{L}+\psi_{L}^{\dagger}\psi_{R})$ to Equation~\ref{eq:leftandright},
+It is also possible to introduce additional Lorentz- and parity-invariant terms $m(\psi_{R}^{\dagger}\psi_{L}+\psi_{L}^{\dagger}\psi_{R})$ to Equation~(\ref{eq:leftandright}),
 
 \begin{equation}
 \label{eq:DiracLag}
 \mathcal{L}_{Dirac}=i\psi_{R}^{\dagger}\sigma^{\mu}\partial_{\mu}\psi_{R}+i\psi_{L}^{\dagger}\bar{\sigma}^{\mu}\partial_{\mu}\psi_{L}+m(\psi_{R}^{\dagger}\psi_{L}+\psi_{L}^{\dagger}\psi_{R}),
 \end{equation}
 
-where $m$ corresponds to the physical mass of the fermions. Equation~\ref{eq:DiracLag} is known as the Dirac Lagrangian. Using the Euler-Lagrange equation that is based on the principle of least action,
+where $m$ corresponds to the physical mass of the fermions. Equation~(\ref{eq:DiracLag}) is known as the Dirac Lagrangian. Using the Euler-Lagrange equation that is based on the principle of least action,
 
 \begin{equation}
 \frac{\partial\mathcal{L}}{\partial\psi}-\partial_{\mu}\frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\psi)}=0,
@@ -63,7 +63,7 @@ i\sigma^{\mu}\partial_{\mu}\psi_{R}=m\psi_{L}
 i\bar{\sigma}^{\mu}\partial_{\mu}\psi_{L}=m\psi_{R}
 \end{equation}
 
-Defining the four-dimensional Dirac spinor as $\psi=\begin{psmallmatrix}\psi_{R}\\\psi_{L}\end{psmallmatrix}$ and the 4$\times$4 Dirac matrix as $\gamma^{\mu}=\begin{psmallmatrix}0&\bar{\sigma}^{\mu}\\\sigma^{\mu}&0\end{psmallmatrix}$, Equation~\ref{eq:Dirac1}-\ref{eq:Dirac2} can be rewritten as,
+Defining the four-dimensional Dirac spinor as $\psi=\begin{psmallmatrix}\psi_{R}\\\psi_{L}\end{psmallmatrix}$ and the 4$\times$4 Dirac matrix as $\gamma^{\mu}=\begin{psmallmatrix}0&\bar{\sigma}^{\mu}\\\sigma^{\mu}&0\end{psmallmatrix}$, Equation~(\ref{eq:Dirac1})-(\ref{eq:Dirac2}) can be rewritten as,
 
 \begin{equation}
 \label{eq:Dirac}
@@ -114,7 +114,7 @@ The theory that describes the light-matter interaction is known as \ac{QED}, whi
 \mathcal{L}_{QED}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi-e\bar{\psi}\gamma^{\mu}A_{\mu}\psi,
 \end{equation}
 
-where the first term in Equation~\ref{eq:QED} is known as the Electromagnetic tensor, which characterizes the spacetime properties, or more formally the curvature form of the photon field. The last term in Equation~\ref{eq:QED} describes the interaction between the fermion fields, mediated by the photon field. 
+where the first term in Equation~(\ref{eq:QED}) is known as the Electromagnetic tensor, which characterizes the spacetime properties, or more formally the curvature form of the photon field. The last term in Equation~(\ref{eq:QED}) describes the interaction between the fermion fields, mediated by the photon field. 
 
 However, it was soon realized that Dirac's theory was reliable only at a first order of perturbation theory. Attempts to compute high-order processes were often met with \ac{UV} divergence that were nonphysical. This problem remained unsolved for more than 20 years until the Second World War broke out, after which a procedure known as ``renormalization'' was developed independently by Japanese physicist Shinichiro Tomonaga~\cite{Tomonaga:1946zz}, American physicists Julian Schwinger~\cite{Schwinger:1948iu}, and Richard Feynman~\cite{Feynman:1950ir}. Schwinger also provided in his paper a one-loop calculation of the electron anomalous magnetic moment which matched precisely with experiments. British physicist Freeman Dyson also made important contributions by providing mathematical insights into this new technique, most notably demonstrating the equivalence between the seemingly different approaches of Feynman, Schwinger, and Tomonaga~\cite{Dyson:1949bp}. Renormalization was initially designed to systematically remove infinities that appeared in \ac{QED}. It was eventually accepted as a foundational element of quantum field theory as it ensures the validity of physics predictions at different scales. Another key feature of the \ac{QED}, known as gauge invariance, is discussed in \autoref{sec:Gauge}.
 
