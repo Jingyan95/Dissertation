@@ -104,7 +104,7 @@ Additionally, all vector-like operators are combined,
  \OP{\textsf{tensor}}{\emut{u}}&=&\OP{(3)}{\textsf{lequ}}+\textsf{h.c},
 \end{eqnarray}
 
-which results in 6 independent \acp{WC}: $\WC{\textsf{vector}}{\emut{u}},~\WC{\textsf{scalar}}{\emut{u}},~\WC{\textsf{tensor}}{\emut{u}},~\WC{\textsf{vector}}{\emut{c}},~\WC{\textsf{scalar}}{\emut{c}},~\WC{\textsf{tensor}}{\emut{c}}.$  
+which results in 6 independent \acp{WC}: $\WC{\textsf{vector}}{\emut{u}},~\WC{\textsf{scalar}}{\emut{u}},~\WC{\textsf{tensor}}{\emut{u}},~\WC{\textsf{vector}}{\emut{c}},~\WC{\textsf{scalar}}{\emut{c}},~\WC{\textsf{tensor}}{\emut{c}}$, where the subscript describes the \ac{CLFV} interaction vertex and the superscript indicates the Lorentz structure of the operators. The signal samples are produced for each of these six couplings, separately for production and decay signal modes.
 
 To generate signal \ac{MC} samples, the effective Lagrangian described above is implemented using the SmeftFR v2~\cite{Dedes:2019uzs} model, and saved in the ``UFO'' format~\cite{Degrande:2011ua}. Additionally, all the \acp{WC} are set to 1 with $\Lam$ = 1 TeV in the UFO, which then interfaces with the \textsc{FeynRules}~\cite{Christensen:2008py} package to calculate Feynman diagrams. The output of the \FR~is used in \ac{ME} event generator \MG~v2.4.2~\cite{Alwall:2014hca} to generate events at \ac{LO}. 
 
@@ -140,14 +140,16 @@ where q=\{u,c\}, and $\mathcal{B}(\tto{q})$ \cite{Kile:2008rp} can be expressed 
 \begin{equation}
 \label{eq:4}
 \mathcal{B}(\tto{q}) = 
+\left\{ 
  \begin{array}{l}
  \displaystyle
- \frac{|\WC{\textsf{vector}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{384\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} \\
+ \frac{|\WC{\textsf{vector}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{384\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}},\\
  \displaystyle
- \frac{|\WC{\textsf{scalar}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{3072\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} \\
+ \frac{|\WC{\textsf{scalar}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{3072\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}}, \\
  \displaystyle
- \frac{|\WC{\textsf{tensor}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{64\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}} 
+ \frac{|\WC{\textsf{tensor}}{\emut{q}}|^2}{\Lam^4}\frac{\textsf{m}_\textsf{t}^5}{64\pi^3\Gam_{\textsf{t}}^{\textsf{SM}}}, 
 \end{array}
+\right.
 \end{equation}
 
 where $\textsf{m}_{\textsf{t}}$ and $\Gam_{\textsf{t}}^{\textsf{SM}}$ are taken to be 172.5 GeV and 1.33 GeV in this analysis, respectively. The choice of u or c quark in final states does not affect the cross sections of the top decay signals. The cross sections for all signal \ac{MC} samples are summarized in Table~\ref{tab:signal}. These cross-sections are used as a baseline to define the signal strength $\mu$, which is used to quantify the relative strength of the signals when their normalization change,
