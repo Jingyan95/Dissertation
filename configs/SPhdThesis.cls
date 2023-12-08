@@ -650,9 +650,7 @@ ALL RIGHTS RESERVED
 	\begin{center}
 		\vspace*{1.5cm}
 		{%
-			\Large \bfseries \begin{CJK*}{UTF8}{gbsn}
-                     致谢
-                         \end{CJK*}
+		        \Large \bfseries Acknowledgments
 		}
 	\end{center}
 	\vspace{0.5cm}
