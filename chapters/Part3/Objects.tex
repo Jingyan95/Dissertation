@@ -12,7 +12,7 @@ The target final states of this analysis feature exactly three leptons that orig
 \subsection{TOP LeptonMVA}
 \label{subsec:TOPMVA}
 
-The \TOP is an offline lepton identification algorithm that was originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on Gradient \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. A total of 13 features are used as input to the \ac{BDT}. They can be categorized into four groups: (i) positions and momenta of the lepton candidates, (ii) isolation variables, (iii) variables associated with the closest jet, and (iv) a quality variable that is specific to electron or muon candidate. The version of \TOP used by this analysis is the same as \cite{CMS:2021ugv}, where a detailed description of all input features can be found.
+The \TOP is an offline lepton identification algorithm that was originally developed for tZq analyses \cite{CMS:2018sgc,CMS:2021ugv}. It is based on a Gradient \ac{BDT} implemented using the TMVA package~\cite{TMVA:2007ngy}. A total of 13 features are used as input to the \ac{BDT}. They can be categorized into four groups: (i) positions and momenta of the lepton candidates, (ii) isolation variables, (iii) variables associated with the closest jet, and (iv) a quality variable that is specific to the electron or muon candidate. The version of \TOP used by this analysis is the same as \cite{CMS:2021ugv}, where a detailed description of all input features can be found.
 
 \emph{Prompt} leptons from $\ttbar$W, $\ttbar$Z, and tZq samples are used as signals in the \ac{BDT} training while \emph{nonprompt} leptons from $\ttbar$ samples are used as backgrounds. The trained \ac{BDT} outputs a single score for each lepton candidate ranging from -1 to 1 with -1 (1) being the most background- (signal-) like. The tight working point with a threshold of ($>$) 0.9 is chosen as the selection criteria for both electron candidates and muon candidates, which corresponds to a signal(background) efficiency of 90\%(1\%). The strategy is to trade a small percentage (<10\%) of signal efficiency for several factors of background rejection. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@ where $p_{\textsf{T}}^{\ell}$ is the $\pt$ of the lepton candidate, the first te
 
 \begin{equation}
 R_{\textsf{max}} = \max (0.05, \min(0.2, \frac{10\GeV}{p_{\textsf{T}}^{\ell}})).
-\end{equation}.
+\end{equation}
 
 This type of isolation variable is known as ``mini isolation'', which maximizes the signal efficiency at $p_{\textsf{T}}^{\ell}$ by reducing the cone size. It is required that lepton candidates to have $I^{\textsf{rel}}_{\textsf{mini}}<$ 0.12.
 
@@ -59,7 +59,7 @@ As discussed in \autoref{sec:Jet}, the energy scale for all jet candidates (data
 \section{Identification of b jets}
 \label{sec:Btag}
 
-The \DeepJ algorithm~\cite{Bols:2020bkb} is used to identify jets that originate from a b quark. The core strategy of this algorithm is to minimize information loss. This is achieved by removing entirely the selection of jet constituents, which limits the number of jet constituents considered. Additionally, an effort is made to use as many low-level features as possible, which further deepens the feature space. Approximately a total of 650 input features are used, which can be categorized into four groups: (i) global variables, (ii) charged \ac{PF} candidate features, (iii) neutral \ac{PF} candidate features, (iv) and \ac{SV} features associated with the jet. When compared to the existing \DeepC algorithm~\cite{CMS:2017wtu}, the \DeepJ algorithm delivers up to 20\% improvement in signal efficiency while maintaining the same background efficiency.
+The \DeepJ algorithm~\cite{Bols:2020bkb} is used to identify jets that originate from a b quark. The core strategy of this algorithm is to minimize information loss. This is achieved by removing entirely the selection of jet constituents, which limits the number of jet constituents considered. Additionally, an effort is made to use as many low-level features as possible, which further deepens the feature space. Approximately a total of 650 input features are used, which can be categorized into four groups: (i) global variables, (ii) charged \ac{PF} candidate features, (iii) neutral \ac{PF} candidate features, and (iv) \ac{SV} features associated with the jet. When compared to the existing \DeepC algorithm~\cite{CMS:2017wtu}, the \DeepJ algorithm delivers up to 20\% improvement in signal efficiency while maintaining the same background rejection rate.
 
 The \DeepJ algorithm outputs a score ranging between 0 and 1, with 0 (1) being the most background- (signal-) like. The ``Medium'' working point is chosen to tag b jet candidates, which corresponds to 70\%-80\% signal efficiency~\cite{CMS-DP-2018-058}. The shape of the \DeepJ output distribution is corrected for the differences between data and \ac{MC} in signal and background efficiencies. The per-event correction weight $ \omega$ is defined as,
  
