@@ -259,8 +259,10 @@
 % page number on right side.
 % \nouppercase is used on left header to force bibliography in lowercase.
 \fancyhead{} 
-\fancyhead[L]{\nouppercase{\SgIntHeaderFormat\leftmark}}
-\fancyhead[R]{\SgIntPageNumFormat\thepage}
+\fancyhead[LO]{\nouppercase{\SgIntHeaderFormat\leftmark}}
+\fancyhead[RO]{\SgIntPageNumFormat\thepage}
+\fancyhead[RE]{\nouppercase{\SgIntHeaderFormat\leftmark}}
+\fancyhead[LE]{\SgIntPageNumFormat\thepage}
 \renewcommand{\headrulewidth}{1pt}
 \addtolength{\headheight}{10pt}
 
@@ -277,7 +279,8 @@
     
     % Footer contains the page number on right side.
     \fancyfoot{}
-    \fancyfoot[R]{\SgIntPageNumFormat\thepage}
+    \fancyfoot[RO]{\SgIntPageNumFormat\thepage}
+    \fancyfoot[LE]{\SgIntPageNumFormat\thepage}
     \renewcommand{\footrulewidth}{0pt}
 }
 
@@ -368,7 +371,7 @@
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 %	\sectionfont{\LARGE\bfseries\sffamily}
 	\chapter*{List of Acronyms}
-	\lhead{\sffamily\bfseries{List of Acronyms}}
+	\markboth{List of Acronyms}{List of Acronyms}
 	\input{configs/acronym}
 	\SgIntClearDoublePage
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
