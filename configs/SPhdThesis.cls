@@ -259,14 +259,18 @@
 % page number on right side.
 % \nouppercase is used on left header to force bibliography in lowercase.
 \fancyhead{} 
-\fancyhead[L]{\nouppercase{\SgIntHeaderFormat\leftmark}}
-\fancyhead[R]{\SgIntPageNumFormat\thepage}
-\renewcommand{\headrulewidth}{1pt}
-\addtolength{\headheight}{10pt}
+%\fancyhead[L]{\nouppercase{\SgIntHeaderFormat\leftmark}}
+%\fancyhead[R]{\SgIntPageNumFormat\thepage}
+%\renewcommand{\headrulewidth}{1pt}
+%\addtolength{\headheight}{10pt}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\SgIntPageNumFormat\thepage}
+\renewcommand{\footrulewidth}{0pt}
+
 
 % Disable footer.
-\fancyfoot{}
-\renewcommand{\footrulewidth}{0pt}
+%\fancyfoot{}
+%\renewcommand{\footrulewidth}{0pt}
 
 % Define header and footer for plain pages.
 \fancypagestyle{plain}
@@ -277,7 +281,7 @@
     
     % Footer contains the page number on right side.
     \fancyfoot{}
-    \fancyfoot[R]{\SgIntPageNumFormat\thepage}
+    \fancyfoot[C]{\SgIntPageNumFormat\thepage}
     \renewcommand{\footrulewidth}{0pt}
 }
 
@@ -311,7 +315,13 @@
 \setlength{\cftfigindent}{0in}
 \setlength{\cfttabindent}{0in}
 
-\newcommand{\SgAddToc}{\renewcommand\contentsname{Table of Contents}\subpdfbookmark{Table of Contents}{}\tableofcontents\SgIntClearDoublePage}
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\newcommand{\SgAddToc}{\renewcommand\contentsname{\hspace{7.5em}Table of Contents}\subpdfbookmark{Table of Contents}{}\tableofcontents\SgIntClearDoublePage}
+
+\renewcommand{\listfigurename}{\hspace{8em}List of Figures}
+\renewcommand{\listtablename}{\hspace{8.2em}List of Tables}
 
 \makeatletter%Add a chapter outside of a part
 \newcommand{\ChapterOutsidePart}{%
@@ -346,7 +356,7 @@
 \newcommand{\SgAddLof}{%
 	\newpage
 	\phantomsection % Requires hyperref; this is to fix the link.
-	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\SgIntTocSectionFormat{}List of Figures}}
+	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\SgIntTocSectionFormat{}{List of Figures}}}
 	\listoffigures
 	\SgIntClearDoublePage
 }
@@ -364,11 +374,10 @@
 	\newpage
 	\phantomsection % Requires hyperref; this is to fix the link.
 	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\SgIntTocSectionFormat{}List of Acronyms}}
-	\thispagestyle{plain}
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 %	\sectionfont{\LARGE\bfseries\sffamily}
-	\chapter*{List of Acronyms}
-	\lhead{\sffamily\bfseries{List of Acronyms}}
+	\chapter*{\hspace{7.5em}List of Acronyms}
+	%\lhead{\sffamily\bfseries{List of Acronyms}}
 	\input{configs/acronym}
 	\SgIntClearDoublePage
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
