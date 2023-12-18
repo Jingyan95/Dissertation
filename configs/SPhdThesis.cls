@@ -84,7 +84,7 @@
 \newcommand{\SgIntTocSectionFormat}{\sffamily\bfseries}
 
 % Specify the format for chapter name and number in chapter headings.
-\setcounter{chapter}{-1}
+%\setcounter{chapter}{-1}
 \newcommand{\SgIntChapNameFormat}{\fontsize{20}{50}\fontshape{sc}\selectfont}
 \newcommand{\SgIntChapNumberFormat}{\fontsize{76}{80}\selectfont\textcolor{red}}
 
@@ -318,10 +318,10 @@
 \renewcommand{\cfttoctitlefont}{\hfill\normalsize}
 \renewcommand{\cftaftertoctitle}{\hfill}
 
-\newcommand{\SgAddToc}{\renewcommand\contentsname{\hspace{7.5em}Table of Contents}\subpdfbookmark{Table of Contents}{}\tableofcontents\SgIntClearDoublePage}
+\newcommand{\SgAddToc}{\renewcommand\contentsname{Table of Contents}\subpdfbookmark{Table of Contents}{}\tableofcontents\SgIntClearDoublePage}
 
-\renewcommand{\listfigurename}{\hspace{8em}List of Figures}
-\renewcommand{\listtablename}{\hspace{8.2em}List of Tables}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
 
 \makeatletter%Add a chapter outside of a part
 \newcommand{\ChapterOutsidePart}{%
@@ -376,7 +376,7 @@
 	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\SgIntTocSectionFormat{}List of Acronyms}}
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 %	\sectionfont{\LARGE\bfseries\sffamily}
-	\chapter*{\hspace{7.5em}List of Acronyms}
+	\chapter*{List of Acronyms}
 	%\lhead{\sffamily\bfseries{List of Acronyms}}
 	\input{configs/acronym}
 	\SgIntClearDoublePage
@@ -400,7 +400,7 @@
 % Change the appearance of chapter headers and section titles.
 
 % Change the fonts for chapter heading.
-\RequirePackage[Lenny]{fncychap}
+\RequirePackage[Plain]{fncychap}
 \ChNameVar{\SgIntChapNameFormat}
 \ChNumVar{\SgIntChapNumberFormat}
 \ChTitleVar{\SgIntChapTitleFormat}
@@ -421,13 +421,13 @@
 	% Reduce the spacing between top margin and chapter title.
 	\renewcommand*{\@makechapterhead}[1]
 	{%
-		\vspace*{10\p@}
+		\vspace*{5\p@}
 		{%
-			\parindent \z@ \raggedright \normalfont
+			\parindent \z@ \centering \normalfont
 			\ifnum \c@secnumdepth >\m@ne
-				\if@mainmatter % Fix for frontmatter, mainmatter, and backmatter 040920
-					\DOCH
-				\fi
+				\normalsize\bfseries\sffamily\LARGE \@chapapp\space \thechapter
+                                  \par\nobreak
+                                 \vskip 15\p@
 			\fi    
 			\interlinepenalty\@M    
 			\if@mainmatter     % Fix for frontmatter, mainmatter, and backmatter 060424
@@ -435,6 +435,8 @@
 			\else%      
 				\DOTIS{#1}%
 			\fi
+%                         \parindent \z@ \centering \normalfont 
+%			\interlinepenalty\@M \DOTIS{#1} \vskip 10\p@
 		}
 	}
 	
@@ -443,7 +445,7 @@
 	{%
 		\vspace*{10\p@}%
 		{%
-			\parindent \z@ \raggedright \normalfont 
+			\parindent \z@ \centering \normalfont 
 			\interlinepenalty\@M \DOTIS{#1} \vskip 10\p@
 		}
 	}
